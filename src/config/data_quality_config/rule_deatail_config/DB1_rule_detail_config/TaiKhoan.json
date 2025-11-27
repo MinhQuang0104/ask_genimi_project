@@ -1,0 +1,67 @@
+{
+    "primaryKey": [
+        "MaTK"
+    ],
+    "Example": {
+        "rules": [
+            ""
+        ],
+        "transform": {
+            "comments": "Việc transform có cần nhiều function thì chuyển sang qua dùng array để lưu dữ liueej",
+            "notNull": "setDefaultDateTime"
+        }
+    },
+    "MaTK": {
+        "rules": [
+            "notNullOrEmpty",
+            "alphaNumericOnly"
+        ],
+        "transform": {}
+    },
+    "TenDangNhap": {
+        "rules": [
+            "notNullOrEmpty",
+            "minLength:6",
+            "maxLength:30",
+            "notWhiteSpace"
+        ],
+        "transform": {}
+    },
+    "MatKhau": {
+        "rules": [
+            "notNullOrEmpty",
+            "minLength:8"
+        ],
+        "transform": {}
+    },
+    "HoTen": {
+        "rules": [
+            "notNullOrEmpty",
+            "noDigit"
+        ],
+        "transform": {}
+    },
+    "GioiTinh": {
+        "rules": [],
+        "transform": {}
+    },
+    "SDT": {
+        "rules": [
+            "notNullOrEmpty"
+        ],
+        "transform": [
+            "formatPhone"
+        ]
+    },
+    "Email": {
+        "rules": [
+            "notNullOrEmpty"
+        ]
+    },
+    "DiaChi": {
+        "rules": [
+            "notNullOrEmpty"
+        ],
+        "transform": {}
+    }
+}

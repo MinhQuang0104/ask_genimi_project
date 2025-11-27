@@ -1,0 +1,56 @@
+{
+    "primaryKey": [
+        "MaSP"
+    ],
+    "MaSP": {
+        "rules": [
+            "notNullOrEmpty",
+            "isInteger"
+        ],
+        "transform": {}
+    },
+    "TenSP": {
+        "rules": [
+            "notNullOrEmpty"
+        ],
+        "transform": {}
+    },
+    "MaLoaiHang": {
+        "rules": [
+            "notNullOrEmpty",
+            "isInteger"
+        ],
+        "transform": {}
+    },
+    "SoLuong": {
+        "rules": [
+            "notNullOrEmpty",
+            "isInteger",
+            "isNonNegative"
+        ],
+        "transform": {}
+    },
+    "GiaNhap": {
+        "rules": [
+            "isNullable",
+            "isDecimal",
+            "isNonNegative"
+        ],
+        "transform": {}
+    },
+    "GiaBan": {
+        "rules": [
+            "isNullable",
+            "isDecimal",
+            "isNonNegative"
+        ],
+        "transform": {}
+    },
+    "TrangThai": {
+        "rules": [
+            "notNullOrEmpty",
+            "inSet:0:1"
+        ],
+        "transform": {}
+    }
+}

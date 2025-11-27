@@ -1,0 +1,28 @@
+{
+    "primaryKey": [
+        "MaSP",
+        "MaVT"
+    ],
+    "MaSP": {
+        "rules": [
+            "notNullOrEmpty",
+            "isInteger"
+        ],
+        "transform": {}
+    },
+    "MaVT": {
+        "rules": [
+            "notNullOrEmpty",
+            "isInteger"
+        ],
+        "transform": {}
+    },
+    "SoLuongTon": {
+        "rules": [
+            "notNullOrEmpty",
+            "isInteger",
+            "isNonNegative"
+        ],
+        "transform": {}
+    }
+}

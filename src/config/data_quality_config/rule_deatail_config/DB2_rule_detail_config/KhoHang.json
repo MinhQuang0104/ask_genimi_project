@@ -1,0 +1,24 @@
+{
+    "primaryKey": [
+        "Makho"
+    ],
+    "Makho": {
+        "rules": [
+            "notNullOrEmpty",
+            "isInteger"
+        ],
+        "transform": {}
+    },
+    "TenKho": {
+        "rules": [
+            "notNullOrEmpty"
+        ],
+        "transform": {}
+    },
+    "DiaChiKho": {
+        "rules": [
+            "isNullable"
+        ],
+        "transform": {}
+    }
+}

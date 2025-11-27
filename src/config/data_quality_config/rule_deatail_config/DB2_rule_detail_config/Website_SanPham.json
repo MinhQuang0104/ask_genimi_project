@@ -1,0 +1,25 @@
+{
+    "primaryKey": [
+        "MaSP"
+    ],
+    "MaSP": {
+        "rules": [
+            "notNullOrEmpty",
+            "isInteger"
+        ],
+        "transform": {}
+    },
+    "TenSP": {
+        "rules": [
+            "notNullOrEmpty"
+        ],
+        "transform": {}
+    },
+    "GiaSP": {
+        "rules": [
+            "isDecimal",
+            "isNonNegative"
+        ],
+        "transform": {}
+    }
+}

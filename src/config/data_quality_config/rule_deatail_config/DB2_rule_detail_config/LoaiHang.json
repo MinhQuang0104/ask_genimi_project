@@ -1,0 +1,18 @@
+{
+    "primaryKey": [
+        "MaLoaiHang"
+    ],
+    "MaLoaiHang": {
+        "rules": [
+            "notNullOrEmpty",
+            "isInteger"
+        ],
+        "transform": {}
+    },
+    "TenLoaiHang": {
+        "rules": [
+            "notNullOrEmpty"
+        ],
+        "transform": {}
+    }
+}

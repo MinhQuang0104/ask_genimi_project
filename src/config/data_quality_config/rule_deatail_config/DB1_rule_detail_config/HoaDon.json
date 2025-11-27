@@ -1,0 +1,19 @@
+{
+  "primaryKey": [
+    "TenDangNhap"
+  ],
+  "MaHD": {
+    "rules": [
+      ""
+    ],
+    "transform": {}
+  },
+  "NgayDat": {
+    "comment": "Vi du nếu ngày là null thì chuyển về => ngày nào đó",
+    "rules": [
+      "notNullOrEmpty",
+      "isPhone"
+    ],
+    "transform": {}
+  }
+}

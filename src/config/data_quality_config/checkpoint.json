@@ -1,0 +1,53 @@
+{
+  "TaiKhoan": {},
+  "HoaDon": {},
+  "SanPham": {},
+  "AnhSanPham": {},
+  "ChiTietHoaDon": {},
+  "ChiTietKhuyenMai": {},
+  "ChiTietKiemKe": {},
+  "ChiTietPhieuXuat": {},
+  "ChiTietNhapHang": {},
+  "ChiTietTraHang": {},
+  "DanhMuc": {},
+  "DanhGia": {},
+  "GioHang": {},
+  "KhoHang": {},
+  "LichSuDonHang": {},
+  "LoaiHang": {},
+  "MatHang": {},
+  "NhaCungCap": {},
+  "PhieuKiemKe": {},
+  "PhieuNhap": {
+    "1": "06dfe7b4caeb3f3079c2f2f53a73d253"
+  },
+  "PhieuTraHang": {},
+  "PhieuXuat": {},
+  "SanPham_Thue": {},
+  "SoDiaChi": {},
+  "ThanhToan": {},
+  "KhuyenMai": {},
+  "Thue": {},
+  "TonKhoChiTiet": {
+    "1_1": "b121050668ca49849e4658149c6480a0",
+    "1_2": "84157cf4c89fb45b5903c6203b79d2ec",
+    "2_3": "7200fdd3f5a73047534f768967ba52eb",
+    "3_1": "6e4366a6086adf900c3dd9cd653e6adf",
+    "3_2": "c94b8393c92d883470fd06aaaf72fea7"
+  },
+  "TonKho": {
+    "1": "f91eeb56df0eb4091ed6a539754e2c1e",
+    "2": "6072b8179d70ac9923db6611354f80dd",
+    "3": "03abf561be4a9bed08fd2ccdce6b3594"
+  },
+  "VanDon": {},
+  "Website_SanPham": {
+    "1": "2c9661deedff1281ff2f0d6a3b4d3d71",
+    "2": "ccb3e1f4b4637b87c341ea3787259319"
+  },
+  "ViTriKho": {
+    "1": "83001c7c084efb8fc6b3f569559ef5e3",
+    "2": "def4efb66134a414ff9ef01c860b1f5f",
+    "3": "400c47552b8a784667fd64a13592e40a"
+  }
+}
