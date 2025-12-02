@@ -1,0 +1,495 @@
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-01 14:31:58 [[31MERROR[39M]: Error: Không tìm thấy Model cho bảng: Web1_ChiTietHoaDon
+    at Function.create (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\core\EntityFactory.ts:17:19)
+    at ParseHandler.handle (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\pipeline\ConcreteHandlers\ParseHandler.ts:10:38)
+    at main (D:\Workspace\School\N4\SE 445 Y\Data_Integration_Typescript\src\index.ts:38:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)

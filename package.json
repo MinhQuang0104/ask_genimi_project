@@ -1,22 +1,22 @@
 {
-  "name": "project_data_integration",
+  "name": "data_integration_typescript",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "send": "node src/rabbit_mq/send.js",
-    "receive": "node src/rabbit_mq/receive.js",
-    "pipeline": "node src/data_quality/pipeline.js",
-    "runProject": "node index.js"
-    
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "csv-parse": "^6.1.0",
     "csv-stringify": "^6.6.0",
-    "mssql": "^12.1.0",
-    "rabbitmq-stream-js-client": "^0.6.2",
+    "reflect-metadata": "^0.2.2",
     "winston": "^3.18.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "@types/node": "^24.10.1"
   }
 }
