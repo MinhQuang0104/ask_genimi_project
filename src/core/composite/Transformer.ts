@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { TRANSFORM_METADATA_KEY } from './decorators/Transforms';
+import { TRANSFORM_METADATA_KEY } from '../decorators/Transforms';
 
 export class Transformer<T> {
     // Hàm này sẽ thay đổi trực tiếp instance (Mutation)

@@ -1,19 +1,16 @@
-import { 
-    Required, IsInteger, IsDecimal, Min
-} from '../core/decorators/Validators';
-import { 
-    Default
-} from '../core/decorators/Transforms';
-
+import { Required, IsInteger, IsDecimal, Min} from '../core/decorators/Validators';
+import { Default} from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('Web1_ChiTietHoaDon')
 export class Web1_ChiTietHoaDon {
     @Required()
+    @UniqueKey()
     MaHD: number;
 
     @Required()
+    @UniqueKey()
     MaSP: number;
 
     @Required()

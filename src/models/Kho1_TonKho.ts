@@ -1,20 +1,16 @@
-import { 
-    Required, MinLen, IsInteger, IsDecimal, Min, InSet, 
-    IsEmail, IsPhoneNumber, MaxDate, IsUrlOrPath, InRange 
-} from '../core/decorators/Validators';
-import { 
-    Default
-} from '../core/decorators/Transforms';
-
+import { Required, MinLen, IsInteger, IsDecimal, Min} from '../core/decorators/Validators';
+import { Default} from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('Kho1_TonKho')
 export class Kho1_TonKho {
     @Required()
+    @UniqueKey()
     MaKho: number;
 
     @Required()
+    @UniqueKey()
     MaSP: number;
 
     @Required()

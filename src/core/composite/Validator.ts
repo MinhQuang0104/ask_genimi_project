@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { ValidationResult } from './ValidationResult';
-import {VALIDATION_METADATA_KEY} from '../core/decorators/Validators'
+import {VALIDATION_METADATA_KEY} from '../decorators/Validators'
 export class Validator<T> {
     validate(instance: T): ValidationResult {
         const result = new ValidationResult();

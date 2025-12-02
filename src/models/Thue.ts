@@ -1,16 +1,11 @@
-import { 
-    Required, IsDecimal, InRange 
-} from '../core/decorators/Validators';
-import { 
-    Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, 
-    ToUpperCase, Default, DefaultDate 
-} from '../core/decorators/Transforms';
-
+import { Required, IsDecimal, InRange } from '../core/decorators/Validators';
+import { Trim, AlphaNumericOnly, Default} from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('Thue')
 export class Thue {
+    @UniqueKey()
     MaThue: number;
 
     @Required()

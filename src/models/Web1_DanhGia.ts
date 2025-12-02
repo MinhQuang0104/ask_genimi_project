@@ -1,15 +1,11 @@
-import { 
-    Required, IsInteger, InRange 
-} from '../core/decorators/Validators';
-import { 
-    Trim, Default, DefaultDate 
-} from '../core/decorators/Transforms';
-
+import { Required, IsInteger, InRange } from '../core/decorators/Validators';
+import { Trim, Default, DefaultDate } from '../core/decorators/Transforms';
+import { UniqueKey } from '../core/decorators/Unique';
 import { Entity } from '../core/decorators/RegisterEntity';
 
-// ...existing code...
 @Entity('Web1_DanhGia')
 export class Web1_DanhGia {
+    @UniqueKey()
     MaDG: number;
 
     @Required()

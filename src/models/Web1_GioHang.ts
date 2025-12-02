@@ -1,17 +1,14 @@
-import { 
-    Required, IsInteger, Min
-} from '../core/decorators/Validators';
-import { 
-    Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, 
-    ToUpperCase, Default, DefaultDate 
-} from '../core/decorators/Transforms';
-
+import {Required, IsInteger, Min} from '../core/decorators/Validators';
+import { Default} from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('Web1_GioHang')
 export class Web1_GioHang {
+    @UniqueKey()
     MaGH: number;
+    
+    @UniqueKey()
     MaTK: number;
 
     @Required()

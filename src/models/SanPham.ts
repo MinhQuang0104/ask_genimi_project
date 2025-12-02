@@ -1,16 +1,11 @@
-import { 
-    Required, MinLen, IsInteger, IsDecimal, Min, IsUrlOrPath 
-} from '../core/decorators/Validators';
-import { 
-    Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, 
-    ToUpperCase, Default, DefaultDate 
-} from '../core/decorators/Transforms';
-
+import { Required, IsInteger, IsDecimal, Min, IsUrlOrPath } from '../core/decorators/Validators';
+import { Trim, AlphaNumericOnly, Default} from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('SanPham')
 export class SanPham {
+    @UniqueKey()
     MaSP: number;
 
     @Required()

@@ -1,17 +1,13 @@
-import { 
-    Required, MinLen, IsInteger, IsDecimal, Min, InSet, 
-    IsEmail, IsPhoneNumber, MaxDate, IsUrlOrPath, InRange 
+import { Required, InSet, MaxDate
 } from '../core/decorators/Validators';
-import { 
-    Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, 
-    ToUpperCase, Default, DefaultDate 
-} from '../core/decorators/Transforms';
-
+import { Default, DefaultDate } from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
 // ...existing code...
 @Entity('Kho1_PhieuXuat')
 export class Kho1_PhieuXuat {
+    @UniqueKey()
     MaPX: number;
 
     @Required()

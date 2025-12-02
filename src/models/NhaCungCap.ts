@@ -1,24 +1,19 @@
-import { 
-    Required
-} from '../core/decorators/Validators';
-import { 
-    Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, 
-    ToUpperCase, Default, DefaultDate 
-} from '../core/decorators/Transforms';
-
+import { Required} from '../core/decorators/Validators';
+import { Trim, AlphaNumericOnly} from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('NhaCungCap')
 export class NhaCungCap {
+    @UniqueKey()
     MaNCC: number;
 
     @Required()
     @Trim()
-    @AlphaNumericOnly() // [cite: 623]
+    @AlphaNumericOnly()
     TenNCC: string;
 
-    @Trim() // [cite: 623]
+    @Trim() 
     DiaChiNCC: string;
     
     SoDienThoai: string;

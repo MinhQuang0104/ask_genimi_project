@@ -1,6 +1,8 @@
 // Context chung truyền qua các mắt xích
 export interface PipelineContext {
     tableName: string;
+    fileName: string;   
+    recordIndex: number; 
     rawData?: any;   // Dữ liệu thô từ CSV
     entity?: any;    // Dữ liệu đã convert sang Class
     isValid?: boolean;

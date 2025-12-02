@@ -1,16 +1,11 @@
-import { 
-    Required
-} from '../core/decorators/Validators';
-import { 
-    Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, 
-    ToUpperCase, Default, DefaultDate 
-} from '../core/decorators/Transforms';
-
+import { Required} from '../core/decorators/Validators';
+import { Trim, AlphaNumericOnly} from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('LoaiHang')
 export class LoaiHang {
+    @UniqueKey()
     MaLoaiHang: number;
 
     @Required()

@@ -1,17 +1,11 @@
-import { 
-    Required, MinLen, IsInteger, IsDecimal, Min, InSet, 
-    IsEmail, IsPhoneNumber, MaxDate, IsUrlOrPath, InRange 
-} from '../core/decorators/Validators';
-import { 
-    Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, 
-    ToUpperCase, Default, DefaultDate 
-} from '../core/decorators/Transforms';
-
+import { Required, InSet, MaxDate} from '../core/decorators/Validators';
+import { Trim, Default, DefaultDate } from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('Kho1_PhieuTraHang')
 export class Kho1_PhieuTraHang {
+    @UniqueKey()
     MaPTH: number;
 
     @Required()

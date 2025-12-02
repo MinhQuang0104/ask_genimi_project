@@ -1,17 +1,15 @@
-import { 
-    Required, IsDecimal, Min, InSet
-} from '../core/decorators/Validators';
-import { 
-    Trim, Default, DefaultDate 
-} from '../core/decorators/Transforms';
+import { Required, IsDecimal, Min, InSet} from '../core/decorators/Validators';
+import { Trim, Default, DefaultDate } from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('Web1_ThanhToan')
 export class Web1_ThanhToan {
+    @UniqueKey()
     MaTT: number;
-
+    
     @Required()
+    @UniqueKey()
     MaHD: number;
 
     @Required()

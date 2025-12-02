@@ -1,52 +1,46 @@
-import { 
-    Required, MinLen, InSet, 
-    IsEmail, IsPhoneNumber, MaxDate
-} from '../core/decorators/Validators';
-import { 
-    Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, 
-    Default, DefaultDate 
-} from '../core/decorators/Transforms';
-
+import { Required, MinLen, InSet, IsEmail, IsPhoneNumber, MaxDate} from '../core/decorators/Validators';
+import { Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, Default, DefaultDate } from '../core/decorators/Transforms';
 import { Entity } from '../core/decorators/RegisterEntity';
+import { UniqueKey } from '../core/decorators/Unique';
 
-// ...existing code...
 @Entity('Web1_TaiKhoan')
 export class Web1_TaiKhoan {
+    @UniqueKey()
     MaTK: number;
 
     @Required()
     @RemoveWhitespace()
-    @AlphaNumericOnly() // 
+    @AlphaNumericOnly() 
     TenDangNhap: string;
 
     @Required()
     @Trim()
-    @MinLen(6) // 
+    @MinLen(6)  
     MatKhau: string;
 
     @Required()
     @Trim()
-    @AlphaNumericOnly() // 
+    @AlphaNumericOnly()  
     HoTen: string;
 
     @Required()
     @ToLowerCase()
     @IsEmail()
-    @Default('') // 
+    @Default('')  
     Email: string;
 
     @Trim()
     @IsPhoneNumber()
-    @Default('') // 
+    @Default('')  
     SoDienThoai: string;
 
     @Required()
     @InSet([1, 2])
-    @Default(2) //  (Default là khách hàng)
+    @Default(2)   // (Default là khách hàng)
     LoaiTaiKhoan: number; 
 
     @DefaultDate('now')
-    @MaxDate('now') // 
+    @MaxDate('now')  
     NgayTao: Date;
 
     constructor(init?: Partial<Web1_TaiKhoan>) {
