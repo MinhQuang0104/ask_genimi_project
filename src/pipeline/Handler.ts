@@ -1,12 +1,14 @@
 // Context chung truyền qua các mắt xích
 export interface PipelineContext {
-    tableName: string;
-    fileName: string;   
-    recordIndex: number; 
+    tableName?: string;
+    fileName?: string;   
+    recordIndex?: number; 
     rawData?: any;   // Dữ liệu thô từ CSV
     entity?: any;    // Dữ liệu đã convert sang Class
     isValid?: boolean;
     errors?: string[];
+    entityName?: string;
+    [key: string]: any;
 }
 
 // Lớp cha của các mắt xích (Handler)

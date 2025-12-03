@@ -3,87 +3,134 @@ import path from "path";
 import crypto from "crypto";
 import * as rabbit from "rabbitmq-stream-js-client";
 import Fuse from "fuse.js"; 
-// [FIX] Import logger đúng đường dẫn
 import logger from "../utils/logger";  
 
 // ---------------------------
-// CONFIG PATHS
+// 1. CONFIG PATHS
 // ---------------------------
-// Lấy root dir (thư mục chứa package.json)
 const ROOT_DIR = path.resolve(__dirname, "../../"); 
 const STAGING_DIR = path.join(ROOT_DIR, "resource", "data_csv", "staging");
-
-// Config RabbitMQ
 const CONFIG_DIR = path.join(__dirname, "..", "config");
 const RABBIT_CONFIG_DIR = path.join(CONFIG_DIR, "rabbitmq_config");
 const OFFSET_DIR = path.join(RABBIT_CONFIG_DIR, "offset");
 const RECEIVED_DIR = path.join(RABBIT_CONFIG_DIR, "received_data");
 
-// Các thư mục output của quy trình Receive
-const TABLE_DIR = path.join(STAGING_DIR, "tables"); // Dữ liệu thô (Raw)
-const OUTPUT_MATCHED = path.join(STAGING_DIR, "matched"); // Trùng (Fuzzy Match)
-const OUTPUT_NEW = path.join(STAGING_DIR, "new_items");   // Mới hoàn toàn
-const OUTPUT_REVIEW = path.join(STAGING_DIR, "manual_review"); // Cần review
-
-// Tạo thư mục nếu chưa có
-const dirsToCreate = [
-    OFFSET_DIR, RECEIVED_DIR, STAGING_DIR, 
-    TABLE_DIR, OUTPUT_MATCHED, OUTPUT_NEW, OUTPUT_REVIEW
-];
-
+// Tạo các thư mục cần thiết
+const dirsToCreate = [OFFSET_DIR, RECEIVED_DIR, STAGING_DIR];
 dirsToCreate.forEach(dir => {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 });
 
 // ---------------------------
-// STATE & VARIABLES
-// ---------------------------
-let totalReceived = 0;
-let totalProcessed = 0;
-let totalSkipped = 0;
-
-// Master Data (Dùng cho Fuzzy Matching)
-// Trong thực tế, cái này nên load từ DB hoặc file chuẩn
-let masterData: string[] = []; 
-
-// Fuse instance
-let fuse: Fuse<string>;
-
-// ---------------------------
-// HELPERS
+// 2. CONFIG MAPPING (SOURCE -> TARGET MODEL)
 // ---------------------------
 
-// Giả lập load Master Data (Ví dụ lấy tên sản phẩm từ file đã clean)
-function loadMasterData() {
-    // TODO: Implement logic đọc từ file _passed.csv hoặc DB
-    // Đây là dữ liệu mẫu để test fuzzy matching
-    masterData = [
-        "iPhone 14 Pro Max",
-        "Samsung Galaxy S23 Ultra",
-        "MacBook Pro M2",
-        "Sony WH-1000XM5"
-    ];
+// Danh sách chính xác tên các Model trong src/models (Target)
+const TARGET_MODELS = [
+    "AnhSanPham",
+    "Kho1_ChiTietKiemKe",
+    "Kho1_ChiTietPhieuNhap",
+    "Kho1_ChiTietPhieuXuat",
+    "Kho1_ChiTietTraHang",
+    "Kho1_PhieuKiemKe",
+    "Kho1_PhieuNhap",
+    "Kho1_PhieuTraHang",
+    "Kho1_PhieuXuat",
+    "Kho1_TonKho",
+    "Kho1_TonKhoChiTiet",
+    "Kho1_VanDon",
+    "KhoHang",
+    "KhuyenMai",
+    "LoaiHang",
+    "NhaCungCap",
+    "SanPham",
+    "SanPham_KhuyenMai",
+    "Thue",
+    "ViTriKho",
+    "Web1_ChiTietHoaDon",
+    "Web1_DanhGia",
+    "Web1_GioHang",
+    "Web1_HoaDon",
+    "Web1_SoDiaChi",
+    "Web1_TaiKhoan",
+    "Web1_ThanhToan"
+];
+
+// Map cứng các trường hợp tên khác nhau hoàn toàn (Dictionary Mapping)
+const HARD_MAPPING: Record<string, string> = {
+    // DB2 (Kho) -> DB3
+    "MatHang": "SanPham",
+    "PhieuNhap": "Kho1_PhieuNhap",
+    "PhieuXuat": "Kho1_PhieuXuat",
+    "TonKho": "Kho1_TonKho",
+    "ChiTietNhapHang": "Kho1_ChiTietPhieuNhap",
+    "ChiTietPhieuXuat": "Kho1_ChiTietPhieuXuat",
+    // DB1 (Web) -> DB3
+    "DanhMuc": "LoaiHang",
+    "User": "Web1_TaiKhoan",
+    "KhachHang": "Web1_TaiKhoan",
+    "HoaDon": "Web1_HoaDon",
+    "ChiTietHoaDon": "Web1_ChiTietHoaDon",
+    "GioHang": "Web1_GioHang",
+    "DanhGia": "Web1_DanhGia",
+    "ThanhToan": "Web1_ThanhToan"
+};
+
+// Cấu hình Fuzzy Matching để tìm tên bảng đích dựa trên độ giống nhau của chuỗi ký tự
+const fuseOptions = {
+    includeScore: true,
+    threshold: 0.4, // Độ chính xác (Càng nhỏ càng khắt khe)
+};
+const fuseModelMatcher = new Fuse(TARGET_MODELS, fuseOptions);
+
+/**
+ * Hàm xác định tên Model đích từ tên bảng nguồn
+ */
+function resolveTargetModel(sourceTableName: string): string {
+    // 1. Chuẩn hóa tên nguồn (bỏ .csv nếu có)
+    const cleanSource = sourceTableName.replace(/\.csv$/i, '').trim();
+
+    // 2. Check Map cứng (Ưu tiên cao nhất)
+    if (HARD_MAPPING[cleanSource]) {
+        return HARD_MAPPING[cleanSource];
+    }
+
+    // 3. Check xem tên nguồn có trùng khớp 100% với model nào không
+    if (TARGET_MODELS.includes(cleanSource)) {
+        return cleanSource;
+    }
+
+    // 4. Dùng Fuzzy Matching để tìm tên Model giống nhất
+    const searchResult = fuseModelMatcher.search(cleanSource);
     
-    // Cấu hình Fuse.js
-    const options = {
-        includeScore: true,
-        threshold: 0.4, // Độ chính xác (0.0 = tuyệt đối, 1.0 = rất lỏng)
-    };
-    fuse = new Fuse(masterData, options);
-    logger.info(`Đã load ${masterData.length} bản ghi Master Data cho Fuzzy Matching.`);
+    if (searchResult.length > 0) {
+        const bestMatch = searchResult[0];
+        // Nếu độ khớp tốt (score < 0.6)
+        if (bestMatch.score && bestMatch.score < 0.6) {
+             logger.info(`🔍 Mapping: '${cleanSource}' -> '${bestMatch.item}' (Score: ${bestMatch.score.toFixed(3)})`);
+             return bestMatch.item;
+        }
+    }
+
+    // 5. Fallback: Nếu không tìm thấy, trả về tên gốc (sẽ tạo ra file csv lạ, dễ debug)
+    return cleanSource; 
 }
 
-function getOffsetAPI() {
-  if ((rabbit as any).OffsetSpecification?.first) {
+// ---------------------------
+// 3. HELPERS
+// ---------------------------
+
+function getOffsetAPI(rabbitInstance: any) {
+  if (rabbitInstance.OffsetSpecification?.first) {
     return {
-      first: (rabbit as any).OffsetSpecification.first,
-      offset: (rabbit as any).OffsetSpecification.offset,
+      first: rabbitInstance.OffsetSpecification.first,
+      offset: rabbitInstance.OffsetSpecification.offset,
     };
   }
-  if ((rabbit as any).Offset?.first) {
+  if (rabbitInstance.Offset?.first) {
     return {
-      first: (rabbit as any).Offset.first,
-      offset: (rabbit as any).Offset.offset,
+      first: rabbitInstance.Offset.first,
+      offset: rabbitInstance.Offset.offset,
     };
   }
   throw new Error("Không tìm thấy API Offset phù hợp!");
@@ -102,13 +149,16 @@ function safeAppendFile(filePath: string, data: string) {
 }
 
 // ---------------------------
-// LOGIC RECEIVE
+// 4. CORE LOGIC
 // ---------------------------
 
-async function receiveStream(client: rabbit.Client, streamName: string, outputFile: string) {
-  const OffsetAPI = getOffsetAPI();
+let totalReceived = 0;
+let totalProcessed = 0;
 
-  // Tạo stream nếu chưa có
+async function receiveStream(client: rabbit.Client, streamName: string) {
+  const OffsetAPI = getOffsetAPI(rabbit);
+
+  // Tạo stream
   try {
       await client.createStream({ stream: streamName });
   } catch (e: any) {
@@ -138,9 +188,7 @@ async function receiveStream(client: rabbit.Client, streamName: string, outputFi
     try {
       const arr = JSON.parse(fs.readFileSync(hashFile, "utf8"));
       if (Array.isArray(arr)) seenHashes = new Set(arr);
-    } catch {
-        // Ignore error
-    }
+    } catch {}
   }
   const sessionSet = new Set<string>();
 
@@ -153,11 +201,10 @@ async function receiveStream(client: rabbit.Client, streamName: string, outputFi
         const text = msg.content.toString();
         totalReceived++;
         
-        // 1. Deduplication (Check trùng chính xác 100%)
+        // --- Deduplication ---
         const hash = getLineHash(text);
         if (sessionSet.has(hash) || seenHashes.has(hash)) {
-          totalSkipped++;
-          return; // Bỏ qua
+          return; // Skip trùng
         }
 
         sessionSet.add(hash);
@@ -166,44 +213,25 @@ async function receiveStream(client: rabbit.Client, streamName: string, outputFi
         // Lưu Offset
         fs.writeFileSync(offsetFile, JSON.stringify({ offset: Number(msg.offset) }));
 
-        // 2. Parse Data
-        const parts = text.split(":");
-        if (parts.length < 2) return;
+        // --- Parse & Route Data ---
+        // Message Format: "TenBangGoc:Data1,Data2..."
+        const firstColonIndex = text.indexOf(":");
+        if (firstColonIndex === -1) return;
 
-        const tableName = parts[0].trim();
-        const rowData = parts.slice(1).join(":");
+        const originalTableName = text.substring(0, firstColonIndex).trim();
+        const rowData = text.substring(firstColonIndex + 1);
         
-        // Ghi vào bảng Staging (Raw Data)
-        const tableFile = path.join(TABLE_DIR, tableName);
-        safeAppendFile(tableFile, rowData + "\n");
-
-        // 3. Fuzzy Matching Logic (Mới bổ sung)
-        // Giả sử rowData là tên sản phẩm hoặc chứa tên sản phẩm
-        // Ở đây ta check đơn giản trên chuỗi rowData
-        const searchResult = fuse.search(rowData);
+        // XÁC ĐỊNH TÊN FILE ĐÍCH (MODEL NAME)
+        const targetModelName = resolveTargetModel(originalTableName);
         
-        if (searchResult.length > 0) {
-            // CASE: Tìm thấy dữ liệu tương tự trong Master Data
-            const bestMatch = searchResult[0];
-            if (bestMatch.score && bestMatch.score < 0.1) {
-                 // Rất giống -> Coi như trùng -> Ghi vào Matched
-                 safeAppendFile(path.join(OUTPUT_MATCHED, `${tableName}_matched.csv`), 
-                    `${rowData} | MATCHED: ${bestMatch.item} (Score: ${bestMatch.score})\n`);
-            } else {
-                 // Hơi giống -> Cần review thủ công
-                 safeAppendFile(path.join(OUTPUT_REVIEW, `${tableName}_review.csv`), 
-                    `${rowData} | MAYBE: ${bestMatch.item} (Score: ${bestMatch.score})\n`);
-            }
-        } else {
-            // CASE: Mới hoàn toàn
-            safeAppendFile(path.join(OUTPUT_NEW, `${tableName}_new.csv`), rowData + "\n");
-        }
+        // Ghi xuống file CSV trong STAGING
+        const targetFile = path.join(STAGING_DIR, `${targetModelName}.csv`);
+        safeAppendFile(targetFile, rowData + "\n");
 
-        // Lưu Hash File (Checkpoint)
+        // Lưu Hash (Checkpoint)
         fs.writeFileSync(hashFile, JSON.stringify([...seenHashes]));
 
         totalProcessed++;
-        // logger.info(`[${streamName}] ✔️ Xử lý xong offset=${msg.offset}`);
 
       } catch (err: any) {
         logger.error(`Lỗi xử lý record: ${err.stack}`);
@@ -212,24 +240,17 @@ async function receiveStream(client: rabbit.Client, streamName: string, outputFi
   );
 }
 
-// ---------------------------
-// STATS LOGGING
-// ---------------------------
+// Stats Log
 setInterval(() => {
   if (totalReceived > 0) {
-      logger.info(
-        `📊 THỐNG KÊ: Recv=${totalReceived} | Proc=${totalProcessed} | Skip=${totalSkipped}`
-      );
+      logger.info(`📊 [Integration] Received=${totalReceived} | Merged=${totalProcessed}`);
   }
 }, 5000);
 
 // ---------------------------
-// MAIN
+// 5. MAIN
 // ---------------------------
 async function main() {
-  // Load dữ liệu mẫu để so khớp
-  loadMasterData();
-
   const client = await rabbit.connect({
     hostname: "localhost",
     port: 5552,
@@ -239,13 +260,13 @@ async function main() {
   });
 
   const streams = [
-    { name: "data_source1_kho_stream", output: "" },
-    { name: "data_source2_web_stream", output: "" },
+    "data_source1_kho_stream",
+    "data_source2_web_stream",
   ];
 
-  await Promise.all(streams.map(s => receiveStream(client, s.name, s.output)));
+  await Promise.all(streams.map(s => receiveStream(client, s)));
 
-  logger.info("🚀 Hệ thống đang chạy. Nhấn Ctrl+C để dừng.");
+  logger.info("🚀 Hệ thống Integration đang chạy. Nhấn Ctrl+C để dừng.");
 }
 
 main().catch((err) => {

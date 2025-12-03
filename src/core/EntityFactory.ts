@@ -14,6 +14,9 @@ export class EntityFactory {
     static getClass(tableName: string): Constructor<any> | undefined {
         return this.registry.get(tableName);
     }
+    public static getRegisteredEntityNames(): string[] {
+        return Array.from(this.registry.keys());
+    }
     static create<T>(tableName: string, data: any): T {
         const Ctor = this.registry.get(tableName);
         if (!Ctor) {

@@ -1,0 +1,17 @@
+﻿MaLoaiHang,TenLoaiHang
+5,Điện lạnh
+1,Điện thoại
+4,Gia dụng
+2,Laptop
+3,Phụ kiện
+6,Thời trang
+7,Văn phòng phẩm
+﻿MaDM,TenDM,MoTa
+1,Laptop Gaming,Dành cho game thủ với cấu hình mạnh.
+2,Laptop Văn Phòng,Phù hợp cho công việc hàng ngày.
+3,Laptop Đồ Họa,Thiết kế chuyên nghiệp cho designer.
+4,Laptop Sinh Viên,"Giá rẻ, hiệu năng ổn định."
+5,Laptop Cao Cấp,"Mỏng nhẹ, thời trang, hiệu năng cao."
+6,Phụ Kiện Chuột,"Chuột gaming, văn phòng."
+7,Phụ Kiện Bàn Phím,"Bàn phím cơ, văn phòng."
+8,Màn Hình,"Màn hình đồ họa, gaming."

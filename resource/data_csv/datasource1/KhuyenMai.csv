@@ -1,0 +1,7 @@
+﻿MaKM,TenKM,MaCode,LoaiKM,GiaTriGiam,NgayBatDau,NgayKetThuc,DieuKienApDung,SoLuongPhatHanh,SoLuongDaDung
+1,Giảm 10% Black Friday,BF2025,1,10.00,2025-11-01 00:00:00.000,2025-11-30 00:00:00.000,Áp dụng cho tất cả sản phẩm.,100,0
+2,Giảm 5% Sinh Viên,STUDENT5,1,5.00,2025-10-01 00:00:00.000,2025-12-31 00:00:00.000,Dành cho tài khoản sinh viên.,200,0
+3,Giảm 2 triệu cho đơn > 20 triệu,SALE20M,2,2000000.00,2025-11-01 00:00:00.000,2025-11-15 00:00:00.000,Áp dụng đơn hàng trên 20 triệu.,50,0
+4,Giảm 15% Laptop Gaming,GAMING15,1,15.00,2025-11-05 00:00:00.000,2025-11-30 00:00:00.000,Áp dụng Laptop Gaming.,100,0
+5,Voucher Noel,NOEL2025,1,8.00,2025-12-01 00:00:00.000,2025-12-31 00:00:00.000,Áp dụng toàn bộ sản phẩm.,150,0
+6,Voucher Hết Hạn,EXPIRED,1,50.00,2020-01-01 00:00:00.000,2020-01-31 00:00:00.000,Hết hạn rồi,10,0
