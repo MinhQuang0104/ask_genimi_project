@@ -5,7 +5,7 @@ import logger from './utils/logger';
 import { CsvReader } from './utils/CsvReader';
 import { ParseHandler, TransformationHandler, ValidationHandler, CsvSaveHandler, DeduplicationHandler } from './pipeline/ConcreteHandlers';
 import { PipelineContext } from './pipeline/Handler';
-
+import { Deduplicator } from './core/Deduplicator';
 async function main() {
     // 1. CẤU HÌNH PIPELINE
     const parser = new ParseHandler();
@@ -37,7 +37,8 @@ async function main() {
     logger.info("========================================");
     logger.info("HỆ THỐNG BẮT ĐẦU XỬ LÝ DỮ LIỆU");
     logger.info("========================================");
-
+        // [QUAN TRỌNG] Load lịch sử trước khi chạy vòng lặp
+    await Deduplicator.loadHistory();
     for await (const { tableName, data } of reader.readAll()) {
         
         // KIỂM TRA CHUYỂN FILE (Nếu tableName thay đổi so với vòng lặp trước)

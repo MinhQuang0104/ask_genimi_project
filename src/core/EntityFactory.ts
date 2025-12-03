@@ -10,7 +10,10 @@ export class EntityFactory {
     static register(tableName: string, ctor: Constructor<any>) {
         this.registry.set(tableName, ctor);
     }
-
+    // hàm này để Deduplicator có thể lấy được Class
+    static getClass(tableName: string): Constructor<any> | undefined {
+        return this.registry.get(tableName);
+    }
     static create<T>(tableName: string, data: any): T {
         const Ctor = this.registry.get(tableName);
         if (!Ctor) {
