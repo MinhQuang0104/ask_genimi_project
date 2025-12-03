@@ -1,0 +1,5 @@
+MaVD,MaHD,MaPX,DonViVanChuyen,MaVanDonVanChuyen,PhiVanChuyen,TrangThaiVanDon,GhiChu
+1,1,1,,,0,1,Giao hàng nhanh
+2,2,2,,,0,1,Giao bình thường
+3,3,3,,,0,2,Đã giao thành công
+4,99,NULL,,,0,9,Trạng thái sai

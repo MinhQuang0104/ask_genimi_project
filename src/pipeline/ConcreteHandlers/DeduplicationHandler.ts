@@ -6,6 +6,10 @@ import logger from "../../utils/logger";
 
 export class DeduplicationHandler extends Handler {
     async handle(context: PipelineContext): Promise<void> {
+        if (!context.tableName) {
+        logger.warn(`[Deduplication] Bỏ qua do thiếu tableName`);
+        return;
+    }
         // 1. Lấy danh sách các trường được đánh dấu @UniqueKey trong Model
         const prototype = Object.getPrototypeOf(context.entity);
         const uniqueKeys: string[] = Reflect.getMetadata(UNIQUE_METADATA_KEY, prototype);
@@ -25,7 +29,6 @@ export class DeduplicationHandler extends Handler {
 
         // 4. Kiểm tra trùng lặp
         const isUnique = Deduplicator.checkAndMark(context.tableName, hash);
-
         if (isUnique) {
             // [LOG] Nếu cần debug chi tiết
             // logger.info(`  [Record ${context.recordIndex}] ✅ Unique check passed.`);

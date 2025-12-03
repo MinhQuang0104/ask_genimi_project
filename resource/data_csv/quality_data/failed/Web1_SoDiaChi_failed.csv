@@ -1,0 +1,6 @@
+MaDC,MaTK,TenNguoiNhan,SoDienThoaiNguoiNhan,DiaChiChiTiet,LaMacDinh,Error_Message
+1,2,Nguyễn Văn A,0909123001,"123 Lê Lợi, Q.1, TP.HCM",1,SoDienThoai không được để trống.
+2,3,Trần Thị B,0909123002,"45 Hai Bà Trưng, Q.1, TP.HCM",1,SoDienThoai không được để trống.
+3,4,Lê Văn C,0909123003,"78 Nguyễn Huệ, Q.1, TP.HCM",1,SoDienThoai không được để trống.
+4,5,Phạm Thị D,0909123004,"12 Lê Thường Kiệt, Q.5, TP.HCM",1,SoDienThoai không được để trống.
+5,2,Nguyễn Văn A,0909123001,"99 Nguyễn Trãi, Q.5, TP.HCM",0,SoDienThoai không được để trống.

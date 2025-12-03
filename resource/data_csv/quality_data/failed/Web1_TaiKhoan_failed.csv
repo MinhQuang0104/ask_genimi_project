@@ -1,0 +1,3 @@
+MaTK,TenDangNhap,MatKhau,HoTen,Email,SoDienThoai,LoaiTaiKhoan,NgayTao,Error_Message
+11,user_bad_email,123456,Trần Không Email,email_khong_hop_le_com,0901114444,2,2025-12-01 13:52:32.437,Email không phải là email hợp lệ.
+12,user_fail_role,123456,User Sai Role,role@gmail.com,0900000000,3,2025-12-01 13:52:32.437,"LoaiTaiKhoan phải thuộc một trong các giá trị sau: [1, 2]."

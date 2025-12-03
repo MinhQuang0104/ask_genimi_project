@@ -3,25 +3,27 @@ import path from 'path';
 import './models'; // Import models để register factory
 import logger from './utils/logger';
 import { CsvReader } from './utils/CsvReader';
-import { ParseHandler, TransformationHandler, ValidationHandler, CsvSaveHandler, DeduplicationHandler } from './pipeline/ConcreteHandlers';
+import { ParseHandler, TransformationHandler, ValidationHandler, CsvSaveHandler, DeduplicationHandler} from './pipeline/ConcreteHandlers';
 import { PipelineContext } from './pipeline/Handler';
 import { Deduplicator } from './core/Deduplicator';
 async function main() {
+    
     // 1. CẤU HÌNH PIPELINE
     const parser = new ParseHandler();
     const transformer = new TransformationHandler();
     const deduplicator = new DeduplicationHandler();
     const validator = new ValidationHandler();
     const saver = new CsvSaveHandler();
-
+   
     parser
         .setNext(transformer)
         .setNext(deduplicator)
         .setNext(validator)
         .setNext(saver);
-
+        
     // 2. KHỞI TẠO READER
     const csvDir = path.join(__dirname, '../resource/data_csv/staging');
+    const outputDir = path.join(__dirname, '../resource/data_csv/quality_data');
     const reader = new CsvReader(csvDir);
     // --- BIẾN THỐNG KÊ TOÀN CỤC ---
     let totalFilesProcessed = 0;

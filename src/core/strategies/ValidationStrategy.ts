@@ -69,10 +69,15 @@ export class MinValueStrategy implements IValidationStrategy {
 
 export class InSetStrategy implements IValidationStrategy {
     validate(value: any, set: any[]): boolean {
-        return set.includes(value);
+        // Cách 1: Chuyển đổi tất cả về string để so sánh
+        // Điều này đảm bảo 1 sẽ bằng "1", và "1" sẽ bằng 1
+        return set.some(item => String(item) === String(value));
     }
+
     errorMessage(propName: string, set: any[]): string {
-        return `${propName} phải thuộc một trong giá trị sau: ${JSON.stringify(set)}.`;
+        // Format lại hiển thị set một chút cho dễ đọc (tùy chọn)
+        const formattedSet = set.map(item => String(item)).join(', ');
+        return `${propName} phải thuộc một trong các giá trị sau: [${formattedSet}].`;
     }
 }
 

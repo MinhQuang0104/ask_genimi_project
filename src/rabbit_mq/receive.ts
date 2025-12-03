@@ -58,22 +58,52 @@ const TARGET_MODELS = [
 
 // Map cứng các trường hợp tên khác nhau hoàn toàn (Dictionary Mapping)
 const HARD_MAPPING: Record<string, string> = {
-    // DB2 (Kho) -> DB3
+// 1. Ánh xạ các bảng chung hoặc tự ánh xạ
+    // Các bảng này có tên Model khớp với tên file gốc
+    // ----------------------------------------------------
+    "AnhSanPham": "AnhSanPham",
+    "KhuyenMai": "KhuyenMai",
+    "NhaCungCap": "NhaCungCap",
+    "SanPham": "SanPham",
+    "Thue": "Thue",
+    "ViTriKho": "ViTriKho",
+    "KhoHang": "KhoHang",
+    "LoaiHang": "LoaiHang",
+    
+    // Ánh xạ đặc biệt (ví dụ: MatHang là tên khác của SanPham)
     "MatHang": "SanPham",
+    "Website_SanPham": "SanPham",
+    "DanhMuc": "LoaiHang",
+    // Ánh xạ bảng chi tiết khuyến mãi (dù tên file staging/model có thể khác)
+    "ChiTietKhuyenMai": "SanPham_KhuyenMai",
+    
+    // ----------------------------------------------------
+    // 2. Ánh xạ các bảng Web (Sử dụng prefix 'Web1_')
+    // ----------------------------------------------------
+    "ChiTietHoaDon": "Web1_ChiTietHoaDon",
+    "DanhGia": "Web1_DanhGia",
+    "GioHang": "Web1_GioHang",
+    "HoaDon": "Web1_HoaDon",
+    "SoDiaChi": "Web1_SoDiaChi",
+    "TaiKhoan": "Web1_TaiKhoan",
+    "ThanhToan": "Web1_ThanhToan",
+    "LichSuDonHang": "Web1_LichSuDonHang",
+    // ----------------------------------------------------
+    // 3. Ánh xạ các bảng Kho (Sử dụng prefix 'Kho1_')
+    // Dữ liệu từ datasource1 và datasource2 sẽ được hợp nhất ở đây
+    // ----------------------------------------------------
+    "ChiTietKiemKe": "Kho1_ChiTietKiemKe",
+    // Cả ChiTietNhapHang (từ DS1 & DS2) đều map về model chi tiết Phiếu Nhập
+    "ChiTietNhapHang": "Kho1_ChiTietPhieuNhap", 
+    "ChiTietPhieuXuat": "Kho1_ChiTietPhieuXuat",
+    "ChiTietTraHang": "Kho1_ChiTietTraHang",
+    "PhieuKiemKe": "Kho1_PhieuKiemKe",
     "PhieuNhap": "Kho1_PhieuNhap",
+    "PhieuTraHang": "Kho1_PhieuTraHang",
     "PhieuXuat": "Kho1_PhieuXuat",
     "TonKho": "Kho1_TonKho",
-    "ChiTietNhapHang": "Kho1_ChiTietPhieuNhap",
-    "ChiTietPhieuXuat": "Kho1_ChiTietPhieuXuat",
-    // DB1 (Web) -> DB3
-    "DanhMuc": "LoaiHang",
-    "User": "Web1_TaiKhoan",
-    "KhachHang": "Web1_TaiKhoan",
-    "HoaDon": "Web1_HoaDon",
-    "ChiTietHoaDon": "Web1_ChiTietHoaDon",
-    "GioHang": "Web1_GioHang",
-    "DanhGia": "Web1_DanhGia",
-    "ThanhToan": "Web1_ThanhToan"
+    "TonKhoChiTiet": "Kho1_TonKhoChiTiet",
+    "VanDon": "Kho1_VanDon",
 };
 
 // Cấu hình Fuzzy Matching để tìm tên bảng đích dựa trên độ giống nhau của chuỗi ký tự
