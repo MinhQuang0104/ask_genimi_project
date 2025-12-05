@@ -8,6 +8,8 @@ export interface PipelineContext {
     isValid?: boolean;
     errors?: string[];
     entityName?: string;
+    isSkipped?: boolean;    // Đánh dấu nếu bản ghi bị bỏ qua (do trùng lặp)
+    isSavedToDB?: boolean;
     [key: string]: any;
 }
 

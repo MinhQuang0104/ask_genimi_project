@@ -2,28 +2,32 @@
 import { Handler, PipelineContext } from '../Handler';
 import { AppDataSource } from '../../config/database/typeormConfig';
 import logger from '../../utils/logger';
-import { EntityFactory } from '../../core/EntityFactory';
 
 export class SqlSaveHandler extends Handler {
     
     async handle(context: PipelineContext): Promise<void> {
         const { tableName, entity, isValid } = context;
 
-        if (isValid && entity && tableName) {
+        // Chỉ lưu nếu hợp lệ và chưa bị đánh dấu skip
+        if (isValid && entity && tableName && !context.isSkipped) {
             try {
-                // 1. Lấy Repository từ TypeORM dựa trên tên bảng (hoặc tên Entity)
-                // Lưu ý: Tên Entity trong TypeORM phải khớp với tableName
                 const repository = AppDataSource.getRepository(tableName);
                 
-                // 2. Lưu trực tiếp (TypeORM tự xử lý INSERT, bỏ qua cột Identity nếu cần)
                 await repository.save(entity);
 
-                logger.info(`[TypeORM] ✅ Đã lưu bản ghi vào bảng ${tableName}`);
+                // [NEW] Đánh dấu và Log chi tiết
+                context.isSavedToDB = true; 
+                
+                // Lấy ra Primary Key hoặc một vài field quan trọng để log cho dễ nhìn
+                // (Giả sử lấy field đầu tiên của entity làm định danh)
+                const firstKey = Object.keys(entity)[0];
+                const firstVal = entity[firstKey];
+                
+                logger.info(`  [Record ${context.recordIndex}] 💾 DB Saved: ${tableName} (Key: ${firstVal})`);
 
             } catch (err: any) {
-                logger.error(`[TypeORM] 💥 Lỗi lưu DB bảng ${tableName}:`, err.message);
+                logger.error(`  [Record ${context.recordIndex}] 💥 DB Error: ${err.message}`);
                 
-                // Ghi nhận lỗi vào context
                 context.isValid = false;
                 context.errors = context.errors || [];
                 context.errors.push(`SQL Error: ${err.message}`);

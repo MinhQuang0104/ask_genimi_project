@@ -1,3 +1,4 @@
+// src/pipeline/ConcreteHandlers/DeduplicationHandler.ts
 import 'reflect-metadata';
 import { Handler, PipelineContext } from '../Handler';
 import { Deduplicator } from '../../core/Deduplicator';
@@ -7,43 +8,42 @@ import logger from "../../utils/logger";
 export class DeduplicationHandler extends Handler {
     async handle(context: PipelineContext): Promise<void> {
         if (!context.tableName) {
-        logger.warn(`[Deduplication] Bỏ qua do thiếu tableName`);
-        return;
-    }
-        // 1. Lấy danh sách các trường được đánh dấu @UniqueKey trong Model
+            logger.warn(`[Deduplication] Bỏ qua do thiếu tableName`);
+            return;
+        }
+
+        // 1. Lấy danh sách các trường được đánh dấu @UniqueKey
         const prototype = Object.getPrototypeOf(context.entity);
         const uniqueKeys: string[] = Reflect.getMetadata(UNIQUE_METADATA_KEY, prototype);
 
-        // Nếu không có key nào được đánh dấu, coi như không cần check trùng -> đi tiếp
+        // Nếu không có key nào được đánh dấu -> đi tiếp
         if (!uniqueKeys || uniqueKeys.length === 0) {
             await super.handle(context);
             return;
         }
 
-        // 2. Lấy giá trị thực tế từ Entity (đã qua Transform)
-        // Ví dụ: entity['MaTK'], entity['TenDangNhap']
+        // 2. Lấy giá trị thực tế
         const keyValues = uniqueKeys.map(key => (context.entity as any)[key]);
 
-        // 3. Tạo Hash signature
+        // 3. Tạo Hash
         const hash = Deduplicator.generateHash(keyValues);
 
         // 4. Kiểm tra trùng lặp
         const isUnique = Deduplicator.checkAndMark(context.tableName, hash);
         if (isUnique) {
-            // [LOG] Nếu cần debug chi tiết
-            // logger.info(`  [Record ${context.recordIndex}] ✅ Unique check passed.`);
-            
-            // Bản ghi mới -> Đi tiếp sang Validation
+            // Bản ghi mới -> Đi tiếp
             await super.handle(context);
         } else {
-            // TRÙNG LẶP -> Dừng pipeline tại đây cho bản ghi này
-            logger.warn(`  [Record ${context.recordIndex}] ⚠️  Bỏ qua bản ghi trùng lặp (Duplicate Key: ${uniqueKeys.join('+')})`);
+            // [LOG] & [FLAG] Cập nhật xử lý trùng lặp
+            const duplicateInfo = uniqueKeys.map((k, i) => `${k}=${keyValues[i]}`).join(', ');
+            logger.warn(`  [Record ${context.recordIndex}] ⏭️  SKIP: Trùng lặp dữ liệu (${duplicateInfo})`);
             
-            // Đánh dấu context là invalid (để thống kê nếu cần, hoặc chỉ đơn giản là return để skip)
+            // Đánh dấu Context
             context.isValid = false; 
-            context.errors = [`Duplicate Record based on keys: ${uniqueKeys.join(', ')}`];
+            context.isSkipped = true; // [NEW] Đánh dấu là đã bỏ qua
+            context.errors = [`Duplicate Record: ${duplicateInfo}`];
             
-            // KHÔNG gọi super.handle() để cắt chuỗi xử lý (Skip Validation & Save)
+            // KHÔNG gọi super.handle() để dừng chuỗi xử lý tại đây
         }
     }
 }

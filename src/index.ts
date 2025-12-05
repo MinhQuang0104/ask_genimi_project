@@ -1,27 +1,28 @@
-
 import 'reflect-metadata';
 import path from 'path';
-import './models'; // Import models để register factory
+import './models'; 
 import logger from './utils/logger';
 import { CsvReader } from './utils/CsvReader';
 import { ParseHandler, TransformationHandler, ValidationHandler, CsvSaveHandler, DeduplicationHandler, SqlSaveHandler } from './pipeline/ConcreteHandlers';
 import { PipelineContext } from './pipeline/Handler';
 import { Deduplicator } from './core/Deduplicator';
-// import { SqlSaveHandler } from './pipeline/ConcreteHandlers/SqlSaveHandler'; 
 import { AppDataSource, initializeDatabase } from './config/database/typeormConfig';
+
 async function main() {
 
     // 1. CẤU HÌNH PIPELINE
     const parser = new ParseHandler();
     const transformer = new TransformationHandler();
-    const deduplicator = new DeduplicationHandler();
+    const deduplicator = new DeduplicationHandler(); // Đã thêm Deduplicator vào chain
     const validator = new ValidationHandler();
     const saver = new CsvSaveHandler();
     const sqlSaver = new SqlSaveHandler();
 
+    // Sắp xếp Chain of Responsibility:
+    // Parse -> Transform -> Deduplicate -> Validate -> Save CSV -> Save SQL
     parser
         .setNext(transformer)
-        // .setNext(deduplicator)
+        .setNext(deduplicator) 
         .setNext(validator)
         .setNext(saver)
         .setNext(sqlSaver);
@@ -32,9 +33,12 @@ async function main() {
 
     // --- BIẾN THỐNG KÊ TOÀN CỤC ---
     let totalFilesProcessed = 0;
+    let globalTotalRecords = 0;
     let globalPass = 0;
     let globalFail = 0;
-    let globalSkip = 0;
+    // [NEW] Thêm biến thống kê
+    let globalSkip = 0;     // Đếm số bản ghi trùng lặp
+    let globalDbSaved = 0;  // Đếm số bản ghi vào DB thành công
 
     // --- BIẾN THEO DÕI FILE HIỆN TẠI ---
     let currentTableName = "";
@@ -42,42 +46,38 @@ async function main() {
     let currentFilePass = 0;
     let currentFileFail = 0;
     let currentFileSkip = 0;
+    let currentFileDbSaved = 0;
 
     logger.info("========================================");
     logger.info("HỆ THỐNG BẮT ĐẦU XỬ LÝ DỮ LIỆU");
     logger.info("========================================");
 
-    //  Bắt đầu khối try...finally để quản lý kết nối DB
     try {
-        // Khởi tạo kết nối TypeORM
         await initializeDatabase();
-        // Load lịch sử trước khi chạy vòng lặp
         await Deduplicator.loadHistory();
 
         for await (const { tableName, data } of reader.readAll()) {
-            // KIỂM TRA CHUYỂN FILE (Nếu tableName thay đổi so với vòng lặp trước)
+            // CHUYỂN FILE: Tổng kết file cũ và reset biến
             if (tableName !== currentTableName) {
-                // Tổng kết file cũ (nếu không phải lần đầu tiên chạy)
                 if (currentTableName !== "") {
-                    printFileSummary(currentTableName, currentFileRecordIndex, currentFilePass, currentFileFail);
+                    printFileSummary(currentTableName, currentFileRecordIndex, currentFilePass, currentFileFail, currentFileSkip, currentFileDbSaved);
                 }
-                //Reset bộ đếm cho file mới
+                
                 currentTableName = tableName;
                 currentFileRecordIndex = 0;
                 currentFilePass = 0;
                 currentFileFail = 0;
                 currentFileSkip = 0;
+                currentFileDbSaved = 0;
                 totalFilesProcessed++;
 
-                // C. Log bắt đầu file mới
-                logger.info(`\nĐang xử lý file: ${tableName}.csv`);
+                logger.info(`\n📂 Đang xử lý file: ${tableName}.csv`);
             }
 
-            // Tăng đếm bản ghi
             currentFileRecordIndex++;
-            logger.info(`\nXử lý bản ghi thứ ${currentFileRecordIndex}:`);
+            globalTotalRecords++;
+            logger.info(`\n--- Record ${currentFileRecordIndex} ---`);
 
-            // TẠO CONTEXT
             const context: PipelineContext = {
                 tableName: tableName,
                 fileName: `${tableName}.csv`,
@@ -85,39 +85,58 @@ async function main() {
                 rawData: data
             };
 
-            // KÍCH HOẠT PIPELINE
             try {
+                // RUN PIPELINE
                 await parser.handle(context);
 
-                // CẬP NHẬT THỐNG KÊ DỰA TRÊN KẾT QUẢ
-                if (context.isValid) {
+                // --- [UPDATED] LOGIC THỐNG KÊ ---
+                if (context.isSkipped) {
+                    // Trường hợp bị Duplicate
+                    currentFileSkip++;
+                    globalSkip++;
+                    // Skip thì coi như không Pass cũng không Fail validation (hoặc tùy định nghĩa của bạn)
+                    // Ở đây ta tách riêng Skip ra khỏi Pass/Fail
+                } else if (context.isValid) {
+                    // Trường hợp Hợp lệ
                     currentFilePass++;
                     globalPass++;
+
+                    // Kiểm tra xem có lưu vào DB thành công không
+                    if (context.isSavedToDB) {
+                        currentFileDbSaved++;
+                        globalDbSaved++;
+                    }
                 } else {
+                    // Trường hợp Lỗi Validation hoặc Lỗi SQL
                     currentFileFail++;
                     globalFail++;
                 }
+
             } catch (err) {
                 console.error(`Lỗi hệ thống nghiêm trọng tại dòng ${currentFileRecordIndex}:`, err);
             }
         }
 
-        // LOG TỔNG KẾT FILE CUỐI CÙNG
+        // Tổng kết file 
         if (currentTableName !== "") {
-            printFileSummary(currentTableName, currentFileRecordIndex, currentFilePass, currentFileFail);
+            printFileSummary(currentTableName, currentFileRecordIndex, currentFilePass, currentFileFail, currentFileSkip, currentFileDbSaved);
         }
 
+        // --- IN LOG TỔNG KẾT TOÀN CỤC ---
         logger.info("\n========================================");
-        logger.info("TỔNG KẾT TOÀN BỘ QUÁ TRÌNH");
-        logger.info(`- Đã xử lý: ${totalFilesProcessed} file`);
-        logger.info(`- Tổng Pass: ${globalPass} record`);
-        logger.info(`- Tổng Fail: ${globalFail} record`);
+        logger.info("       TỔNG KẾT TOÀN BỘ QUÁ TRÌNH       ");
+        logger.info("========================================");
+        logger.info(`Số file đã xử lý : ${totalFilesProcessed}`);
+        logger.info(`Tổng số bản ghi  : ${globalTotalRecords}`);
+        logger.info(`Tổng Valid       : ${globalPass}`);
+        logger.info(`Tổng Invalid     : ${globalFail}`);
+        logger.info(`Tổng Skipped    : ${globalSkip} (Trùng lặp)`);
+        logger.info(`Tổng record Đã Lưu DB  : ${globalDbSaved}`);
         logger.info("========================================");
 
     } catch (error) {
-        logger.error("Lỗi không mong muốn trong quá trình xử lý chính:", error);
+        logger.error("Lỗi không mong muốn:", error);
     } finally {
-        // Đóng kết nối TypeORM khi xong
         if (AppDataSource.isInitialized) {
             await AppDataSource.destroy();
             logger.info("Đã đóng kết nối TypeORM.");
@@ -125,13 +144,15 @@ async function main() {
     }
 }
 
-// Hàm phụ trợ in log tổng kết file
-function printFileSummary(tableName: string, total: number, pass: number, fail: number) {
-    logger.info(`------- KẾT QUẢ FILE ${tableName}.csv -------`);
-    logger.info(`  • Tổng số bản ghi: ${total}`);
-    logger.info(`  • Pass: ${pass}`);
-    logger.info(`  • Fail: ${fail}`);
-    logger.info(`------------------------------------------`);
+// [UPDATED] Hàm in log chi tiết file
+function printFileSummary(tableName: string, total: number, pass: number, fail: number, skip: number, dbSaved: number) {
+    logger.info(`\n------- KẾT QUẢ FILE: ${tableName} -------`);
+    logger.info(`  • Tổng dòng : ${total}`);
+    logger.info(`  • Valid     : ${pass}`);
+    logger.info(`  • Invalid   : ${fail}`);
+    logger.info(`  • Skipped   : ${skip} (Duplicate)`);
+    logger.info(`  • Saved DB  : ${dbSaved}`);
+    logger.info(`------------------------------------------\n`);
 }
 
 main().catch(err => logger.error("Fatal Error:", err));
