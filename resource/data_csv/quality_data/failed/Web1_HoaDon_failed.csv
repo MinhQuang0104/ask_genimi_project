@@ -1,2 +1,3 @@
 MaHD,MaTK,NgayDat,TongTien,TrangThaiDonHang,DiaChiGiaoHang,SoDienThoaiNguoiNhan,TenNguoiNhan,PhuongThucThanhToan,GhiChuKhachHang,Error_Message
 10,2,2025-12-01 13:52:32.447,2000000.00,9,Đà Nẵng,0911223344,Lê Văn C,COD,NULL,"TrangThaiDonHang phải thuộc một trong các giá trị sau: [1, 2, 3, 4, 5]."
+10,2,2025-12-01 13:52:32.447,2000000.00,9,Đà Nẵng,0911223344,Lê Văn C,COD,NULL,"TrangThaiDonHang phải thuộc một trong các giá trị sau: [1, 2, 3, 4, 5]."

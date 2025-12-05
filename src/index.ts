@@ -23,38 +23,38 @@ async function main() {
         
     // 2. KHỞI TẠO READER
     const csvDir = path.join(__dirname, '../resource/data_csv/staging');
-    const outputDir = path.join(__dirname, '../resource/data_csv/quality_data');
     const reader = new CsvReader(csvDir);
     // --- BIẾN THỐNG KÊ TOÀN CỤC ---
     let totalFilesProcessed = 0;
     let globalPass = 0;
     let globalFail = 0;
+    let globalSkip = 0;
 
     // --- BIẾN THEO DÕI FILE HIỆN TẠI ---
     let currentTableName = "";
     let currentFileRecordIndex = 0;
     let currentFilePass = 0;
     let currentFileFail = 0;
-    
+    let currentFileSkip = 0;
+
     logger.info("========================================");
     logger.info("HỆ THỐNG BẮT ĐẦU XỬ LÝ DỮ LIỆU");
     logger.info("========================================");
         // [QUAN TRỌNG] Load lịch sử trước khi chạy vòng lặp
     await Deduplicator.loadHistory();
     for await (const { tableName, data } of reader.readAll()) {
-        
         // KIỂM TRA CHUYỂN FILE (Nếu tableName thay đổi so với vòng lặp trước)
         if (tableName !== currentTableName) {
-            // A. Tổng kết file cũ (nếu không phải lần đầu tiên chạy)
+            // Tổng kết file cũ (nếu không phải lần đầu tiên chạy)
             if (currentTableName !== "") {
                 printFileSummary(currentTableName, currentFileRecordIndex, currentFilePass, currentFileFail);
             }
-
-            // B. Reset bộ đếm cho file mới
+            //Reset bộ đếm cho file mới
             currentTableName = tableName;
             currentFileRecordIndex = 0;
             currentFilePass = 0;
             currentFileFail = 0;
+            currentFileSkip = 0;
             totalFilesProcessed++;
 
             // C. Log bắt đầu file mới
