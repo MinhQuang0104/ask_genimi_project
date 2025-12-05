@@ -1,33 +1,41 @@
+import { Entity as TypeOrmEntity, PrimaryColumn, Column } from "typeorm";
 import { Required, IsInteger, IsDecimal, Min} from '../core/decorators/Validators';
 import { Default} from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 import { UniqueKey } from '../core/decorators/Unique';
 
-@Entity('Web1_ChiTietHoaDon')
+@TypeOrmEntity('Web1_ChiTietHoaDon')
+@MyEntity('Web1_ChiTietHoaDon')
 export class Web1_ChiTietHoaDon {
     @Required()
     @UniqueKey()
+    @PrimaryColumn({ name: 'MaHD' })
     MaHD: number;
 
     @Required()
     @UniqueKey()
+    @PrimaryColumn({ name: 'MaSP' })
     MaSP: number;
 
     @Required()
     @IsInteger()
-    @Min(1) // isPositive (>0)
-    @Default(1) // [cite: 656]
+    @Min(1)
+    @Default(1)
+    @Column({ name: 'SoLuong' })
     SoLuong: number;
 
     @Required()
     @IsDecimal()
     @Min(0)
-    @Default(0) // [cite: 656]
+    @Default(0)
+    @Column({ name: 'GiaBanLucDat', type: 'decimal', precision: 18, scale: 2 })
     GiaBanLucDat: number;
 
+    @Column({ name: 'PhanTramThue', type: 'decimal', precision: 5, scale: 2, default: 0 })
     PhanTramThue: number;
 
-    @IsDecimal() // [cite: 656]
+    @IsDecimal()
+    @Column({ name: 'ThanhTien', type: 'decimal', precision: 18, scale: 2, default: 0 })
     ThanhTien: number;
 
     constructor(init?: Partial<Web1_ChiTietHoaDon>) {

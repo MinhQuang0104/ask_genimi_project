@@ -1,29 +1,35 @@
+import { Entity as TypeOrmEntity, PrimaryColumn, Column } from "typeorm";
 import { Required, IsInteger, Min} from '../core/decorators/Validators';
 import { Trim, AlphaNumericOnly, Default} from '../core/decorators/Transforms';
 import { UniqueKey } from '../core/decorators/Unique';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 
-
-@Entity('Kho1_ChiTietTraHang')
+@TypeOrmEntity('Kho1_ChiTietTraHang')
+@MyEntity('Kho1_ChiTietTraHang')
 export class Kho1_ChiTietTraHang {
     @Required()
     @UniqueKey()
+    @PrimaryColumn({ name: 'MaPTH' })
     MaPTH: number;
 
     @Required()
     @UniqueKey()
+    @PrimaryColumn({ name: 'MaSP' })
     MaSP: number;
 
     @Required()
     @IsInteger()
     @Min(1)
-    @Default(1) // [cite: 635]
+    @Default(1)
+    @Column({ name: 'SoLuongTra' })
     SoLuongTra: number;
 
-    @Trim() // [cite: 635]
+    @Trim()
+    @Column({ name: 'LyDoTra', type: 'nvarchar', length: 255, nullable: true })
     LyDoTra: string;
 
-    @AlphaNumericOnly() // [cite: 635]
+    @AlphaNumericOnly()
+    @Column({ name: 'TinhTrangSP', type: 'nvarchar', length: 100, nullable: true })
     TinhTrangSP: string;
 
     constructor(init?: Partial<Kho1_ChiTietTraHang>) {

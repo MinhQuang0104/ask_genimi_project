@@ -1,27 +1,35 @@
+import { Entity as TypeOrmEntity, PrimaryColumn, Column } from "typeorm";
 import { Required, IsInteger, MaxLen} from '../core/decorators/Validators';
 import { Trim } from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 
-@Entity('Kho1_ChiTietKiemKe')
+@TypeOrmEntity('Kho1_ChiTietKiemKe')
+@MyEntity('Kho1_ChiTietKiemKe')
 export class Kho1_ChiTietKiemKe {
     @Required()
-    MaKK: number; // PK, FK
+    @PrimaryColumn({ name: 'MaKK' })
+    MaKK: number; 
 
     @Required()
-    MaSP: number; // PK, FK
+    @PrimaryColumn({ name: 'MaSP' })
+    MaSP: number; 
 
     @Required()
     @IsInteger()
+    @Column({ name: 'SoLuongHeThong' })
     SoLuongHeThong: number;
 
     @Required()
     @IsInteger()
+    @Column({ name: 'SoLuongThucTe' })
     SoLuongThucTe: number;
 
+    @Column({ name: 'SoLuongLech', nullable: true })
     SoLuongLech: number; 
 
     @Trim()
     @MaxLen(255)
+    @Column({ name: 'LyDoLech', type: 'nvarchar', length: 255, nullable: true })
     LyDoLech: string;
 
     constructor(init?: Partial<Kho1_ChiTietKiemKe>) {

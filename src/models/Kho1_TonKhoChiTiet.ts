@@ -1,22 +1,28 @@
+import { Entity as TypeOrmEntity, PrimaryColumn, Column } from "typeorm";
 import { Required, IsInteger, MinLen } from '../core/decorators/Validators';
 import { Default } from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 
-@Entity('Kho1_TonKhoChiTiet')
+@TypeOrmEntity('Kho1_TonKhoChiTiet')
+@MyEntity('Kho1_TonKhoChiTiet')
 export class Kho1_TonKhoChiTiet {
     @Required()
-    MaKho: number; // PK, FK
+    @PrimaryColumn({ name: 'MaKho' })
+    MaKho: number; 
 
     @Required()
-    MaVT: number; // PK, FK
+    @PrimaryColumn({ name: 'MaVT' })
+    MaVT: number; 
 
     @Required()
-    MaSP: number; // PK, FK
+    @PrimaryColumn({ name: 'MaSP' })
+    MaSP: number; 
 
     @Required()
     @IsInteger()
     @MinLen(0)
     @Default(0)
+    @Column({ name: 'SoLuongTon', default: 0 })
     SoLuongTon: number;
 
     constructor(init?: Partial<Kho1_TonKhoChiTiet>) {

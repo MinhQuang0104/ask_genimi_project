@@ -1,46 +1,56 @@
+import { Entity as TypeOrmEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { Required, MinLen, InSet, IsEmail, IsPhoneNumber, MaxDate} from '../core/decorators/Validators';
 import { Trim, AlphaNumericOnly, RemoveWhitespace, ToLowerCase, Default, DefaultDate } from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 import { UniqueKey } from '../core/decorators/Unique';
 
-@Entity('Web1_TaiKhoan')
+@TypeOrmEntity('Web1_TaiKhoan')
+@MyEntity('Web1_TaiKhoan')
 export class Web1_TaiKhoan {
     @UniqueKey()
+    @PrimaryGeneratedColumn({ name: 'MaTK' })
     MaTK: number;
 
     @Required()
     @RemoveWhitespace()
-    @AlphaNumericOnly() 
+    @AlphaNumericOnly()
+    @Column({ name: 'TenDangNhap', type: 'varchar', length: 50 })
     TenDangNhap: string;
 
     @Required()
     @Trim()
-    @MinLen(6)  
+    @MinLen(6)
+    @Column({ name: 'MatKhau', type: 'varchar', length: 255 })
     MatKhau: string;
 
     @Required()
     @Trim()
-    @AlphaNumericOnly()  
+    @AlphaNumericOnly()
+    @Column({ name: 'HoTen', type: 'nvarchar', length: 100 })
     HoTen: string;
 
     @Required()
     @ToLowerCase()
     @IsEmail()
-    @Default('')  
+    @Default('')
+    @Column({ name: 'Email', type: 'nvarchar', length: 100 })
     Email: string;
 
     @Trim()
     @IsPhoneNumber()
-    @Default('')  
+    @Default('')
+    @Column({ name: 'SoDienThoai', type: 'varchar', length: 15, nullable: true })
     SoDienThoai: string;
 
     @Required()
     @InSet([1, 2])
-    @Default(2)   // (Default là khách hàng)
+    @Default(2)
+    @Column({ name: 'LoaiTaiKhoan', default: 2 })
     LoaiTaiKhoan: number; 
 
     @DefaultDate('now')
-    @MaxDate('now')  
+    @MaxDate('now')
+    @Column({ name: 'NgayTao', type: 'datetime', default: () => 'GETDATE()' })
     NgayTao: Date;
 
     constructor(init?: Partial<Web1_TaiKhoan>) {

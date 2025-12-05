@@ -1,42 +1,58 @@
+import { Entity as TypeOrmEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { Required, IsDecimal, Min, InSet, IsPhoneNumber, MaxDate} from '../core/decorators/Validators';
 import { Trim, Default, DefaultDate } from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 import { UniqueKey } from '../core/decorators/Unique';
 
-@Entity('Web1_HoaDon')
+@TypeOrmEntity('Web1_HoaDon')
+@MyEntity('Web1_HoaDon')
 export class Web1_HoaDon {
     @UniqueKey()
+    @PrimaryGeneratedColumn({ name: 'MaHD' })
     MaHD: number;
+
+    @Column({ name: 'MaTK', nullable: true })
     MaTK: number;
+
+    @Column({ name: 'MaKM', nullable: true })
     MaKM: number;
 
     @DefaultDate('now')
-    @MaxDate('now') // [cite: 652]
+    @MaxDate('now')
+    @Column({ name: 'NgayDat', type: 'datetime', default: () => 'GETDATE()' })
     NgayDat: Date;
 
+    @Column({ name: 'TongTienHang', type: 'decimal', precision: 18, scale: 2, default: 0 })
     TongTienHang: number;
+
+    @Column({ name: 'SoTienGiam', type: 'decimal', precision: 18, scale: 2, default: 0 })
     SoTienGiam: number;
 
     @IsDecimal()
     @Min(0)
-    @Default(0) // [cite: 652]
+    @Default(0)
+    @Column({ name: 'TongTienThanhToan', type: 'decimal', precision: 18, scale: 2, default: 0 })
     TongTienThanhToan: number;
 
     @Required()
     @InSet([1, 2, 3, 4, 5])
-    @Default(1) // [cite: 652]
+    @Default(1)
+    @Column({ name: 'TrangThaiDonHang' })
     TrangThaiDonHang: number; 
 
     @Required()
-    @Trim() // [cite: 652]
+    @Trim()
+    @Column({ name: 'DiaChiGiaoHang', type: 'nvarchar', length: 500 })
     DiaChiGiaoHang: string;
 
     @Required()
-    @IsPhoneNumber() // [cite: 652]
+    @IsPhoneNumber()
+    @Column({ name: 'SoDienThoaiNguoiNhan', type: 'varchar', length: 15 })
     SoDienThoaiNguoiNhan: string;
 
     @Required()
-    @Trim() // [cite: 652]
+    @Trim()
+    @Column({ name: 'TenNguoiNhan', type: 'nvarchar', length: 100 })
     TenNguoiNhan: string;
 
     constructor(init?: Partial<Web1_HoaDon>) {

@@ -1,28 +1,36 @@
+import { Entity as TypeOrmEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { Required, IsInteger } from '../core/decorators/Validators';
 import { Trim, DefaultDate} from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 import { UniqueKey } from '../core/decorators/Unique';
 
-@Entity('Kho1_PhieuNhap')
+@TypeOrmEntity('Kho1_PhieuNhap')
+@MyEntity('Kho1_PhieuNhap')
 export class Kho1_PhieuNhap {
     @UniqueKey()
+    @PrimaryGeneratedColumn({ name: 'MaPN' })
     MaPN: number;
 
     @Required()
     @IsInteger()
+    @Column({ name: 'MaNCC' })
     MaNCC: number;
 
     @Required()
     @IsInteger()
+    @Column({ name: 'MaKho' })
     MaKho: number;
 
     @DefaultDate('now')
+    @Column({ name: 'NgayNhap', type: 'datetime', default: () => 'GETDATE()' })
     NgayNhap: Date;
 
     @Trim()
+    @Column({ name: 'NguoiNhap', type: 'nvarchar', length: 100, nullable: true })
     NguoiNhap: string;
 
     @Trim()
+    @Column({ name: 'GhiChu', type: 'nvarchar', length: 'max', nullable: true })
     GhiChu: string;
 
     constructor(init?: Partial<Kho1_PhieuNhap>) {

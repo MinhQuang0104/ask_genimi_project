@@ -1,44 +1,56 @@
+import { Entity as TypeOrmEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { Required, IsDecimal, Min, InSet} from '../core/decorators/Validators';
 import {Trim, AlphaNumericOnly, ToUpperCase, Default, DefaultDate } from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 import { UniqueKey } from '../core/decorators/Unique';
 
-@Entity('KhuyenMai')
+@TypeOrmEntity('KhuyenMai')
+@MyEntity('KhuyenMai')
 export class KhuyenMai {
     @UniqueKey()
+    @PrimaryGeneratedColumn({ name: 'MaKM' })
     MaKM: number;
 
     @Required()
     @Trim()
-    @AlphaNumericOnly() // 
+    @AlphaNumericOnly()
+    @Column({ name: 'TenKM', type: 'nvarchar', length: 100 })
     TenKM: string;
 
-    @ToUpperCase() // 
+    @ToUpperCase()
+    @Column({ name: 'MaCode', type: 'varchar', length: 20, nullable: true })
     MaCode: string;
 
     @Required()
     @InSet([1, 2])
-    @Default(1) // 
+    @Default(1)
+    @Column({ name: 'LoaiKM' })
     LoaiKM: number; 
 
     @Required()
     @IsDecimal()
     @Min(0)
-    @Default(0) // 
+    @Default(0)
+    @Column({ name: 'GiaTriGiam', type: 'decimal', precision: 18, scale: 2 })
     GiaTriGiam: number;
 
+    @Column({ name: 'DieuKienTongTien', type: 'decimal', precision: 18, scale: 2, default: 0 })
     DieuKienTongTien: number;
 
     @Required()
-    @DefaultDate('now') // 
+    @DefaultDate('now')
+    @Column({ name: 'NgayBatDau', type: 'datetime' })
     NgayBatDau: Date;
 
     @Required()
-    NgayKetThuc: Date; // Rule check isAfterOrEqual(NgayBatDau) cần xử lý ở tầng Service hoặc Class Validator phức tạp hơn
+    @Column({ name: 'NgayKetThuc', type: 'datetime' })
+    NgayKetThuc: Date; 
 
-    @Trim() // 
+    @Trim()
+    @Column({ name: 'DieuKienApDung', type: 'nvarchar', length: 'max', nullable: true }) // Dùng cột ảo hoặc mapping nvarchar(max) nếu DB3 có
     DieuKienApDung: string;
 
+    @Column({ name: 'TrangThai', default: true })
     TrangThai: boolean;
 
     constructor(init?: Partial<KhuyenMai>) {

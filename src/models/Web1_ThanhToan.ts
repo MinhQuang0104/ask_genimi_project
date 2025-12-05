@@ -1,35 +1,43 @@
+import { Entity as TypeOrmEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { Required, IsDecimal, Min, InSet} from '../core/decorators/Validators';
 import { Trim, Default, DefaultDate } from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 import { UniqueKey } from '../core/decorators/Unique';
 
-@Entity('Web1_ThanhToan')
+@TypeOrmEntity('Web1_ThanhToan')
+@MyEntity('Web1_ThanhToan')
 export class Web1_ThanhToan {
     @UniqueKey()
+    @PrimaryGeneratedColumn({ name: 'MaTT' })
     MaTT: number;
     
     @Required()
-    @UniqueKey()
+    @Column({ name: 'MaHD' })
     MaHD: number;
 
     @Required()
-    @Trim() // [cite: 668]
+    @Trim()
+    @Column({ name: 'PhuongThucTT', type: 'nvarchar', length: 50 })
     PhuongThucTT: string;
 
     @Required()
     @IsDecimal()
     @Min(0)
-    @Default(0) // [cite: 668]
+    @Default(0)
+    @Column({ name: 'SoTienTT', type: 'decimal', precision: 18, scale: 2 })
     SoTienTT: number;
 
     @Required()
     @InSet([1, 2, 3])
-    @Default(1) // [cite: 668]
+    @Default(1)
+    @Column({ name: 'TrangThaiTT' })
     TrangThaiTT: number; 
 
-    @DefaultDate('now') // [cite: 668]
+    @DefaultDate('now')
+    @Column({ name: 'NgayTao', type: 'datetime', default: () => 'GETDATE()' })
     NgayTao: Date;
     
+    @Column({ name: 'GhiChu', type: 'nvarchar', length: 255, nullable: true })
     GhiChu: string;
 
     constructor(init?: Partial<Web1_ThanhToan>) {

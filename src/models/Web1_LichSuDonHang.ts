@@ -1,26 +1,33 @@
+import { Entity as TypeOrmEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { Required, IsInteger, MaxLen } from '../core/decorators/Validators';
 import { Trim, Default } from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 import { UniqueKey } from '../core/decorators/Unique';
 
-@Entity('Web1_LichSuDonHang')
+@TypeOrmEntity('Web1_LichSuDonHang')
+@MyEntity('Web1_LichSuDonHang')
 export class Web1_LichSuDonHang {
     @UniqueKey()
+    @PrimaryGeneratedColumn({ name: 'MaLSDH' })
     MaLSDH: number;
 
     @Required()
+    @Column({ name: 'MaHD' })
     MaHD: number;
 
     @Required()
     @Default('GETDATE()')
+    @Column({ name: 'NgayThayDoi', type: 'datetime', default: () => 'GETDATE()' })
     NgayThayDoi: Date;
 
     @Required()
     @IsInteger()
-    TrangThaiDonHang: number; // Lưu snapshot trạng thái (1, 2, 3...)
+    @Column({ name: 'TrangThaiDonHang' })
+    TrangThaiDonHang: number; 
 
     @Trim()
     @MaxLen(500)
+    @Column({ name: 'GhiChu', type: 'nvarchar', length: 'max', nullable: true })
     GhiChu: string;
 
     constructor(init?: Partial<Web1_LichSuDonHang>) {

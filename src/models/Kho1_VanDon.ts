@@ -1,40 +1,50 @@
+import { Entity as TypeOrmEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { Required, IsInteger, Min, MaxLen, IsDecimal } from '../core/decorators/Validators';
 import { Trim, Default } from '../core/decorators/Transforms';
-import { Entity } from '../core/decorators/RegisterEntity';
+import { Entity as MyEntity } from '../core/decorators/RegisterEntity';
 import { UniqueKey } from '../core/decorators/Unique';
 
-@Entity('Kho1_VanDon')
+@TypeOrmEntity('Kho1_VanDon')
+@MyEntity('Kho1_VanDon')
 export class Kho1_VanDon {
     @UniqueKey()
+    @PrimaryGeneratedColumn({ name: 'MaVD' })
     MaVD: number;
 
     @Required()
-    MaHD: number; // Liên kết với đơn hàng
+    @Column({ name: 'MaHD' })
+    MaHD: number; 
 
-    MaPX: number; // Liên kết với phiếu xuất (có thể NULL)
+    @Column({ name: 'MaPX', nullable: true })
+    MaPX: number; 
 
     @Trim()
     @MaxLen(100)
+    @Column({ name: 'DonViVanChuyen', type: 'nvarchar', length: 100, nullable: true })
     DonViVanChuyen: string;
 
     @Trim()
     @MaxLen(50)
-    MaVanDonVanChuyen: string; // Mã tracking
+    @Column({ name: 'MaVanDonVanChuyen', type: 'varchar', length: 50, nullable: true })
+    MaVanDonVanChuyen: string;
 
     @Required()
     @IsDecimal()
     @Min(0)
     @Default(0)
+    @Column({ name: 'PhiVanChuyen', type: 'decimal', precision: 18, scale: 2, default: 0 })
     PhiVanChuyen: number;
 
     @Required()
     @IsInteger()
     @Min(1)
     @Default(1) 
-    TrangThaiVanDon: number; // 1: Chờ lấy, 2: Đang giao, 3: Đã giao
+    @Column({ name: 'TrangThaiVanDon', default: 1 })
+    TrangThaiVanDon: number;
 
     @Trim()
     @MaxLen(255)
+    @Column({ name: 'GhiChu', type: 'nvarchar', length: 255, nullable: true })
     GhiChu: string;
 
     constructor(init?: Partial<Kho1_VanDon>) {
