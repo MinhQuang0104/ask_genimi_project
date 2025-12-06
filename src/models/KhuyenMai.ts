@@ -47,8 +47,8 @@ export class KhuyenMai {
     NgayKetThuc: Date; 
 
     @Trim()
-    @Column({ name: 'DieuKienApDung', type: 'nvarchar', length: 'max', nullable: true }) // Dùng cột ảo hoặc mapping nvarchar(max) nếu DB3 có
-    DieuKienApDung: string;
+    @Column({ name: 'DieuKienTongTien' }) // <-- Phải khớp với DB3.sql
+    DieuKienApDung: number;
 
     @Column({ name: 'TrangThai', default: true })
     TrangThai: boolean;
@@ -62,7 +62,7 @@ export class KhuyenMai {
         this.DieuKienTongTien = init?.DieuKienTongTien ?? 0;
         this.NgayBatDau = init?.NgayBatDau ?? new Date();
         this.NgayKetThuc = init?.NgayKetThuc ?? new Date();
-        this.DieuKienApDung = init?.DieuKienApDung ?? '';
+        this.DieuKienApDung = init?.DieuKienApDung ?? 0;
         this.TrangThai = init?.TrangThai ?? true;
     }
 }

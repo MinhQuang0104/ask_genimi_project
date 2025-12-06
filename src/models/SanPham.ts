@@ -36,6 +36,9 @@ export class SanPham {
     @Column({ name: 'GiaBan', type: 'decimal', precision: 18, scale: 2 })
     GiaBan: number;
 
+    @Column({ name: 'GiaNhap', type: 'decimal', precision: 18, scale: 2, default: 0 })
+    GiaNhap: number;
+
     @Required()
     @IsInteger()
     @Min(0)
@@ -63,6 +66,7 @@ export class SanPham {
         this.MaThue = init?.MaThue ?? 0;
         this.MoTaChiTiet = init?.MoTaChiTiet ?? '';
         this.GiaBan = init?.GiaBan ?? 0;
+        this.GiaNhap = init?.GiaNhap ?? 0;
         this.SoLuongTon = init?.SoLuongTon ?? 0;
         this.NhaSanXuat = init?.NhaSanXuat ?? '';
         this.HinhAnh = init?.HinhAnh ?? '';

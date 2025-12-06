@@ -28,15 +28,21 @@ export class Kho1_PhieuNhap {
     @Trim()
     @Column({ name: 'NguoiNhap', type: 'nvarchar', length: 100, nullable: true })
     NguoiNhap: string;
-
+    @Column({ name: 'TrangThaiPN', default: 1 })
+    TrangThaiPN: number;
     @Trim()
     @Column({ name: 'GhiChu', type: 'nvarchar', length: 'max', nullable: true })
     GhiChu: string;
-
+    
+    // Trong Kho1_PhieuNhap.ts
+    @Column({ name: 'TongTienNhap', type: 'decimal', precision: 18, scale: 2, default: 0 })
+    TongTienNhap: number;
     constructor(init?: Partial<Kho1_PhieuNhap>) {
         this.MaPN = init?.MaPN ?? 0;
         this.MaNCC = init?.MaNCC ?? 0;
         this.MaKho = init?.MaKho ?? 0;
+        this.TongTienNhap = init?.TongTienNhap ?? 0;
+        this.TrangThaiPN = init?.TrangThaiPN ?? 1;
         this.NgayNhap = init?.NgayNhap ?? new Date();
         this.NguoiNhap = init?.NguoiNhap ?? '';
         this.GhiChu = init?.GhiChu ?? '';
