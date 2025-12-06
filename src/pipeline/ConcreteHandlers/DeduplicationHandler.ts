@@ -36,7 +36,7 @@ export class DeduplicationHandler extends Handler {
         } else {
             // [LOG] & [FLAG] Cập nhật xử lý trùng lặp
             const duplicateInfo = uniqueKeys.map((k, i) => `${k}=${keyValues[i]}`).join(', ');
-            logger.warn(`  [Record ${context.recordIndex}] ⏭️  SKIP: Trùng lặp dữ liệu (${duplicateInfo})`);
+            logger.warn(`  [Record ${context.recordIndex}] SKIP: Trùng lặp dữ liệu (${duplicateInfo})`);
             
             // Đánh dấu Context
             context.isValid = false; 

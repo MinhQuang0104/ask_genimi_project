@@ -23,10 +23,10 @@ export class SqlSaveHandler extends Handler {
                 const firstKey = Object.keys(entity)[0];
                 const firstVal = entity[firstKey];
                 
-                logger.info(`  [Record ${context.recordIndex}] 💾 DB Saved: ${tableName} (Key: ${firstVal})`);
+                logger.info(`  [Record ${context.recordIndex}] DB Saved: ${tableName} (Key: ${firstVal})`);
 
             } catch (err: any) {
-                logger.error(`  [Record ${context.recordIndex}] 💥 DB Error: ${err.message}`);
+                logger.error(`  [Record ${context.recordIndex}] DB Error: ${err.message}`);
                 
                 context.isValid = false;
                 context.errors = context.errors || [];

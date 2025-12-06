@@ -59,11 +59,11 @@ export class CsvSaveHandler extends Handler {
 
             // Log nhẹ (chỉ log khi lỗi hoặc debug, tránh spam logger)
             if (!isValid) {
-                logger.info(`[Save] ❌ Đã ghi nhận lỗi vào ${tableName}_failed.csv`);
+                logger.info(`[Save] Đã ghi nhận lỗi vào ${tableName}_failed.csv`);
             }
 
         } catch (err) {
-            logger.error(`[Save] 💥 Lỗi khi ghi file ${tableName}:`, err);
+            logger.error(`[Save] Lỗi khi ghi file ${tableName}:`, err);
         }
 
         // Tiếp tục chuỗi (nếu có handler phía sau, ví dụ: gửi thông báo)

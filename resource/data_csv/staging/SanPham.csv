@@ -1,0 +1,35 @@
+﻿MaSP,TenSP,MaLoaiHang,SoLuong,GiaNhap,GiaBan,TrangThai
+1,iPhone 14,1,4,20000000.00,25000000.00,1
+2,MacBook Pro,2,5,30000000.00,35000000.00,1
+3,Samsung S23 Ultra,1,10,22000000.00,28000000.00,1
+4,Dell XPS 15,2,3,28000000.00,32000000.00,1
+5,Chuột Logitech,3,6,500000.00,700000.00,1
+6,Tai nghe AirPods 3,3,15,3500000.00,4200000.00,1
+7,Bàn phím cơ Keychron,3,8,1800000.00,2200000.00,1
+8,Tủ lạnh Samsung 300L,5,2,8000000.00,10000000.00,1
+9,Máy giặt LG Inverter,5,4,7500000.00,9500000.00,1
+10,Nồi cơm điện Sharp,4,20,1200000.00,1800000.00,1
+11,"  Áo Thun Lỗi  ",6,6,100000.00,150000.00,1
+12,Giày Nike $$*,6,6,2000000.00,2500000.00,1
+13,Sản phẩm Giá Âm,7,5,-50000.00,100000.00,1
+14,Sản phẩm Tồn Âm,7,-10,10000.00,20000.00,1
+﻿MaSP,TenSP,MaDM,MoTaChiTiet,GiaBan,SoLuongTon,NhaSanXuat
+1,Asus ROG Strix G15,1,Laptop gaming với CPU Ryzen 7 và GPU RTX 4060.,32990000.00,10,ASUS
+2,Dell XPS 13,5,"Laptop mỏng nhẹ cao cấp, màn hình 13 inch 4K.",38990000.00,8,Dell
+3,HP Pavilion 15,2,"Laptop văn phòng hiệu năng tốt, pin bền.",15990000.00,15,HP
+4,Acer Aspire 7,4,Laptop học tập và làm việc đa dụng.,13990000.00,12,Acer
+5,MSI Creator Z16,3,Dành cho dân đồ họa với GPU RTX 4070.,49990000.00,5,MSI
+6,Chuột Logitech G102,6,"Chuột quốc dân, led RGB.",400000.00,50,Logitech
+7,Bàn phím Keychron K2,7,Bàn phím cơ không dây layout 75%.,1900000.00,20,Keychron
+8,Màn hình LG UltraGear 27,8,Màn hình 2K 144Hz.,8500000.00,10,LG
+9,Tai nghe HyperX Cloud II,6,Tai nghe gaming âm thanh vòm 7.1.,1500000.00,25,HyperX
+10,Lenovo ThinkPad ***$$$,2,Bền bỉ.,25000000.00,10,Lenovo
+11,Laptop Lỗi Giá,2,Test giá âm,-5000000.00,5,Dell
+12,Laptop Tồn Âm,4,Test tồn kho âm,10000000.00,-10,HP
+13,"  Laptop Spacer  ",1,Tên thừa khoảng trắng,20000000.00,5,Asus
+﻿MaSP,TenSP,GiaSP
+1,iPhone 14,25000000.00
+2,MacBook Pro,35000000.00
+3,Samsung S23 Ultra,28000000.00
+5,Chuột Logitech,700000.00
+8,Tủ lạnh Samsung 300L,10000000.00

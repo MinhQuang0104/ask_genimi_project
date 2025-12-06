@@ -24,9 +24,9 @@ export class Kho1_ChiTietTraHang {
     @Column({ name: 'SoLuongTra' })
     SoLuongTra: number;
 
-    @Trim()
-    @Column({ name: 'LyDoTra', type: 'nvarchar', length: 255, nullable: true })
-    LyDoTra: string;
+    // @Trim()
+    // @Column({ name: 'LyDoTra', type: 'nvarchar', length: 255, nullable: true })
+    // LyDoTra: string;
 
     @AlphaNumericOnly()
     @Column({ name: 'TinhTrangSP', type: 'nvarchar', length: 100, nullable: true })
@@ -36,7 +36,7 @@ export class Kho1_ChiTietTraHang {
         this.MaPTH = init?.MaPTH ?? 0;
         this.MaSP = init?.MaSP ?? 0;
         this.SoLuongTra = init?.SoLuongTra ?? 1;
-        this.LyDoTra = init?.LyDoTra ?? '';
+        // this.LyDoTra = init?.LyDoTra ?? '';
         this.TinhTrangSP = init?.TinhTrangSP ?? '';
     }
 }

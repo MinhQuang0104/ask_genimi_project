@@ -16,7 +16,7 @@ export class ValidationHandler extends Handler {
              await super.handle(context);
         } else {
              // [LOG] Chỉ log warning ngắn gọn
-             logger.warn(`  [Record ${context.recordIndex}] Validation Failed: ${result.errors.join('; ')}`);
+             logger.warn(`  [Record ${context.recordIndex}] Validation thất bại: ${result.errors.join('; ')}`);
              await super.handle(context);
         }
     }

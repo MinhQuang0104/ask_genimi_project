@@ -24,8 +24,8 @@ export class Kho1_ChiTietKiemKe {
     @Column({ name: 'SoLuongThucTe' })
     SoLuongThucTe: number;
 
-    @Column({ name: 'SoLuongLech', nullable: true })
-    SoLuongLech: number; 
+    // @Column({ name: 'SoLuongLech', nullable: true })
+    // SoLuongLech: number; 
 
     @Trim()
     @MaxLen(255)
@@ -37,7 +37,7 @@ export class Kho1_ChiTietKiemKe {
         this.MaSP = init?.MaSP ?? 0;
         this.SoLuongHeThong = init?.SoLuongHeThong ?? 0;
         this.SoLuongThucTe = init?.SoLuongThucTe ?? 0;
-        this.SoLuongLech = init?.SoLuongLech ?? 0;
+        // this.SoLuongLech = init?.SoLuongLech ?? 0;
         this.LyDoLech = init?.LyDoLech ?? '';
     }
 }
