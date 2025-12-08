@@ -49,21 +49,46 @@ export class SqlSaveHandler extends Handler {
                     }
                 });
 
-                // --- GHI LOG THÀNH CÔNG ---
+                // --- GHI LOG THÀNH CÔNG (STRUCTURED LOGGING) ---
                 context.isSavedToDB = true;
                 
                 // Lấy giá trị khóa chính để log (Field đầu tiên của object)
                 const firstKey = Object.keys(entity)[0];
                 const firstVal = entity[firstKey];
-                logger.info(`  [Record ${context.recordIndex}] DB Saved: ${tableName} (Key: ${firstVal}) ${hasIdentity ? '[Identity Insert]' : ''}`);
+                
+                // [TRACKING] Log đầy đủ thông tin để truy vết
+                logger.info(`DB Saved Success`, {
+                    stage: 'DB_SAVE',
+                    recordIndex: context.recordIndex,
+                    tableName: tableName,
+                    primaryKey: firstVal,
+                    identityInsert: hasIdentity,
+                    // dataSnapshot: entity // Bỏ comment dòng này nếu muốn lưu lại toàn bộ dữ liệu đã insert (tốn dung lượng log)
+                });
 
             } catch (err: any) {
                 // Xử lý lỗi trùng lặp (Violation of PRIMARY KEY constraint)
                 if (err.message && err.message.includes('Violation of PRIMARY KEY')) {
-                     logger.warn(`  [Record ${context.recordIndex}] DB Skip: Record đã tồn tại (Duplicate Key).`);
+                     // [TRACKING] Log Warning Duplicate
+                     logger.warn(`DB Duplicate Key`, {
+                         stage: 'DB_SAVE',
+                         recordIndex: context.recordIndex,
+                         tableName: tableName,
+                         error: err.message
+                     });
+                     
                      context.isSkipped = true; // Đánh dấu là skip để không tính là lỗi
                 } else {
-                    logger.error(`  [Record ${context.recordIndex}] DB Error: ${err.message}`);
+                    // [TRACKING] Log Error Insert
+                    logger.error(`DB Insert Error`, {
+                        stage: 'DB_SAVE',
+                        recordIndex: context.recordIndex,
+                        tableName: tableName,
+                        error: err.message,
+                        failingData: entity, // Lưu lại dữ liệu gây lỗi để debug
+                        failingRecordData: entity
+                    });
+
                     context.isValid = false;
                     context.errors = context.errors || [];
                     context.errors.push(`SQL Error: ${err.message}`);
