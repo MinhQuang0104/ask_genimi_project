@@ -4,17 +4,34 @@ import path from "path";
 import { parse } from "csv-parse/sync";
 import { EntityFactory } from "./EntityFactory";
 import { UNIQUE_METADATA_KEY } from "./decorators/Unique";
-import 'reflect-metadata';
+import "reflect-metadata";
 
 export class Deduplicator {
   private static storage: Map<string, Set<string>> = new Map();
-
+  public static resetCache(tableName?: string) {
+    if (tableName) {
+      // Trường hợp 1: Xóa cache của 1 bảng cụ thể
+      if (this.storage.has(tableName)) {
+        this.storage.get(tableName)!.clear(); // Xóa các hash trong Set
+        this.storage.delete(tableName); // Xóa luôn key bảng khỏi Map
+        console.log(`🧹 [Deduplicator] Đã xóa cache của bảng: ${tableName}`);
+      } else {
+        console.log(
+          `⚠️ [Deduplicator] Không tìm thấy cache của bảng: ${tableName}`
+        );
+      }
+    } else {
+      // Trường hợp 2: Xóa toàn bộ cache (Reset All)
+      this.storage.clear();
+      console.log(`🧹 [Deduplicator] Đã xóa TOÀN BỘ cache deduplication.`);
+    }
+  }
   static async loadHistory() {
     const OUTPUT_DIR = path.join(
       __dirname,
       "../../resource/data_csv/quality_data/passed"
     );
-    
+
     if (!fs.existsSync(OUTPUT_DIR)) return;
 
     const files = fs.readdirSync(OUTPUT_DIR);
@@ -23,36 +40,39 @@ export class Deduplicator {
     for (const file of files) {
       if (file.endsWith("_passed.csv")) {
         const tableName = file.replace("_passed.csv", "");
-        
+
         const modelCtor = EntityFactory.getClass(tableName);
         if (!modelCtor) continue;
 
-        const uniqueKeys: string[] = Reflect.getMetadata(UNIQUE_METADATA_KEY, modelCtor.prototype);
-        
+        const uniqueKeys: string[] = Reflect.getMetadata(
+          UNIQUE_METADATA_KEY,
+          modelCtor.prototype
+        );
+
         if (!uniqueKeys || uniqueKeys.length === 0) continue;
 
         try {
-            const content = fs.readFileSync(path.join(OUTPUT_DIR, file), 'utf8');
-            
-            // [FIX] Ép kiểu kết quả trả về thành mảng các Object (any[])
-            const records = parse(content, { 
-                columns: true, 
-                skip_empty_lines: true, 
-                bom: true 
-            }) as any[]; 
+          const content = fs.readFileSync(path.join(OUTPUT_DIR, file), "utf8");
 
-            let count = 0;
-            for (const record of records) {
-                // Bây giờ 'record' có kiểu là 'any', bạn có thể truy cập record[k] thoải mái
-                const keyValues = uniqueKeys.map(k => record[k]);
-                
-                const hash = this.generateHash(keyValues);
-                this.forceMark(tableName, hash);
-                count++;
-            }
-            console.log(`   -> Đã khôi phục ${count} bản ghi từ ${file}`);
+          // [FIX] Ép kiểu kết quả trả về thành mảng các Object (any[])
+          const records = parse(content, {
+            columns: true,
+            skip_empty_lines: true,
+            bom: true,
+          }) as any[];
+
+          let count = 0;
+          for (const record of records) {
+            // Bây giờ 'record' có kiểu là 'any', bạn có thể truy cập record[k] thoải mái
+            const keyValues = uniqueKeys.map((k) => record[k]);
+
+            const hash = this.generateHash(keyValues);
+            this.forceMark(tableName, hash);
+            count++;
+          }
+          console.log(`   -> Đã khôi phục ${count} bản ghi từ ${file}`);
         } catch (err) {
-            console.warn(`   -> Lỗi đọc file ${file}:`, err);
+          console.warn(`   -> Lỗi đọc file ${file}:`, err);
         }
       }
     }
@@ -62,10 +82,10 @@ export class Deduplicator {
   // ... (Các phần code còn lại giữ nguyên) ...
 
   private static forceMark(tableName: string, hash: string) {
-      if (!this.storage.has(tableName)) {
-          this.storage.set(tableName, new Set());
-      }
-      this.storage.get(tableName)!.add(hash);
+    if (!this.storage.has(tableName)) {
+      this.storage.set(tableName, new Set());
+    }
+    this.storage.get(tableName)!.add(hash);
   }
 
   static generateHash(values: any[]): string {

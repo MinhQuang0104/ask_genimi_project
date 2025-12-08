@@ -97,6 +97,7 @@ async function main() {
 
     try {
         await initializeDatabase();
+        await Deduplicator.resetCache();
         await Deduplicator.loadHistory();
 
         // [QUAN TRỌNG] Sử dụng readCustomList thay vì readAll để đảm bảo thứ tự
