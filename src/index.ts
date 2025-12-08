@@ -1,6 +1,5 @@
 import 'reflect-metadata';
 import path from 'path';
-import fs from 'fs';
 import './models'; 
 import logger from './utils/logger';
 import { CsvReader } from './utils/CsvReader';
@@ -43,7 +42,7 @@ async function main() {
 
         // Nhóm 3: Nghiệp vụ Kho (Nhập/Xuất/Tồn)
         "Kho1_TonKho",
-        "Kho1_TonKhoChiTiet", // <--- [ĐÃ THÊM] Bổ sung bảng này vào đây
+        "Kho1_TonKhoChiTiet", 
         "Kho1_PhieuNhap", "Kho1_ChiTietPhieuNhap",
         "Kho1_PhieuXuat", "Kho1_ChiTietPhieuXuat",
         "Kho1_PhieuKiemKe", "Kho1_ChiTietKiemKe",

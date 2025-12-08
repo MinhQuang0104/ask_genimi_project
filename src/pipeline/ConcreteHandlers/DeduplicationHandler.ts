@@ -40,10 +40,9 @@ export class DeduplicationHandler extends Handler {
             
             // Đánh dấu Context
             context.isValid = false; 
-            context.isSkipped = true; // [NEW] Đánh dấu là đã bỏ qua
+            context.isSkipped = true; //
             context.errors = [`Duplicate Record: ${duplicateInfo}`];
-            
-            // KHÔNG gọi super.handle() để dừng chuỗi xử lý tại đây
+        
         }
     }
 }
