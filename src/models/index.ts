@@ -32,5 +32,3 @@ export * from './Web1_SoDiaChi';
 export * from './Web1_TaiKhoan';
 export * from './Web1_ThanhToan';
 export * from './Web1_LichSuDonHang';
-
-export * from './types'; // [QUAN TRỌNG] Export các interface vừa tạo
