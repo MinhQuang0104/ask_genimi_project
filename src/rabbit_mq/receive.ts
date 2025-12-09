@@ -5,7 +5,7 @@ import { parse } from "csv-parse/sync";
 import { stringify } from "csv-stringify/sync";
 
 import { DataIntegrator } from "../core/integration/DataIntegrator";
-import { MergeService } from "../services/MergeService"; // Sửa đường dẫn import nếu cần
+import { MergeService } from "../services/MergeService"; 
 import { CSV_CONFIG } from "../config/CsvMappingConfig";
 import logger from "../utils/logger";
 
@@ -13,56 +13,34 @@ const ROOT_DIR = path.resolve(__dirname, "../../");
 const STAGING_DIR = path.join(ROOT_DIR, "resource", "data_csv", "staging");
 
 // 1. ĐỊNH NGHĨA THỨ TỰ ƯU TIÊN (PHASES)
-// Tên ở đây PHẢI KHỚP với targetModel trong CsvMappingConfig.ts và tên Class trong src/models
 const PHASES = [
-    // PHASE 1: MASTER DATA (Dữ liệu nền tảng - Độc lập)
+    // PHASE 1: MASTER DATA
     [
-        "LoaiHang", 
-        "NhaCungCap", 
-        "KhoHang", 
-        "ViTriKho", 
-        "Thue", 
-        "KhuyenMai", 
-        "Web1_TaiKhoan", 
-        "Web1_SoDiaChi"
+        "LoaiHang", "NhaCungCap", "KhoHang", "ViTriKho", 
+        "Thue", "KhuyenMai", "Web1_TaiKhoan", "Web1_SoDiaChi"
     ],
-    
-    // PHASE 2: PRODUCT DATA (Phụ thuộc Phase 1)
+    // PHASE 2: PRODUCT DATA
     [
-        "SanPham", 
-        "AnhSanPham", 
-        "SanPham_Thue",
-        "SanPham_KhuyenMai"
+        "SanPham", "AnhSanPham", "SanPham_Thue", "SanPham_KhuyenMai"
     ],
-    
-    // PHASE 3: INVENTORY & OPS (Phụ thuộc Product & Kho)
+    // PHASE 3: INVENTORY & OPS
     [
-        "Kho1_TonKho",
-        "Kho1_PhieuNhap", "Kho1_ChiTietPhieuNhap",
-        "Kho1_PhieuXuat", "Kho1_ChiTietPhieuXuat",
-        "Kho1_VanDon",
-        "Kho1_PhieuKiemKe", "Kho1_ChiTietKiemKe",
-        "Kho1_PhieuTraHang", "Kho1_ChiTietTraHang"
+        "Kho1_TonKho", "Kho1_PhieuNhap", "Kho1_ChiTietPhieuNhap",
+        "Kho1_PhieuXuat", "Kho1_ChiTietPhieuXuat", "Kho1_VanDon",
+        "Kho1_PhieuKiemKe", "Kho1_ChiTietKiemKe", "Kho1_PhieuTraHang", "Kho1_ChiTietTraHang"
     ],
-    
-    // PHASE 4: TRANSACTION (Giao dịch Web - Phụ thuộc User & Product)
+    // PHASE 4: TRANSACTION
     [
-        "Web1_HoaDon", 
-        "Web1_ChiTietHoaDon", 
-        "Web1_GioHang", 
-        "Web1_DanhGia", 
-        "Web1_ThanhToan", 
-        "Web1_LichSuDonHang"
+        "Web1_HoaDon", "Web1_ChiTietHoaDon", "Web1_GioHang", 
+        "Web1_DanhGia", "Web1_ThanhToan", "Web1_LichSuDonHang"
     ]
 ];
 
-// Helper: Tạo key để tra cứu trong Config (VD: SOURCE1_ViTriKho)
 function getConfigKey(source: string, rawTable: string): string {
     const cleanTable = rawTable.replace(/\.csv$/i, '').trim();
     return `${source}_${cleanTable}`; 
 }
 
-// Helper: Lấy tên clean để log fallback (chỉ dùng khi quên config)
 function getRawNameForLog(rawTable: string): string {
     return rawTable.replace(/\.csv$/i, '').replace(/^SOURCE\d+_?/i, '').trim();
 }
@@ -76,7 +54,6 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
             let consumer: any;
             let idleTimer: NodeJS.Timeout;
 
-            // Hàm kết thúc consumer khi stream tạm nghỉ (idle)
             const finish = async () => {
                 clearTimeout(idleTimer);
                 if (consumer) await consumer.close();
@@ -85,7 +62,6 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
 
             const resetIdleTimer = () => {
                 if (idleTimer) clearTimeout(idleTimer);
-                // Nếu 2s không có tin nhắn mới -> Coi như hết Phase hiện tại
                 idleTimer = setTimeout(finish, 2000); 
             };
 
@@ -98,23 +74,17 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
                         const firstColon = text.indexOf(":");
                         if (firstColon === -1) return;
 
-                        const rawTable = text.substring(0, firstColon).trim(); // VD: SOURCE1_ViTriKho.csv
+                        const rawTable = text.substring(0, firstColon).trim();
                         let rowData = text.substring(firstColon + 1);
 
-                        // 1. Xác định Config Key
                         const configKey = getConfigKey(sourceName, rawTable);
                         const config = CSV_CONFIG[configKey];
 
-                        // 2. Xác định Model đích (Target Model)
                         let targetModel = "";
-
                         if (config && config.targetModel) {
-                            // [UPDATE] Lấy trực tiếp từ Config (Chính xác 100%)
                             targetModel = config.targetModel;
                         } else {
-                            // Fallback: Nếu quên config thì đoán (Log warn để biết đường sửa)
                             targetModel = getRawNameForLog(rawTable);
-                            // logger.warn(`⚠️ Chưa cấu hình targetModel cho ${configKey}. Fallback sang: ${targetModel}`);
                         }
 
                         // 3. Kiểm tra: Model này có thuộc Phase đang chạy không?
@@ -127,7 +97,42 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
                                     let cols = rows[0]; 
                                     
                                     const oldId = cols[config.idIndex];
-                                    const rawName = cols[config.nameIndex];
+
+                                    // ===================================
+                                    // [CODE MỚI] XỬ LÝ NHIỀU CỘT TÊN
+                                    // ===================================
+                                    let rawName = "";
+
+                                    if (Array.isArray(config.nameIndex)) {
+                                        // Trường hợp nhiều cột: Nối lại bằng dấu gạch ngang
+                                        // Ví dụ: "iPhone 15" + "Titan" -> "iPhone 15 - Titan"
+                                        rawName = config.nameIndex
+                                            .map(idx => cols[idx]) // Lấy giá trị từng cột
+                                            .filter(val => val)    // Bỏ giá trị rỗng (null/undefined)
+                                            .join(" - ");          // Nối lại
+                                    } else {
+                                        // Trường hợp 1 cột (Cũ)
+                                        rawName = cols[config.nameIndex];
+                                    }
+                                    // ===================================
+
+                                    // =======================================================================
+                                    // [CODE CŨ] BỘ LỌC HEADER (HEADER FILTER)
+                                    // =======================================================================
+                                    const headerKeywords = [
+                                        "Ma", "ID", "Code", "Stt", 
+                                        "Ten", "Name",             
+                                        "Source", "Nguon"
+                                    ];
+
+                                    const isHeader = oldId && 
+                                                     headerKeywords.some(k => oldId.toString().toLowerCase().startsWith(k.toLowerCase())) && 
+                                                     isNaN(Number(oldId));
+
+                                    if (isHeader) {
+                                        return; // Dừng xử lý dòng này ngay lập tức
+                                    }
+                                    // =======================================================================
 
                                     if (oldId && rawName) {
                                         // A. Gọi Service để Chuẩn hóa Tên & Lấy ID thống nhất
@@ -135,13 +140,18 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
 
                                         // B. Cập nhật lại CSV (ID mới + Tên chuẩn)
                                         cols[config.idIndex] = result.newId; 
-                                        cols[config.nameIndex] = result.newName;
+                                        
+                                        // Nếu nameIndex là 1 cột đơn thì update lại cột đó
+                                        // (Nếu là mảng nhiều cột thì ta không ghi đè lại CSV gốc để giữ nguyên dữ liệu tách biệt, 
+                                        //  chỉ dùng rawName đã gộp để mapping ID thôi)
+                                        if (!Array.isArray(config.nameIndex)) {
+                                            cols[config.nameIndex] = result.newName;
+                                        }
 
                                         // C. Xử lý Khóa Ngoại (Foreign Keys)
                                         if (config.foreignKeys) {
                                             for (const fk of config.foreignKeys) {
                                                 const fkOldVal = cols[fk.colIndex];
-                                                // Dịch ID ngoại: Tìm ID mới của bảng cha dựa trên ID cũ
                                                 const fkNewVal = MergeService.translateForeignKey(fk.parentModel, sourceName, fkOldVal);
                                                 cols[fk.colIndex] = fkNewVal;
                                             }
@@ -154,8 +164,7 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
                             }
                             // === KẾT THÚC LOGIC GỘP ===
 
-                            // Đẩy vào Pipeline xử lý tiếp (Parse -> Validate -> Save DB)
-                            // Lúc này targetModel đã là tên chuẩn (VD: Web1_TaiKhoan)
+                            // Đẩy vào Pipeline xử lý tiếp
                             await DataIntegrator.processRecord(sourceName, rawTable, targetModel, rowData);
                         }
 
@@ -165,7 +174,6 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
                 }
             );
             
-            // Khởi động timer lần đầu
             resetIdleTimer();
         });
     });
@@ -181,7 +189,7 @@ async function main() {
         fs.mkdirSync(STAGING_DIR, { recursive: true });
     }
 
-    // 1. Reset bộ nhớ đệm của MergeService (Xóa ID mapping cũ)
+    // 1. Reset bộ nhớ đệm
     MergeService.clear();
 
     // 2. Kết nối RabbitMQ Stream
@@ -193,15 +201,33 @@ async function main() {
         vhost: "/"
     });
 
-    // Tên các stream trong RabbitMQ
     const streams = ["data_source1_kho_stream", "data_source2_web_stream"];
 
     logger.info("🔥 BẮT ĐẦU QUÁ TRÌNH INTEGRATION VỚI MERGE SERVICE...");
 
     // 3. CHẠY TUẦN TỰ TỪNG PHASE
-    // Phase 1 chạy xong mới chạy Phase 2 -> Đảm bảo khóa ngoại luôn tìm thấy khóa chính
     for (const phaseTables of PHASES) {
         await consumePhase(client, streams, phaseTables);
+    }
+
+    // 4. XUẤT BÁO CÁO MERGE
+    logger.info("📊 Đang tạo báo cáo gộp dữ liệu (Merge Report)...");
+    try {
+        const reportPath = path.join(ROOT_DIR, "resource", "data_csv", "MERGE_REPORT.csv");
+        
+        if (MergeService.mergeLogs.length > 0) {
+            const csvData = stringify(MergeService.mergeLogs, {
+                header: true,
+                columns: ["TableName", "Source", "OriginalID", "OriginalName", "FinalName", "FinalID", "Status", "Score"]
+            });
+            
+            fs.writeFileSync(reportPath, csvData);
+            logger.info(`✅ Đã xuất báo cáo tại: ${reportPath}`);
+        } else {
+            logger.warn("⚠️ Không có dữ liệu nào được xử lý để báo cáo.");
+        }
+    } catch (err) {
+        logger.error("❌ Lỗi khi ghi báo cáo:", err);
     }
 
     logger.info("🎉 TOÀN BỘ QUÁ TRÌNH TÍCH HỢP HOÀN TẤT.");

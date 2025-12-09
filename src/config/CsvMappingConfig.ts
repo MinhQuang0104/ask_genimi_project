@@ -2,7 +2,7 @@
 
 export interface IModelConfig {
     idIndex: number;
-    nameIndex: number;
+    nameIndex: number | number[];
     targetModel: string;
     foreignKeys?: {
         colIndex: number;
@@ -25,8 +25,8 @@ export const CSV_CONFIG: Record<string, IModelConfig> = {
 
     // KhoHang & ViTri
     "SOURCE2_KhoHang": { idIndex: 0, nameIndex: 1, targetModel: "KhoHang" },
-    "SOURCE1_ViTriKho": { idIndex: 0, nameIndex: 1, targetModel: "ViTriKho", foreignKeys: [{ colIndex: 2, parentModel: "KhoHang" }] },
-    "SOURCE2_ViTriKho": { idIndex: 0, nameIndex: 1, targetModel: "ViTriKho", foreignKeys: [{ colIndex: 2, parentModel: "KhoHang" }] },
+    "SOURCE1_ViTriKho": { idIndex: 0, nameIndex: [0,1], targetModel: "ViTriKho", foreignKeys: [{ colIndex: 2, parentModel: "KhoHang" }] },
+    "SOURCE2_ViTriKho": { idIndex: 0, nameIndex: [0,1], targetModel: "ViTriKho", foreignKeys: [{ colIndex: 2, parentModel: "KhoHang" }] },
 
     // Thue & KhuyenMai (Thường từ SOURCE1 - Hệ thống quản lý)
     "SOURCE1_Thue": { idIndex: 0, nameIndex: 1, targetModel: "Thue" },
