@@ -46,11 +46,11 @@ function getRawNameForLog(rawTable: string): string {
 }
 
 async function consumePhase(client: rabbit.Client, streams: string[], targetTables: string[]) {
-    logger.info(`\n🚀 BẮT ĐẦU PHASE: [${targetTables.join(", ")}]`);
+    // logger.info(`\n🚀 BẮT ĐẦU PHASE: [${targetTables.join(", ")}]`); // Log này đã chuyển ra ngoài main
     
     const promises = streams.map(streamName => {
         return new Promise<void>(async (resolve) => {
-            const sourceName = streamName.includes("datasource1") ? "SOURCE1" : "SOURCE2";
+            const sourceName = streamName.includes("data_source1") ? "SOURCE1" : "SOURCE2";
             let consumer: any;
             let idleTimer: NodeJS.Timeout;
 
@@ -87,68 +87,36 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
                             targetModel = getRawNameForLog(rawTable);
                         }
 
-                        // 3. Kiểm tra: Model này có thuộc Phase đang chạy không?
                         if (targetTables.includes(targetModel)) {
-                            
-                            // === LOGIC GỘP DỮ LIỆU & ÁNH XẠ ID ===
                             if (config) {
                                 const rows = parse(rowData, { relax_column_count: true, skip_empty_lines: true });
                                 if (rows.length > 0) {
                                     let cols = rows[0]; 
-                                    
                                     const oldId = cols[config.idIndex];
 
-                                    // ===================================
-                                    // [CODE MỚI] XỬ LÝ NHIỀU CỘT TÊN
-                                    // ===================================
+                                    // XỬ LÝ NHIỀU CỘT TÊN
                                     let rawName = "";
-
                                     if (Array.isArray(config.nameIndex)) {
-                                        // Trường hợp nhiều cột: Nối lại bằng dấu gạch ngang
-                                        // Ví dụ: "iPhone 15" + "Titan" -> "iPhone 15 - Titan"
-                                        rawName = config.nameIndex
-                                            .map(idx => cols[idx]) // Lấy giá trị từng cột
-                                            .filter(val => val)    // Bỏ giá trị rỗng (null/undefined)
-                                            .join(" - ");          // Nối lại
+                                        rawName = config.nameIndex.map(idx => cols[idx]).filter(val => val).join(" - ");
                                     } else {
-                                        // Trường hợp 1 cột (Cũ)
                                         rawName = cols[config.nameIndex];
                                     }
-                                    // ===================================
 
-                                    // =======================================================================
-                                    // [CODE CŨ] BỘ LỌC HEADER (HEADER FILTER)
-                                    // =======================================================================
-                                    const headerKeywords = [
-                                        "Ma", "ID", "Code", "Stt", 
-                                        "Ten", "Name",             
-                                        "Source", "Nguon"
-                                    ];
+                                    // BỘ LỌC HEADER
+                                    const headerKeywords = ["Ma", "ID", "Code", "Stt", "Ten", "Name", "Source", "Nguon"];
+                                    const isHeader = oldId && headerKeywords.some(k => oldId.toString().toLowerCase().startsWith(k.toLowerCase())) && isNaN(Number(oldId));
 
-                                    const isHeader = oldId && 
-                                                     headerKeywords.some(k => oldId.toString().toLowerCase().startsWith(k.toLowerCase())) && 
-                                                     isNaN(Number(oldId));
-
-                                    if (isHeader) {
-                                        return; // Dừng xử lý dòng này ngay lập tức
-                                    }
-                                    // =======================================================================
+                                    if (isHeader) return; 
 
                                     if (oldId && rawName) {
-                                        // A. Gọi Service để Chuẩn hóa Tên & Lấy ID thống nhất
+                                        // Gọi Service
                                         const result = MergeService.processRecord(targetModel, sourceName, oldId, rawName);
 
-                                        // B. Cập nhật lại CSV (ID mới + Tên chuẩn)
                                         cols[config.idIndex] = result.newId; 
-                                        
-                                        // Nếu nameIndex là 1 cột đơn thì update lại cột đó
-                                        // (Nếu là mảng nhiều cột thì ta không ghi đè lại CSV gốc để giữ nguyên dữ liệu tách biệt, 
-                                        //  chỉ dùng rawName đã gộp để mapping ID thôi)
                                         if (!Array.isArray(config.nameIndex)) {
                                             cols[config.nameIndex] = result.newName;
                                         }
 
-                                        // C. Xử lý Khóa Ngoại (Foreign Keys)
                                         if (config.foreignKeys) {
                                             for (const fk of config.foreignKeys) {
                                                 const fkOldVal = cols[fk.colIndex];
@@ -156,30 +124,23 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
                                                 cols[fk.colIndex] = fkNewVal;
                                             }
                                         }
-
-                                        // Đóng gói lại thành chuỗi CSV
                                         rowData = stringify([cols]).trim();
                                     }
                                 }
                             }
-                            // === KẾT THÚC LOGIC GỘP ===
-
-                            // Đẩy vào Pipeline xử lý tiếp
                             await DataIntegrator.processRecord(sourceName, rawTable, targetModel, rowData);
                         }
-
                     } catch (e) {
                         logger.error(`Error processing msg: ${e}`);
                     }
                 }
             );
-            
             resetIdleTimer();
         });
     });
 
     await Promise.all(promises);
-    logger.info(`✅ HOÀN TẤT PHASE.`);
+    // logger.info(`✅ HOÀN TẤT STREAM.`); 
 }
 
 async function main() {
@@ -189,10 +150,10 @@ async function main() {
         fs.mkdirSync(STAGING_DIR, { recursive: true });
     }
 
-    // 1. Reset bộ nhớ đệm
+    // 1. Reset bộ nhớ đệm MergeService
     MergeService.clear();
 
-    // 2. Kết nối RabbitMQ Stream
+    // 2. Kết nối RabbitMQ
     const client = await rabbit.connect({
         hostname: "localhost",
         port: 5552,
@@ -201,36 +162,54 @@ async function main() {
         vhost: "/"
     });
 
-    const streams = ["data_source1_kho_stream", "data_source2_web_stream"];
+    // [UPDATE] Tách riêng 2 stream để xử lý tuần tự
+    const streamSource1 = ["data_source1_kho_stream"];
+    const streamSource2 = ["data_source2_web_stream"];
 
-    logger.info("🔥 BẮT ĐẦU QUÁ TRÌNH INTEGRATION VỚI MERGE SERVICE...");
+    logger.info("🔥 BẮT ĐẦU QUÁ TRÌNH INTEGRATION...");
 
     // 3. CHẠY TUẦN TỰ TỪNG PHASE
     for (const phaseTables of PHASES) {
-        await consumePhase(client, streams, phaseTables);
+        logger.info(`\n=== ĐANG XỬ LÝ PHASE: [${phaseTables.join(", ")}] ===`);
+        
+        // [QUAN TRỌNG] Chạy Source 1 trước để nạp dữ liệu Gốc (Anchor)
+        logger.info(`>> Đang nạp dữ liệu gốc từ SOURCE 1...`);
+        await consumePhase(client, streamSource1, phaseTables);
+
+        // [QUAN TRỌNG] Sau đó mới chạy Source 2 để Gộp vào Source 1
+        logger.info(`>> Đang nạp và gộp dữ liệu từ SOURCE 2...`);
+        await consumePhase(client, streamSource2, phaseTables);
     }
 
-    // 4. XUẤT BÁO CÁO MERGE
-    logger.info("📊 Đang tạo báo cáo gộp dữ liệu (Merge Report)...");
+    // === XUẤT BÁO CÁO MERGE CHI TIẾT ===
+    logger.info("📊 Đang tạo báo cáo gộp dữ liệu chi tiết (Detailed Merge Report)...");
+    
     try {
-        const reportPath = path.join(ROOT_DIR, "resource", "data_csv", "MERGE_REPORT.csv");
+        const reportPath = path.join(ROOT_DIR, "resource", "data_csv", "MERGE_REPORT_DETAILED.csv");
         
         if (MergeService.mergeLogs.length > 0) {
             const csvData = stringify(MergeService.mergeLogs, {
                 header: true,
-                columns: ["TableName", "Source", "OriginalID", "OriginalName", "FinalName", "FinalID", "Status", "Score"]
+                columns: [
+                    "TableName", 
+                    "Match_Type", "Similarity_Score", 
+                    "Unified_ID",
+                    "Incoming_Source", "Incoming_ID", "Incoming_Name", 
+                    "Anchor_Source", "Anchor_ID", "Anchor_Name"        
+                ]
             });
             
             fs.writeFileSync(reportPath, csvData);
-            logger.info(`✅ Đã xuất báo cáo tại: ${reportPath}`);
+            logger.info(`✅ Đã xuất báo cáo chi tiết tại: ${reportPath}`);
         } else {
             logger.warn("⚠️ Không có dữ liệu nào được xử lý để báo cáo.");
         }
     } catch (err) {
         logger.error("❌ Lỗi khi ghi báo cáo:", err);
     }
+    // ==============================================
 
-    logger.info("🎉 TOÀN BỘ QUÁ TRÌNH TÍCH HỢP HOÀN TẤT.");
+    logger.info("🎉QUÁ TRÌNH XỬ LÝ HOÀN TẤT.");
     process.exit(0);
 }
 

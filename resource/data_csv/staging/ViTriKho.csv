@@ -1,11 +1,9 @@
 TenViTri,TrangThaiViTri,MaKho,MaVT
 TenViTri,TrangThaiViTri,,1
-Kệ A1,1,,2
-Kệ B2,1,,2
-Kệ HCM-01,1,,3
-Kệ DN-A,1,,4
-Kệ Lỗi $$,0,,2
-Kệ Thừa Space,1,,5
-Kệ A-02,1,,2
-Kệ B-02 $$$,0,,2
-Kệ C-Error,9,,2
+Kệ A-01,1,,2
+Kệ B-02 $$$,0,,6
+Kệ C-Error,9,,7
+Kệ HCM-01,1,,13
+Kệ DN-A,1,,15
+Kệ Lỗi $$,0,,16
+Kệ Thừa Space,1,,17

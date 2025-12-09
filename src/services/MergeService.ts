@@ -1,130 +1,153 @@
-// src/core/services/MergeService.ts
 import stringSimilarity from "string-similarity";
-import logger from "../utils/logger";
 
-// 1. Định nghĩa cấu trúc dòng Log (Thêm mới)
+// 1. Cấu trúc Log chi tiết hơn cho việc Tracking
 export interface IMergeLog {
     TableName: string;
-    Source: string;
-    OriginalID: string;
-    OriginalName: string;
-    FinalName: string;
-    FinalID: string;
-    Status: "NEW" | "MERGED_EXACT" | "MERGED_FUZZY";
-    Score: string; // Lưu dạng string cho dễ đọc (VD: "100%", "92%")
+    
+    // Thông tin bên SOURCE 1 (Gốc/Anchor)
+    Anchor_Source: string; // VD: SOURCE1
+    Anchor_ID: string;     // VD: 101 (ID của bản ghi gốc dùng để so sánh)
+    Anchor_Name: string;   // VD: "Samsung Vina"
+
+    // Thông tin bên SOURCE 2 (Bản ghi đang xử lý)
+    Incoming_Source: string; // VD: SOURCE2
+    Incoming_ID: string;     // VD: 555
+    Incoming_Name: string;   // VD: "Cty Sam sung"
+
+    // Kết quả gộp
+    Unified_ID: string;      // ID cuối cùng (VD: SOURCE1_101)
+    Match_Type: "NEW" | "EXACT" | "FUZZY";
+    Similarity_Score: string; // VD: "92.5%"
+}
+
+// Cấu trúc lưu trong RAM để nhớ "Ai là người tạo ra tên chuẩn này"
+interface INameMetadata {
+    standardName: string;
+    originalId: string;
+    sourceName: string;
 }
 
 export class MergeService {
-    // Kho chứa tên chuẩn: Map<TenBang, List<TenChuan>>
-    private static standardNames: Map<string, string[]> = new Map();
-
-    // Kho chứa bản đồ ID: Map<Key, UnifiedID>
+    // Map<TableName, Map<NormalizedName, Metadata>>
+    // Thay vì chỉ lưu mảng tên, ta lưu Map để tra cứu ngược lại ID gốc
+    private static cache: Map<string, Map<string, INameMetadata>> = new Map();
+    
+    // Map ID Mapping (Giữ nguyên)
     private static idMap: Map<string, string> = new Map();
+    
+    // Log Report
+    public static mergeLogs: IMergeLog[] = []; 
 
-    // 2. Thêm biến chứa Log để theo dõi quá trình gộp
-    public static mergeLogs: IMergeLog[] = [];
+    private static readonly THRESHOLD = 0.9;
 
-    // Ngưỡng giống nhau (85%)
-    private static readonly THRESHOLD = 0.85;
-
-    /**
-     * Xử lý chính: Chuẩn hóa Tên + Đăng ký ID mới + Ghi Log
-     */
     static processRecord(
-        tableName: string,   // Tên bảng chung (VD: SanPham)
-        sourceName: string,  // Nguồn (VD: SOURCE1)
-        oldId: string,       // ID trong CSV (VD: "1")
-        rawName: string      // Tên trong CSV (VD: "Samsung VN")
+        tableName: string,
+        sourceName: string,
+        incomingId: string,
+        rawName: string
     ): { newName: string; newId: string } {
         
-        const normalizedName = rawName.trim();
-        const lowerName = normalizedName.toLowerCase();
+        const normalizedInput = rawName.trim();
+        const lowerInput = normalizedInput.toLowerCase();
 
-        // --- A. XỬ LÝ TÊN (FUZZY MATCHING) ---
-        if (!this.standardNames.has(tableName)) {
-            this.standardNames.set(tableName, []);
+        // Khởi tạo cache cho bảng nếu chưa có
+        if (!this.cache.has(tableName)) {
+            this.cache.set(tableName, new Map());
         }
-        const nameList = this.standardNames.get(tableName)!;
+        const tableCache = this.cache.get(tableName)!;
 
-        let finalName = normalizedName;
-        let matchFound = false;
+        // Biến lưu kết quả
+        let finalName = normalizedInput;
+        let matchType: "NEW" | "EXACT" | "FUZZY" = "NEW";
+        let matchScore = 0;
         
-        // Biến theo dõi trạng thái gộp để ghi log
-        let status: "NEW" | "MERGED_EXACT" | "MERGED_FUZZY" = "NEW";
-        let score = 0;
+        // Biến lưu thông tin bản ghi gốc (Anchor) để tracking
+        let anchorMeta: INameMetadata | null = null;
 
-        // 1. Check chính xác
-        const exactMatch = nameList.find(n => n.toLowerCase() === lowerName);
-        
-        if (exactMatch) {
-            finalName = exactMatch;
-            matchFound = true;
-            status = "MERGED_EXACT";
-            score = 1; // 100%
+        // --- 1. SO KHỚP CHÍNH XÁC (EXACT MATCH) ---
+        if (tableCache.has(lowerInput)) {
+            anchorMeta = tableCache.get(lowerInput)!;
+            finalName = anchorMeta.standardName;
+            matchType = "EXACT";
+            matchScore = 1;
         } 
-        // 2. Check mờ (Fuzzy)
-        else if (nameList.length > 0) {
-            const best = stringSimilarity.findBestMatch(normalizedName, nameList).bestMatch;
+        // --- 2. SO KHỚP MỜ (FUZZY MATCH) ---
+        else if (tableCache.size > 0) {
+            // Lấy danh sách các tên đã có trong cache để so sánh
+            const existingNames = Array.from(tableCache.keys());
+            const best = stringSimilarity.findBestMatch(lowerInput, existingNames).bestMatch;
+
             if (best.rating >= this.THRESHOLD) {
-                finalName = best.target; // Dùng tên chuẩn cũ
-                matchFound = true;
-                status = "MERGED_FUZZY";
-                score = best.rating;
+                // Tìm thấy tên gần giống -> Lấy metadata của nó
+                anchorMeta = tableCache.get(best.target)!;
+                finalName = anchorMeta.standardName;
+                matchType = "FUZZY";
+                matchScore = best.rating;
             }
         }
 
-        // Nếu là tên mới toanh, lưu vào kho
-        if (!matchFound) {
-            nameList.push(normalizedName);
+        // --- 3. XỬ LÝ KẾT QUẢ ---
+        if (matchType === "NEW") {
+            // Nếu là mới -> Đóng vai trò là Anchor cho các bản ghi sau
+            const newMeta: INameMetadata = {
+                standardName: normalizedInput,
+                originalId: incomingId,
+                sourceName: sourceName
+            };
+            // Lưu vào cache
+            tableCache.set(lowerInput, newMeta);
+            anchorMeta = newMeta;
         }
 
-        // --- B. XỬ LÝ ID (ID MAPPING) ---
-        const unifiedKey = `${tableName}_NAME_${finalName.toLowerCase()}`;
+        // --- 4. TẠO ID THỐNG NHẤT (ID MAPPING) ---
+        // Logic: ID thống nhất luôn dựa trên ID của thằng Anchor (Người đến trước)
+        const unifiedKey = `${tableName}_UID_${finalName.toLowerCase()}`;
         let unifiedId = this.idMap.get(unifiedKey);
 
         if (!unifiedId) {
-            // Nếu chưa có ID cho tên này, tạo ID mới dựa trên Source và OldID
-            unifiedId = `${sourceName}_${oldId}`; 
+            // Tạo ID mới dựa trên Anchor
+            unifiedId = `${anchorMeta!.sourceName}_${anchorMeta!.originalId}`;
             this.idMap.set(unifiedKey, unifiedId);
         }
 
-        // Lưu map để dùng cho khóa ngoại: "LoaiHang_SOURCE2_5" -> "SOURCE1_1"
-        const specificKey = `${tableName}_${sourceName}_${oldId}`;
+        // Lưu mapping cho bản ghi hiện tại để dùng cho khóa ngoại sau này
+        const specificKey = `${tableName}_${sourceName}_${incomingId}`;
         this.idMap.set(specificKey, unifiedId);
 
-        // --- C. GHI LOG (Thêm mới) ---
+        // --- 5. GHI LOG REPORT CHI TIẾT ---
+        // Chỉ ghi log nếu đây là bản ghi đến sau (để thấy sự so sánh), hoặc ghi tất cả tùy bạn.
+        // Ở đây tôi ghi tất cả để bạn dễ debug.
         this.mergeLogs.push({
             TableName: tableName,
-            Source: sourceName,
-            OriginalID: oldId,
-            OriginalName: rawName,
-            FinalName: finalName,
-            FinalID: unifiedId,
-            Status: status,
-            Score: (score * 100).toFixed(1) + "%"
+            
+            // Thông tin bản ghi gốc mà nó khớp (Nếu là NEW thì chính là nó)
+            Anchor_Source: anchorMeta ? anchorMeta.sourceName : "N/A",
+            Anchor_ID: anchorMeta ? anchorMeta.originalId : "N/A",
+            Anchor_Name: anchorMeta ? anchorMeta.standardName : "N/A",
+
+            // Thông tin bản ghi đang xử lý
+            Incoming_Source: sourceName,
+            Incoming_ID: incomingId,
+            Incoming_Name: rawName,
+
+            // Kết quả
+            Unified_ID: unifiedId,
+            Match_Type: matchType,
+            Similarity_Score: (matchScore * 100).toFixed(1) + "%"
         });
 
         return { newName: finalName, newId: unifiedId };
     }
 
-    /**
-     * Dịch Khóa Ngoại: Đưa vào ID cũ (của bảng cha) -> Trả về ID mới (đã thống nhất)
-     */
-    static translateForeignKey(
-        parentTable: string, // Bảng cha (VD: LoaiHang)
-        sourceName: string,  // Nguồn hiện tại (VD: SOURCE2)
-        fkOldId: string      // ID khóa ngoại cũ (VD: "5")
-    ): string {
+    // (Giữ nguyên hàm translateForeignKey và clear)
+    static translateForeignKey(parentTable: string, sourceName: string, fkOldId: string): string {
         const key = `${parentTable}_${sourceName}_${fkOldId}`;
-        const unifiedId = this.idMap.get(key);
-        
-        // Nếu không tìm thấy (UnifiedID là undefined), trả về fkOldId ban đầu (fallback)
-        return unifiedId || fkOldId;
+        return this.idMap.get(key) || fkOldId;
     }
 
     static clear() {
-        this.standardNames.clear();
+        this.cache.clear();
         this.idMap.clear();
-        this.mergeLogs = []; // Reset log
+        this.mergeLogs = [];
     }
 }

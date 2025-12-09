@@ -1,8 +1,0 @@
-MaTK,TenDangNhap,MatKhau,HoTen,Email,SoDienThoai,LoaiTaiKhoan,NgayTao
-1,TenDangNhap,MatKhau,HoTen,Email,SoDienThoai,LoaiTaiKhoan,NgayTao
-2,admin,123456,Quản Trị Viên,admin@weblaptop.com,0909123456,1,2025-12-01 13:52:32.437
-3,user1,123456,Nguyễn Văn A,a@gmail.com,0909123001,2,2025-12-01 13:52:32.437
-11,user_dirty,123456,Nguyễn Văn @#$,dirty@gmail.com,0901113333,2,2025-12-01 13:52:32.437
-12,user_bad_email,123456,Trần Không Email,email_khong_hop_le_com,0901114444,2,2025-12-01 13:52:32.437
-13,user_fail_role,123456,User Sai Role,role@gmail.com,0900000000,3,2025-12-01 13:52:32.437
-14,user_null_name,123456,User Sai Role2,nullname@gmail.com,0900111222,2,2025-12-01 13:52:32.437
