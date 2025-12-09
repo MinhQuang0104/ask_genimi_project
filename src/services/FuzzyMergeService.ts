@@ -175,7 +175,7 @@ export class FuzzyMergeService {
         
         this.staging.log(`   [Web1_ChiTietHoaDon] Bắt đầu Ánh xạ ${webDetails.length} dòng.`);
 
-        const mappedTransactions = webDetails.map(item => {
+        const mappedTransactions = webDetails.map((item: WebProduct) => {
             const productMap = mapping.find(m => m.Entity === 'SAN_PHAM' && m.OriginalSource === 'WEB' && m.OriginalID === item.MaSP);
             
             if (productMap) {
