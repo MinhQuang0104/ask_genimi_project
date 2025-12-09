@@ -1,11 +1,8 @@
-MaDG,MaTK,MaSP,MaHD,DiemDanhGia,NoiDung,NgayDG,Id
-1,2,1,1,5,"Laptop chạy mượt, rất hài lòng!",2025-12-01 13:52:32.450,1
-2,3,3,2,4,"Hiệu năng ổn định, pin tốt.",2025-12-01 13:52:32.450,2
-3,4,5,3,5,"Cấu hình mạnh, render nhanh.",2025-12-01 13:52:32.450,3
-4,5,4,4,3,Ngoại hình đẹp nhưng hơi nóng.,2025-12-01 13:52:32.450,4
-5,2,2,5,5,"Máy mỏng nhẹ, màn hình cực đẹp.",2025-12-01 13:52:32.450,5
-1,1,Tiền mặt,32990000.00,3,2025-12-01 13:52:32.450,1
-2,2,Chuyển khoản,15990000.00,3,2025-12-01 13:52:32.450,2
-3,3,Thẻ tín dụng,49990000.00,2,2025-12-01 13:52:32.450,3
-4,4,Tiền mặt,13990000.00,1,2025-12-01 13:52:32.450,4
-5,5,MOMO,38990000.00,3,2025-12-01 13:52:32.450,5
+MaAnh,MaSP,Anh
+1,,images/asus_g15_main.jpg
+2,,images/asus_g15_side.jpg
+3,,images/dell_xps13_main.jpg
+4,,images/hp_pavilion15_main.jpg
+5,,images/acer_aspire7_main.jpg
+6,,images/logitech_g102.jpg
+7,,images/keychron_k2.jpg

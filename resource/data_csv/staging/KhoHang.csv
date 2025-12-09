@@ -1,7 +1,8 @@
-TenKho,DiaChiKho,Id
-Kho Hà Nội,"123 Nguyễn Trãi, Thanh Xuân, Hà Nội",1
-Kho TP.HCM,"45 Lý Thường Kiệt, Quận 10, TP.HCM",2
-Kho Đà Nẵng,"78 Lê Duẩn, Hải Châu, Đà Nẵng",3
-Kho Cần Thơ,"30/4 Ninh Kiều, Cần Thơ",4
-Kho Lỗi Trim,Địa chỉ chưa trim,5
-Kho Ảo !!!,Địa chỉ ảo,6
+TenKho,DiaChiKho,MaKho
+TenKho,DiaChiKho,1
+Kho Hà Nội,"123 Nguyễn Trãi, Thanh Xuân, Hà Nội",2
+Kho TP.HCM,"45 Lý Thường Kiệt, Quận 10, TP.HCM",3
+Kho Đà Nẵng,"78 Lê Duẩn, Hải Châu, Đà Nẵng",4
+Kho Cần Thơ,"30/4 Ninh Kiều, Cần Thơ",5
+Kho Lỗi Trim,Địa chỉ chưa trim,6
+Kho Ảo !!!,Địa chỉ ảo,7

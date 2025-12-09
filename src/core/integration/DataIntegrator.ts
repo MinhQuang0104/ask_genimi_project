@@ -187,14 +187,34 @@ export class DataIntegrator {
     }
 
     private static getPrimaryKey(model: string): string {
-        // Quy tắc đặt tên PK: "Ma" + TênModel (VD: MaSanPham, MaLoaiHang) hoặc check DB3
-        // Mapping đơn giản:
+        // Mapping từ @PrimaryGeneratedColumn decorators trong src/models:
         if (model === "LoaiHang") return "MaLoaiHang";
         if (model === "SanPham") return "MaSP";
         if (model === "NhaCungCap") return "MaNCC";
+        if (model === "KhoHang") return "MaKho";
+        if (model === "ViTriKho") return "MaVT";
         if (model === "KhuyenMai") return "MaKM";
+        if (model === "Thue") return "MaThue";
+        if (model === "AnhSanPham") return "MaAnh";
         if (model === "Web1_TaiKhoan") return "MaTK";
+        if (model === "Web1_SoDiaChi") return "MaDC";
         if (model === "Web1_HoaDon") return "MaHD";
+        if (model === "Web1_GioHang") return "MaGH";
+        if (model === "Web1_DanhGia") return "MaDG";
+        if (model === "Web1_ChiTietHoaDon") return "MaCTHD";
+        if (model === "Web1_ThanhToan") return "MaTT";
+        if (model === "Web1_LichSuDonHang") return "MaLSDH";
+        if (model === "Kho1_TonKho") return "MaTK";
+        if (model === "Kho1_TonKhoChiTiet") return "MaTKCT";
+        if (model === "Kho1_PhieuNhap") return "MaPN";
+        if (model === "Kho1_ChiTietPhieuNhap") return "MaCTPN";
+        if (model === "Kho1_PhieuXuat") return "MaPX";
+        if (model === "Kho1_ChiTietPhieuXuat") return "MaCTPX";
+        if (model === "Kho1_VanDon") return "MaVD";
+        if (model === "Kho1_PhieuKiemKe") return "MaKK";
+        if (model === "Kho1_ChiTietKiemKe") return "MaCTKK";
+        if (model === "Kho1_PhieuTraHang") return "MaPTH";
+        if (model === "Kho1_ChiTietTraHang") return "MaCTPTH";
         // Default fallback
         return "Id"; 
     }

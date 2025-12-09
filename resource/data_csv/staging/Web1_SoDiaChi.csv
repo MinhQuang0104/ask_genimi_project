@@ -1,4 +1,5 @@
-MaDC,MaTK,TenNguoiNhan,SoDienThoaiNguoiNhan,DiaChiChiTiet,LaMacDinh,Id
-1,2,Nguyễn Văn A,0909123001,"123 Lê Lợi, Q.1, TP.HCM",1,1
-3,2,Lê Văn C,0909123003,"78 Nguyễn Huệ, Q.1, TP.HCM",1,3
-4,2,Phạm Thị D,0909123004,"12 Lê Thường Kiệt, Q.5, TP.HCM",1,4
+MaDC,MaTK,TenNguoiNhan,SoDienThoaiNguoiNhan,DiaChiChiTiet,LaMacDinh
+1,,TenNguoiNhan,SoDienThoaiNguoiNhan,DiaChiChiTiet,LaMacDinh
+2,,Nguyễn Văn A,0909123001,"123 Lê Lợi, Q.1, TP.HCM",1
+4,,Lê Văn C,0909123003,"78 Nguyễn Huệ, Q.1, TP.HCM",1
+5,,Phạm Thị D,0909123004,"12 Lê Thường Kiệt, Q.5, TP.HCM",1

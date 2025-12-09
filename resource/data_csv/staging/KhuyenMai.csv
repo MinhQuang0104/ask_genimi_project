@@ -1,9 +1,4 @@
-MaHD,MaKM,GiaTriDaGiam
-1,1,3299000.00
-2,2,799500.00
-3,3,2000000.00
-4,4,2098500.00
-5,5,3119200.00
+MaKM,TenKM,MaCode,LoaiKM,GiaTriGiam,NgayBatDau,NgayKetThuc,DieuKienApDung,SoLuongPhatHanh,SoLuongDaDung
 1,Giảm 10% Black Friday,BF2025,1,10.00,2025-11-01 00:00:00.000,2025-11-30 00:00:00.000,Áp dụng cho tất cả sản phẩm.,100,0
 2,Giảm 5% Sinh Viên,STUDENT5,1,5.00,2025-10-01 00:00:00.000,2025-12-31 00:00:00.000,Dành cho tài khoản sinh viên.,200,0
 3,Giảm 2 triệu cho đơn > 20 triệu,SALE20M,2,2000000.00,2025-11-01 00:00:00.000,2025-11-15 00:00:00.000,Áp dụng đơn hàng trên 20 triệu.,50,0

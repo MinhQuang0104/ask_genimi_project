@@ -1,0 +1,6 @@
+MaVD,MaHD,MaKhoXuat,MaPX,NgayKhoiTao,TrangThaiVanDon,GhiChu
+1,,MaKhoXuat,,NgayKhoiTao,TrangThaiVanDon,GhiChu
+2,,1,1,2025-11-05 00:00:00.000,1,Giao hàng nhanh
+3,,2,2,2025-11-06 00:00:00.000,1,Giao bình thường
+4,,3,3,2025-11-15 00:00:00.000,2,Đã giao thành công
+5,,1,,2025-11-20 00:00:00.000,9,Trạng thái sai
