@@ -8,4 +8,5 @@ export interface IValidationError {
 export class ValidationResult {
     isValid: boolean = true;
     errors: IValidationError[] = [];
+    validationsApplied: string[] = [];
 }

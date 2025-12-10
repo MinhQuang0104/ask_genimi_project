@@ -1,0 +1,5 @@
+MaTK,TenDangNhap,MatKhau,HoTen,Email,SoDienThoai,LoaiTaiKhoan,NgayTao
+2,admin,123456,QunTrVin,admin@weblaptop.com,0909123456,1,1764571952437
+3,user1,123456,NguynVnA,a@gmail.com,0909123001,2,1764571952437
+11,userdirty,123456,NguynVn,dirty@gmail.com,0901113333,2,1764571952437
+14,usernullname,123456,UserSaiRole2,nullname@gmail.com,0900111222,2,1764571952437

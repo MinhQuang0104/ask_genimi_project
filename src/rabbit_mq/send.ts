@@ -7,7 +7,6 @@ import logger from "../utils/logger";
 // ---------------------------
 // PATH CONFIG
 // ---------------------------
-// Lưu offset vào src/config/...
 const OFFSET_DIR = path.join(__dirname, "../config/rabbitMQ_config/offset");
 
 // [FIX] data_csv nằm ở root (ngoài src), nên cần ../..
@@ -98,28 +97,39 @@ async function sendDataSource(client: rabbit.Client, sourceName: string, sourceP
 async function main() {
   logger.info("🚀 STARTING RABBITMQ PRODUCER...");
 
-  const client = await rabbit.connect({
-    hostname: "localhost",
-    port: 5552,
-    username: "guest",
-    password: "guest",
-    vhost: "/"
-  });
+  try {
+    const client = await rabbit.connect({
+      hostname: "localhost",
+      port: 5552,
+      username: "guest",
+      password: "guest",
+      vhost: "/"
+    });
 
-  const dataSources = [
-    { name: "data_source1_kho", path: DATA_SOURCE_DIR_1 },
-    { name: "data_source2_web", path: DATA_SOURCE_DIR_2 },
-  ];
+    logger.info("✅ Kết nối RabbitMQ thành công!");
 
-  for (const ds of dataSources) {
-    await sendDataSource(client, ds.name, ds.path);
+    const dataSources = [
+      { name: "data_source1_kho", path: DATA_SOURCE_DIR_1 },
+      { name: "data_source2_web", path: DATA_SOURCE_DIR_2 },
+    ];
+
+    for (const ds of dataSources) {
+      await sendDataSource(client, ds.name, ds.path);
+    }
+
+    await client.close();
+    logger.info("✅ Đã gửi xong tất cả dữ liệu!");
+  } catch (err: any) {
+    logger.error("❌ Lỗi RabbitMQ:", {
+      message: err.message,
+      code: err.code,
+      stack: err.stack
+    });
+    process.exit(1);
   }
-
-  await client.close();
-  logger.info("Đã gửi xong tất cả dữ liệu!");
 }
 
-main().catch((err) => {
-  logger.error("Lỗi Fatal khi gửi RabbitMQ:", err);
+main().catch(err => {
+  logger.error("Fatal Error:", err);
   process.exit(1);
 });

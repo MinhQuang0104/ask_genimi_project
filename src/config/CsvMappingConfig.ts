@@ -46,9 +46,8 @@ export const CSV_CONFIG: Record<string, IModelConfig> = {
     // ========================================================================
     // PHASE 2: PRODUCT DATA
     // ========================================================================
-    "SOURCE1_SanPham": { idIndex: 0, nameIndex: 1, targetModel: "SanPham", foreignKeys: [{ colIndex: 2, parentModel: "LoaiHang" }] },
-    // "SOURCE2_Website_SanPham": { idIndex: 0, nameIndex: 1, targetModel: "SanPham", foreignKeys: [{ colIndex: 2, parentModel: "LoaiHang" }] },
-    "SOURCE2_MatHang": { idIndex: 0, nameIndex: 1, targetModel: "SanPham", foreignKeys: [{ colIndex: 2, parentModel: "LoaiHang" }] },
+    "SOURCE1_MatHang": { idIndex: 0, nameIndex: 1, targetModel: "SanPham", foreignKeys: [{ colIndex: 2, parentModel: "LoaiHang" }] },
+    "SOURCE2_SanPham": { idIndex: 0, nameIndex: 1, targetModel: "SanPham", foreignKeys: [{ colIndex: 2, parentModel: "LoaiHang" }] },
     
     "SOURCE1_AnhSanPham": { idIndex: 0, nameIndex: [0,1], targetModel: "AnhSanPham", foreignKeys: [{ colIndex: 1, parentModel: "SanPham" }] },
     "SOURCE1_SanPham_Thue": { idIndex: 0, nameIndex: 0, targetModel: "SanPham_Thue", foreignKeys: [{ colIndex: 0, parentModel: "SanPham" }, { colIndex: 1, parentModel: "Thue" }] },

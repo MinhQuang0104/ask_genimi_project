@@ -51,6 +51,46 @@ ViTriKho,NEW,0.0%,SOURCE2_3,SOURCE2,ViTriKho,3,3 - 2 - K? B-01,SOURCE2,ViTriKho,
 ViTriKho,NEW,0.0%,SOURCE2_4,SOURCE2,ViTriKho,4,4 - 2 - K? B-02,SOURCE2,ViTriKho,4,4 - 2 - K? B-02
 ViTriKho,NEW,0.0%,SOURCE2_5,SOURCE2,ViTriKho,5,5 - 1 -   K? B-02 $$$  ,SOURCE2,ViTriKho,5,5 - 1 -   K? B-02 $$$
 ViTriKho,NEW,0.0%,SOURCE2_6,SOURCE2,ViTriKho,6,6 - 1 - K? C-Error,SOURCE2,ViTriKho,6,6 - 1 - K? C-Error
+SanPham,NEW,0.0%,SOURCE1_1,SOURCE1,MatHang,1,IPhone 14,SOURCE1,MatHang,1,IPhone 14
+SanPham,NEW,0.0%,SOURCE1_2,SOURCE1,MatHang,2,MacBook Pro,SOURCE1,MatHang,2,MacBook Pro
+SanPham,NEW,0.0%,SOURCE1_3,SOURCE1,MatHang,3,Samsung S23 Ultra,SOURCE1,MatHang,3,Samsung S23 Ultra
+SanPham,NEW,0.0%,SOURCE1_4,SOURCE1,MatHang,4,Dell XPS 15,SOURCE1,MatHang,4,Dell XPS 15
+SanPham,NEW,0.0%,SOURCE1_5,SOURCE1,MatHang,5,Chu?t Logitech,SOURCE1,MatHang,5,Chu?t Logitech
+SanPham,NEW,0.0%,SOURCE1_6,SOURCE1,MatHang,6,Tai nghe AirPods 3,SOURCE1,MatHang,6,Tai nghe AirPods 3
+SanPham,NEW,0.0%,SOURCE1_7,SOURCE1,MatHang,7,Bn phm co Keychron,SOURCE1,MatHang,7,Bn phm co Keychron
+SanPham,NEW,0.0%,SOURCE1_8,SOURCE1,MatHang,8,T? l?nh Samsung 300L,SOURCE1,MatHang,8,T? l?nh Samsung 300L
+SanPham,NEW,0.0%,SOURCE1_9,SOURCE1,MatHang,9,My gi?t LG Inverter,SOURCE1,MatHang,9,My gi?t LG Inverter
+SanPham,NEW,0.0%,SOURCE1_10,SOURCE1,MatHang,10,N?i com di?n Sharp,SOURCE1,MatHang,10,N?i com di?n Sharp
+SanPham,NEW,0.0%,SOURCE1_11,SOURCE1,MatHang,11,  o Thun L?i  ,SOURCE1,MatHang,11,o Thun L?i
+SanPham,NEW,0.0%,SOURCE1_12,SOURCE1,MatHang,12,Giy Nike $$*,SOURCE1,MatHang,12,Giy Nike $$*
+SanPham,NEW,0.0%,SOURCE1_13,SOURCE1,MatHang,13,S?n ph?m Gi m,SOURCE1,MatHang,13,S?n ph?m Gi m
+SanPham,NEW,0.0%,SOURCE1_14,SOURCE1,MatHang,14,S?n ph?m T?n m,SOURCE1,MatHang,14,S?n ph?m T?n m
+SanPham,NEW,0.0%,SOURCE1_15,SOURCE1,MatHang,15,Laptop ASUS ROG Strix G15,SOURCE1,MatHang,15,Laptop ASUS ROG Strix G15
+SanPham,NEW,0.0%,SOURCE1_16,SOURCE1,MatHang,16,HP Pavilion 15 inch,SOURCE1,MatHang,16,HP Pavilion 15 inch
+SanPham,EXACT,100.0%,SOURCE1_4,SOURCE1,MatHang,17,Dell xps 15,SOURCE1,MatHang,4,Dell XPS 15
+SanPham,NEW,0.0%,SOURCE1_18,SOURCE1,MatHang,18,Man hinh ViewSonic 24 inch,SOURCE1,MatHang,18,Man hinh ViewSonic 24 inch
+SanPham,NEW,0.0%,SOURCE1_19,SOURCE1,MatHang,19,Ban phim Filco,SOURCE1,MatHang,19,Ban phim Filco
+SanPham,NEW,0.0%,SOURCE2_1,SOURCE2,SanPham,1,Asus ROG Strix G15,SOURCE2,SanPham,1,Asus ROG Strix G15
+SanPham,NEW,0.0%,SOURCE2_2,SOURCE2,SanPham,2,Dell XPS 13,SOURCE2,SanPham,2,Dell XPS 13
+SanPham,NEW,0.0%,SOURCE2_3,SOURCE2,SanPham,3,HP Pavilion 15,SOURCE2,SanPham,3,HP Pavilion 15
+SanPham,NEW,0.0%,SOURCE2_4,SOURCE2,SanPham,4,Acer Aspire 7,SOURCE2,SanPham,4,Acer Aspire 7
+SanPham,NEW,0.0%,SOURCE2_5,SOURCE2,SanPham,5,MSI Creator Z16,SOURCE2,SanPham,5,MSI Creator Z16
+SanPham,NEW,0.0%,SOURCE2_6,SOURCE2,SanPham,6,Chu?t Logitech G102,SOURCE2,SanPham,6,Chu?t Logitech G102
+SanPham,NEW,0.0%,SOURCE2_7,SOURCE2,SanPham,7,Bn phm Keychron K2,SOURCE2,SanPham,7,Bn phm Keychron K2
+SanPham,NEW,0.0%,SOURCE2_8,SOURCE2,SanPham,8,Mn hnh LG UltraGear 27,SOURCE2,SanPham,8,Mn hnh LG UltraGear 27
+SanPham,NEW,0.0%,SOURCE2_9,SOURCE2,SanPham,9,Tai nghe HyperX Cloud II,SOURCE2,SanPham,9,Tai nghe HyperX Cloud II
+SanPham,NEW,0.0%,SOURCE2_10,SOURCE2,SanPham,10,Lenovo ThinkPad ***$$$,SOURCE2,SanPham,10,Lenovo ThinkPad ***$$$
+SanPham,NEW,0.0%,SOURCE2_11,SOURCE2,SanPham,11,Laptop L?i Gi,SOURCE2,SanPham,11,Laptop L?i Gi
+SanPham,NEW,0.0%,SOURCE2_12,SOURCE2,SanPham,12,Laptop T?n m,SOURCE2,SanPham,12,Laptop T?n m
+SanPham,NEW,0.0%,SOURCE2_13,SOURCE2,SanPham,13,  Laptop Spacer  ,SOURCE2,SanPham,13,Laptop Spacer
+SanPham,EXACT,100.0%,SOURCE1_1,SOURCE2,SanPham,14,iPhone 14,SOURCE1,MatHang,1,IPhone 14
+SanPham,EXACT,100.0%,SOURCE1_2,SOURCE2,SanPham,15,MacBook Pro,SOURCE1,MatHang,2,MacBook Pro
+SanPham,EXACT,100.0%,SOURCE1_4,SOURCE2,SanPham,16,Dell xps 15,SOURCE1,MatHang,4,Dell XPS 15
+SanPham,NEW,0.0%,SOURCE2_17,SOURCE2,SanPham,17,Apple iPhone 14,SOURCE2,SanPham,17,Apple iPhone 14
+SanPham,NEW,0.0%,SOURCE2_18,SOURCE2,SanPham,18,Samsung Galaxy S23 Ultra,SOURCE2,SanPham,18,Samsung Galaxy S23 Ultra
+SanPham,NEW,0.0%,SOURCE2_19,SOURCE2,SanPham,19,Chuot Logitech Master MX3,SOURCE2,SanPham,19,Chuot Logitech Master MX3
+SanPham,EXACT,100.0%,SOURCE1_4,SOURCE2,SanPham,20,Dell XPS 15,SOURCE1,MatHang,4,Dell XPS 15
+SanPham,NEW,0.0%,SOURCE2_21,SOURCE2,SanPham,21,May anh Sony A7IV,SOURCE2,SanPham,21,May anh Sony A7IV
 Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_﻿MaCTNH,SOURCE1,ChiTietNhapHang,﻿MaCTNH,﻿MaCTNH,SOURCE1,ChiTietNhapHang,﻿MaCTNH,MaCTNH
 Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_1,SOURCE1,ChiTietNhapHang,1,1,SOURCE1,ChiTietNhapHang,1,1
 Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_2,SOURCE1,ChiTietNhapHang,2,2,SOURCE1,ChiTietNhapHang,2,2
@@ -106,7 +146,6 @@ Web1_HoaDon,NEW,0.0%,SOURCE2_1,SOURCE2,HoaDon,1,1 - 0909123001 - Nguy?n Van A,SO
 Web1_HoaDon,NEW,0.0%,SOURCE2_2,SOURCE2,HoaDon,2,2 - 0909123002 - Tr?n Th? B,SOURCE2,HoaDon,2,2 - 0909123002 - Tr?n Th? B
 Web1_HoaDon,NEW,0.0%,SOURCE2_3,SOURCE2,HoaDon,3,3 - 0909123003 - L� Van C,SOURCE2,HoaDon,3,3 - 0909123003 - L� Van C
 Web1_HoaDon,NEW,0.0%,SOURCE2_4,SOURCE2,HoaDon,4,4 - 0909123004 - Ph?m Th? D,SOURCE2,HoaDon,4,4 - 0909123004 - Ph?m Th? D
-Web1_HoaDon,FUZZY,95.5%,SOURCE2_1,SOURCE2,HoaDon,5,5 - 0909123001 - Nguy?n Van A,SOURCE2,HoaDon,1,1 - 0909123001 - Nguy?n Van A
 Web1_HoaDon,NEW,0.0%,SOURCE2_6,SOURCE2,HoaDon,6,6 - 0909123006 - �? Th? F,SOURCE2,HoaDon,6,6 - 0909123006 - �? Th? F
 Web1_HoaDon,NEW,0.0%,SOURCE2_7,SOURCE2,HoaDon,7,7 - 0909123007 - B�i Van G,SOURCE2,HoaDon,7,7 - 0909123007 - B�i Van G
 Web1_HoaDon,NEW,0.0%,SOURCE2_8,SOURCE2,HoaDon,8,8 - 0909123008 - L� Th? H,SOURCE2,HoaDon,8,8 - 0909123008 - L� Th? H

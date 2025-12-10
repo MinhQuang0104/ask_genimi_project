@@ -5,3 +5,4 @@ export * from './TransformationHandler';
 export * from './CsvSaveHandler';
 export * from './DeduplicationHandler';
 export * from './SqlSaveHandler';
+export * from './ReportHandler';

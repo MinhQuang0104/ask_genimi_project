@@ -14,14 +14,17 @@ export class Validator<T> {
                 for (const ruleItem of rules) {
                     const { strategy, args } = ruleItem;
                     const value = (instance as any)[key];
+                    const ruleName = strategy.constructor.name.replace('Strategy', '');
                     
+                    // Ghi lại tất cả các rule đã được áp dụng
+                    result.validationsApplied.push(`${key}: ${ruleName}`);
+
                     if (!strategy.validate(value, ...args)) {
                         result.isValid = false;
                         result.errors.push({
                             property: key,
                             value: value,
-                            // Lấy tên class của Strategy làm tên Rule (VD: MinLengthStrategy -> MinLength)
-                            rule: strategy.constructor.name.replace('Strategy', ''), 
+                            rule: ruleName, 
                             message: strategy.errorMessage(key, ...args)
                         });
                     }

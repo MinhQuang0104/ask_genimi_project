@@ -42,6 +42,42 @@ export class CsvReader {
         }
     }
 
+    // Method mới: Đọc toàn bộ nội dung file vào mảng
+    async readAllRecords(tableName: string): Promise<any[]> {
+        const fileName = `${tableName}.csv`;
+        const filePath = path.join(this.folderPath, fileName);
+
+        if (!fs.existsSync(filePath)) {
+            logger.warn(`⚠️ File không tồn tại, không thể đọc: ${fileName}`);
+            return [];
+        }
+        
+        return new Promise((resolve, reject) => {
+            const records: any[] = [];
+            const stream = fs.createReadStream(filePath)
+                .pipe(parse({
+                    columns: true,
+                    trim: true,
+                    skip_empty_lines: true,
+                    bom: true,
+                    relax_column_count: true,
+                    skip_records_with_error: true
+                }));
+            
+            stream.on('data', (record) => {
+                records.push(record);
+            });
+            stream.on('end', () => {
+                logger.info(`✅ Đã đọc xong ${records.length} bản ghi từ file: ${fileName}`);
+                resolve(records);
+            });
+            stream.on('error', (err) => {
+                logger.error(`❌ Lỗi khi đọc file ${fileName}:`, err);
+                reject(err);
+            });
+        });
+    }
+
     // [HELPER] Tách logic đọc stream ra để tái sử dụng
     private async *streamFile(fileName: string): AsyncGenerator<{ tableName: string, data: any }> {
         const tableName = path.parse(fileName).name;

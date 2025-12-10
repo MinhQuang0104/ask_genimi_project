@@ -5,6 +5,7 @@
 export const SOURCE_HEADERS: Record<string, string[]> = {
   // =============== DATASOURCE 1 : KHO ==================
   SOURCE1_LoaiHang: ["MaLoaiHang", "TenLoaiHang"],
+  SOURCE1_SanPham: ["MaSP", "TenSP", "MaDM", "MoTaChiTiet", "GiaBan", "SoLuongTon", "NhaSanXuat"],
   SOURCE1_MatHang: ["MaSP", "TenSP", "MaLoaiHang", "SoLuong", "GiaNhap", "GiaBan", "TrangThai"],
   SOURCE1_KhoHang: ["MaKho", "TenKho", "DiaChiKho"],
   SOURCE1_ViTriKho: ["MaVT", "MaKho", "TenViTri", "TrangThaiViTri"],

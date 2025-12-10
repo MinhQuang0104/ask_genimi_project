@@ -1,16 +1,29 @@
-TenSP,GiaBan,SoLuongTon,MoTaChiTiet,NhaSanXuat,MaLoaiHang,MaSP
-Asus ROG Strix G15,32990000,10,Laptop gaming v?i CPU Ryzen 7 v� GPU RTX 4060.,ASUS,,1
-Dell XPS 13,38990000,8,"Laptop m?ng nh? cao c?p, m�n h�nh 13 inch 4K.",Dell,,2
-HP Pavilion 15,15990000,15,"Laptop van ph�ng hi?u nang t?t, pin b?n.",HP,,3
-Acer Aspire 7,13990000,12,Laptop h?c t?p v� l�m vi?c da d?ng.,Acer,,4
-MSI Creator Z16,49990000,5,D�nh cho d�n d? h?a v?i GPU RTX 4070.,MSI,,5
-Chu?t Logitech G102,400000,50,"Chu?t qu?c d�n, led RGB.",Logitech,,6
-B�n ph�m Keychron K2,1900000,20,B�n ph�m co kh�ng d�y layout 75%.,Keychron,,7
-M�n h�nh LG UltraGear 27,8500000,10,M�n h�nh 2K 144Hz.,LG,,8
-Tai nghe HyperX Cloud II,1500000,25,Tai nghe gaming �m thanh v�m 7.1.,HyperX,,9
-Lenovo ThinkPad ***$$$,25000000,10,B?n b?.,Lenovo,,10
-Laptop L?i Gi�,-5000000,5,Test gi� �m,Dell,,11
-Laptop T?n �m,10000000,-10,Test t?n kho �m,HP,,12
-Laptop Spacer,20000000,5,T�n th?a kho?ng tr?ng,Asus,,13
-iPhone 14,8500000,5,�i?n thoai,Apple,,14
-MacBook Pro,8500001,6,Laptop,Apple,,15
+TenSP,GiaBan,GiaNhap,SoLuongTon,TrangThai,MaLoaiHang,MaSP
+IPhone 14,25000000,20000000,4,1,2,1
+MacBook Pro,35000000,30000000,5,1,4,2
+Samsung S23 Ultra,28000000,22000000,10,1,2,3
+Dell XPS 15,32000000,28000000,3,1,4,4
+Chu?t Logitech,700000,500000,6,1,5,5
+Tai nghe AirPods 3,4200000,3500000,15,1,5,6
+Bn phm co Keychron,2200000,1800000,8,1,5,7
+T? l?nh Samsung 300L,10000000,8000000,2,1,1,8
+My gi?t LG Inverter,9500000,7500000,4,1,1,9
+N?i com di?n Sharp,1800000,1200000,20,1,3,10
+o Thun L?i,150000,100000,6,1,6,11
+Giy Nike $$*,2500000,2000000,6,1,6,12
+S?n ph?m Gi m,100000,-50000,5,1,7,13
+Laptop ASUS ROG Strix G15,32990000,30000000,10,1,4,15
+HP Pavilion 15 inch,15990000,15000000,20,1,4,16
+Man hinh ViewSonic 24 inch,4500000,3500000,30,1,5,17
+Ban phim Filco,3800000,3000000,15,1,5,18
+Acer Aspire 7,13990000,12,Laptop h?c t?p v lm vi?c da d?ng.,Acer,,22
+MSI Creator Z16,49990000,5,Dnh cho dn d? h?a v?i GPU RTX 4070.,MSI,,23
+Bn phm Keychron K2,1900000,20,Bn phm co khng dy layout 75%.,Keychron,,25
+Mn hnh LG UltraGear 27,8500000,10,Mn hnh 2K 144Hz.,LG,,26
+Tai nghe HyperX Cloud II,1500000,25,Tai nghe gaming m thanh vm 7.1.,HyperX,,27
+Lenovo ThinkPad ***$$$,25000000,10,B?n b?.,Lenovo,,28
+Laptop L?i Gi,-5000000,5,Test gi m,Dell,,29
+Laptop Spacer,20000000,5,Tn th?a kho?ng tr?ng,Asus,,31
+Apple iPhone 14,24000000,100,Dien thoai cao cap a,Apple,,35
+Chuot Logitech Master MX3,2100000,80,Chuot van phong cao cap,Logitech,,37
+May anh Sony A7IV,55000000,12,May anh full-frame a,Sony,,38

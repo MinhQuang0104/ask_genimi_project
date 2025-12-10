@@ -1,17 +1,22 @@
 MaSP,TenSP,MaDM,MoTaChiTiet,GiaBan,SoLuongTon,NhaSanXuat
-1,Asus ROG Strix G15,1,Laptop gaming v?i CPU Ryzen 7 và GPU RTX 4060.,32990000,10,ASUS
-2,Dell XPS 13,5,"Laptop m?ng nh? cao c?p, màn hình 13 inch 4K.",38990000,8,Dell
-3,HP Pavilion 15,2,"Laptop van phòng hi?u nang t?t, pin b?n.",15990000,15,HP
-4,Acer Aspire 7,4,Laptop h?c t?p và làm vi?c da d?ng.,13990000,12,Acer
-5,MSI Creator Z16,3,Dành cho dân d? h?a v?i GPU RTX 4070.,49990000,5,MSI
-6,Chu?t Logitech G102,6,"Chu?t qu?c dân, led RGB.",400000,50,Logitech
-7,Bàn phím Keychron K2,7,Bàn phím co không dây layout 75%.,1900000,20,Keychron
-8,Màn hình LG UltraGear 27,8,Màn hình 2K 144Hz.,8500000,10,LG
-9,Tai nghe HyperX Cloud II,6,Tai nghe gaming âm thanh vòm 7.1.,1500000,25,HyperX
+1,Asus ROG Strix G15,1,Laptop gaming v?i CPU Ryzen 7 v GPU RTX 4060.,32990000,10,ASUS
+2,Dell XPS 13,5,"Laptop m?ng nh? cao c?p, mn hnh 13 inch 4K.",38990000,8,Dell
+3,HP Pavilion 15,2,"Laptop van phng hi?u nang t?t, pin b?n.",15990000,15,HP
+4,Acer Aspire 7,4,Laptop h?c t?p v lm vi?c da d?ng.,13990000,12,Acer
+5,MSI Creator Z16,3,Dnh cho dn d? h?a v?i GPU RTX 4070.,49990000,5,MSI
+6,Chu?t Logitech G102,6,"Chu?t qu?c dn, led RGB.",400000,50,Logitech
+7,Bn phm Keychron K2,7,Bn phm co khng dy layout 75%.,1900000,20,Keychron
+8,Mn hnh LG UltraGear 27,8,Mn hnh 2K 144Hz.,8500000,10,LG
+9,Tai nghe HyperX Cloud II,6,Tai nghe gaming m thanh vm 7.1.,1500000,25,HyperX
 10,Lenovo ThinkPad ***$$$,2,B?n b?.,25000000,10,Lenovo
-11,Laptop L?i Giá,2,Test giá âm,-5000000,5,Dell
-12,Laptop T?n Âm,4,Test t?n kho âm,10000000,-10,HP
-13,  Laptop Spacer  ,1,Tên th?a kho?ng tr?ng,20000000,5,Asus
-14,iPhone 14,9,Ði?n thoai,8500000,5,Apple
+11,Laptop L?i Gi,2,Test gi m,-5000000,5,Dell
+12,Laptop T?n m,4,Test t?n kho m,10000000,-10,HP
+13,  Laptop Spacer  ,1,Tn th?a kho?ng tr?ng,20000000,5,Asus
+14,iPhone 14,9,i?n thoai,8500000,5,Apple
 15,MacBook Pro,10,Laptop,8500001,6,Apple
 16,Dell xps 15,10,Laptop,8500002,7,Dell
+17,Apple iPhone 14,9,"Dien thoai cao cap a",24000000,100,Apple
+18,Samsung Galaxy S23 Ultra,9,"Flagship cua Samsung",27000000,50,Samsung
+19,Chuot Logitech Master MX3,6,"Chuot van phong cao cap",2100000,80,Logitech
+20,Dell XPS 15,10,"Laptop cho doanh nhan",31500000,8,Dell
+21,May anh Sony A7IV,11,"May anh full-frame a",55000000,12,Sony

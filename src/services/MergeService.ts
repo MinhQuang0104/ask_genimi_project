@@ -1,5 +1,4 @@
 import stringSimilarity from "string-similarity";
-
 // 1. Cấu trúc Log chi tiết
 export interface IMergeLog {
     TargetModel: string; // Tên bảng đích (DB3)
@@ -21,7 +20,6 @@ export interface IMergeLog {
     Match_Type: "NEW" | "EXACT" | "FUZZY";
     Similarity_Score: string; 
 }
-
 // Cấu trúc lưu trong RAM
 interface INameMetadata {
     standardName: string;
@@ -29,7 +27,6 @@ interface INameMetadata {
     sourceName: string;
     refTableName: string;
 }
-
 export class MergeService {
     private static cache: Map<string, Map<string, INameMetadata>> = new Map();
     private static idMap: Map<string, string> = new Map();
@@ -37,7 +34,6 @@ export class MergeService {
 
     private static readonly THRESHOLD = 0.9;
 
-    // [QUAN TRỌNG] Hàm này có 5 tham số
     static processRecord(
         targetModel: string,   // 1. Model đích (VD: SanPham)
         sourceName: string,    // 2. Nguồn (VD: SOURCE1)
