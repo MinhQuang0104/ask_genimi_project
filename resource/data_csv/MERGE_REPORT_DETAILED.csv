@@ -1,163 +1,129 @@
-TableName,Match_Type,Similarity_Score,Unified_ID,Incoming_Source,Incoming_ID,Incoming_Name,Anchor_Source,Anchor_ID,Anchor_Name
-LoaiHang,NEW,0.00%,SOURCE1_?MaDM,SOURCE1,?MaDM,TenDM,SOURCE1,?MaDM,TenDM
-LoaiHang,NEW,0.00%,SOURCE1_1,SOURCE1,1,Laptop Gaming,SOURCE1,1,Laptop Gaming
-LoaiHang,NEW,0.00%,SOURCE1_2,SOURCE1,2,Laptop Van Phòng,SOURCE1,2,Laptop Van Phòng
-LoaiHang,NEW,0.00%,SOURCE1_3,SOURCE1,3,Laptop Ð? H?a,SOURCE1,3,Laptop Ð? H?a
-LoaiHang,NEW,0.00%,SOURCE1_4,SOURCE1,4,Laptop Sinh Viên,SOURCE1,4,Laptop Sinh Viên
-LoaiHang,NEW,0.00%,SOURCE1_5,SOURCE1,5,Laptop Cao C?p,SOURCE1,5,Laptop Cao C?p
-LoaiHang,NEW,0.00%,SOURCE1_6,SOURCE1,6,Ph? Ki?n Chu?t,SOURCE1,6,Ph? Ki?n Chu?t
-LoaiHang,NEW,0.00%,SOURCE1_7,SOURCE1,7,Ph? Ki?n Bàn Phím,SOURCE1,7,Ph? Ki?n Bàn Phím
-LoaiHang,NEW,0.00%,SOURCE1_8,SOURCE1,8,Màn Hình,SOURCE1,8,Màn Hình
-KhuyenMai,NEW,0.00%,SOURCE1_?MaKM,SOURCE1,?MaKM,TenKM,SOURCE1,?MaKM,TenKM
-KhuyenMai,NEW,0.00%,SOURCE1_1,SOURCE1,1,Gi?m 10% Black Friday,SOURCE1,1,Gi?m 10% Black Friday
-KhuyenMai,NEW,0.00%,SOURCE1_2,SOURCE1,2,Gi?m 5% Sinh Viên,SOURCE1,2,Gi?m 5% Sinh Viên
-KhuyenMai,NEW,0.00%,SOURCE1_3,SOURCE1,3,Gi?m 2 tri?u cho don > 20 tri?u,SOURCE1,3,Gi?m 2 tri?u cho don > 20 tri?u
-KhuyenMai,NEW,0.00%,SOURCE1_4,SOURCE1,4,Gi?m 15% Laptop Gaming,SOURCE1,4,Gi?m 15% Laptop Gaming
-KhuyenMai,NEW,0.00%,SOURCE1_5,SOURCE1,5,Voucher Noel,SOURCE1,5,Voucher Noel
-KhuyenMai,NEW,0.00%,SOURCE1_6,SOURCE1,6,Voucher H?t H?n,SOURCE1,6,Voucher H?t H?n
-NhaCungCap,NEW,0.00%,SOURCE1_?MaNCC,SOURCE1,?MaNCC,TenNCC,SOURCE1,?MaNCC,TenNCC
-NhaCungCap,NEW,0.00%,SOURCE1_1,SOURCE1,1,Công ty TNHH Phân Ph?i FPT,SOURCE1,1,Công ty TNHH Phân Ph?i FPT
-NhaCungCap,NEW,0.00%,SOURCE1_2,SOURCE1,2,Digiworld,SOURCE1,2,Digiworld
-NhaCungCap,NEW,0.00%,SOURCE1_3,SOURCE1,3,Công ty PSD,SOURCE1,3,Công ty PSD
-NhaCungCap,NEW,0.00%,SOURCE1_4,SOURCE1,4,Vi?n Son,SOURCE1,4,Vi?n Son
-NhaCungCap,NEW,0.00%,SOURCE1_5,SOURCE1,5,H?i Anh Computer,SOURCE1,5,H?i Anh Computer
-NhaCungCap,NEW,0.00%,SOURCE1_6,SOURCE1,6,Samsung Vina @#$,SOURCE1,6,Samsung Vina @#$
-NhaCungCap,NEW,0.00%,SOURCE1_7,SOURCE1,7,   LG Electronics   ,SOURCE1,7,LG Electronics
-Thue,NEW,0.00%,SOURCE1_?MaThue,SOURCE1,?MaThue,TenThue,SOURCE1,?MaThue,TenThue
-Thue,NEW,0.00%,SOURCE1_1,SOURCE1,1,VAT 10%,SOURCE1,1,VAT 10%
-Thue,NEW,0.00%,SOURCE1_2,SOURCE1,2,VAT 5%,SOURCE1,2,VAT 5%
-Thue,NEW,0.00%,SOURCE1_3,SOURCE1,3,Không Thu?,SOURCE1,3,Không Thu?
-Thue,NEW,0.00%,SOURCE1_4,SOURCE1,4,Thu? Nh?p Kh?u 15%,SOURCE1,4,Thu? Nh?p Kh?u 15%
-Thue,NEW,0.00%,SOURCE1_5,SOURCE1,5,Thu? Ð?c Bi?t 20%,SOURCE1,5,Thu? Ð?c Bi?t 20%
-Thue,NEW,0.00%,SOURCE1_6,SOURCE1,6,Thu? Sai Range,SOURCE1,6,Thu? Sai Range
-Thue,NEW,0.00%,SOURCE1_7,SOURCE1,7,  Thu? Ký T? @  ,SOURCE1,7,Thu? Ký T? @
-ViTriKho,NEW,0.00%,SOURCE1_?MaVT,SOURCE1,?MaVT,?MaVT - MaKho - TenViTri,SOURCE1,?MaVT,MaVT - MaKho - TenViTri
-ViTriKho,NEW,0.00%,SOURCE1_1,SOURCE1,1,1 - 1 - K? A-01,SOURCE1,1,1 - 1 - K? A-01
-ViTriKho,NEW,0.00%,SOURCE1_2,SOURCE1,2,2 - 1 - K? A-02,SOURCE1,2,2 - 1 - K? A-02
-ViTriKho,NEW,0.00%,SOURCE1_3,SOURCE1,3,3 - 2 - K? B-01,SOURCE1,3,3 - 2 - K? B-01
-ViTriKho,NEW,0.00%,SOURCE1_4,SOURCE1,4,4 - 2 - K? B-02,SOURCE1,4,4 - 2 - K? B-02
-ViTriKho,NEW,0.00%,SOURCE1_5,SOURCE1,5,5 - 1 -   K? B-02 $$$  ,SOURCE1,5,5 - 1 -   K? B-02 $$$
-ViTriKho,NEW,0.00%,SOURCE1_6,SOURCE1,6,6 - 1 - K? C-Error,SOURCE1,6,6 - 1 - K? C-Error
-KhoHang,NEW,0.00%,SOURCE2_?MaKho,SOURCE2,?MaKho,TenKho,SOURCE2,?MaKho,TenKho
-KhoHang,NEW,0.00%,SOURCE2_1,SOURCE2,1,Kho Hà N?i,SOURCE2,1,Kho Hà N?i
-KhoHang,NEW,0.00%,SOURCE2_2,SOURCE2,2,Kho TP.HCM,SOURCE2,2,Kho TP.HCM
-KhoHang,NEW,0.00%,SOURCE2_3,SOURCE2,3,Kho Ðà N?ng,SOURCE2,3,Kho Ðà N?ng
-KhoHang,NEW,0.00%,SOURCE2_4,SOURCE2,4,Kho C?n Tho,SOURCE2,4,Kho C?n Tho
-KhoHang,NEW,0.00%,SOURCE2_5,SOURCE2,5,  Kho L?i Trim  ,SOURCE2,5,Kho L?i Trim
-KhoHang,NEW,0.00%,SOURCE2_6,SOURCE2,6,Kho ?o !!!,SOURCE2,6,Kho ?o !!!
-LoaiHang,NEW,0.00%,SOURCE2_?MaLoaiHang,SOURCE2,?MaLoaiHang,TenLoaiHang,SOURCE2,?MaLoaiHang,TenLoaiHang
-LoaiHang,NEW,0.00%,SOURCE2_5,SOURCE2,5,Ði?n l?nh,SOURCE2,5,Ði?n l?nh
-LoaiHang,NEW,0.00%,SOURCE2_1,SOURCE2,1,Ði?n tho?i,SOURCE2,1,Ði?n tho?i
-LoaiHang,NEW,0.00%,SOURCE2_4,SOURCE2,4,Gia d?ng,SOURCE2,4,Gia d?ng
-LoaiHang,NEW,0.00%,SOURCE2_2,SOURCE2,2,Laptop,SOURCE2,2,Laptop
-LoaiHang,NEW,0.00%,SOURCE2_3,SOURCE2,3,Ph? ki?n,SOURCE2,3,Ph? ki?n
-LoaiHang,NEW,0.00%,SOURCE2_6,SOURCE2,6,Th?i trang,SOURCE2,6,Th?i trang
-LoaiHang,NEW,0.00%,SOURCE2_7,SOURCE2,7,Van phòng ph?m,SOURCE2,7,Van phòng ph?m
-NhaCungCap,EXACT,100.00%,SOURCE1_?MaNCC,SOURCE2,?MaNCC,TenNCC,SOURCE1,?MaNCC,TenNCC
-NhaCungCap,NEW,0.00%,SOURCE2_1,SOURCE2,1,Công ty Apple VN,SOURCE2,1,Công ty Apple VN
-NhaCungCap,NEW,0.00%,SOURCE2_2,SOURCE2,2,Công ty Dell VN,SOURCE2,2,Công ty Dell VN
-NhaCungCap,NEW,0.00%,SOURCE2_3,SOURCE2,3,Samsung Vina,SOURCE2,3,Samsung Vina
-NhaCungCap,EXACT,100.00%,SOURCE1_7,SOURCE2,4,LG Electronics,SOURCE1,7,LG Electronics
-NhaCungCap,NEW,0.00%,SOURCE2_5,SOURCE2,5,Logitech Distributor,SOURCE2,5,Logitech Distributor
-NhaCungCap,NEW,0.00%,SOURCE2_6,SOURCE2,6,NCC Ký T? @#,SOURCE2,6,NCC Ký T? @#
-NhaCungCap,NEW,0.00%,SOURCE2_7,SOURCE2,7,  NCC Space  ,SOURCE2,7,NCC Space
-ViTriKho,EXACT,100.00%,SOURCE1_?MaVT,SOURCE2,?MaVT,?MaVT - MaKho - TenViTri,SOURCE1,?MaVT,MaVT - MaKho - TenViTri
-ViTriKho,NEW,0.00%,SOURCE2_1,SOURCE2,1,1 - 1 - K? A1,SOURCE2,1,1 - 1 - K? A1
-ViTriKho,NEW,0.00%,SOURCE2_2,SOURCE2,2,2 - 1 - K? A2,SOURCE2,2,2 - 1 - K? A2
-ViTriKho,NEW,0.00%,SOURCE2_3,SOURCE2,3,3 - 1 - K? B1,SOURCE2,3,3 - 1 - K? B1
-ViTriKho,NEW,0.00%,SOURCE2_4,SOURCE2,4,4 - 1 - K? B2,SOURCE2,4,4 - 1 - K? B2
-ViTriKho,NEW,0.00%,SOURCE2_5,SOURCE2,5,5 - 2 - K? HCM-01,SOURCE2,5,5 - 2 - K? HCM-01
-ViTriKho,NEW,0.00%,SOURCE2_6,SOURCE2,6,6 - 2 - K? HCM-02,SOURCE2,6,6 - 2 - K? HCM-02
-ViTriKho,NEW,0.00%,SOURCE2_7,SOURCE2,7,7 - 3 - K? DN-A,SOURCE2,7,7 - 3 - K? DN-A
-ViTriKho,NEW,0.00%,SOURCE2_8,SOURCE2,8,8 - 1 - K? L?i $$,SOURCE2,8,8 - 1 - K? L?i $$
-ViTriKho,NEW,0.00%,SOURCE2_9,SOURCE2,9,9 - 4 -   K? Th?a Space  ,SOURCE2,9,9 - 4 -   K? Th?a Space
-AnhSanPham,NEW,0.00%,SOURCE1_?MaAnh,SOURCE1,?MaAnh,?MaAnh - MaSP,SOURCE1,?MaAnh,MaAnh - MaSP
-AnhSanPham,NEW,0.00%,SOURCE1_1,SOURCE1,1,1-Jan,SOURCE1,1,1-Jan
-AnhSanPham,NEW,0.00%,SOURCE1_2,SOURCE1,2,1-Feb,SOURCE1,2,1-Feb
-AnhSanPham,NEW,0.00%,SOURCE1_3,SOURCE1,3,2-Mar,SOURCE1,3,2-Mar
-AnhSanPham,NEW,0.00%,SOURCE1_4,SOURCE1,4,3-Apr,SOURCE1,4,3-Apr
-AnhSanPham,NEW,0.00%,SOURCE1_5,SOURCE1,5,4-May,SOURCE1,5,4-May
-AnhSanPham,NEW,0.00%,SOURCE1_6,SOURCE1,6,6-Jun,SOURCE1,6,6-Jun
-AnhSanPham,NEW,0.00%,SOURCE1_7,SOURCE1,7,7-Jul,SOURCE1,7,7-Jul
-SanPham,NEW,0.00%,SOURCE1_?MaSP,SOURCE1,?MaSP,TenSP,SOURCE1,?MaSP,TenSP
-SanPham,NEW,0.00%,SOURCE1_1,SOURCE1,1,Asus ROG Strix G15,SOURCE1,1,Asus ROG Strix G15
-SanPham,NEW,0.00%,SOURCE1_2,SOURCE1,2,Dell XPS 13,SOURCE1,2,Dell XPS 13
-SanPham,NEW,0.00%,SOURCE1_3,SOURCE1,3,HP Pavilion 15,SOURCE1,3,HP Pavilion 15
-SanPham,NEW,0.00%,SOURCE1_4,SOURCE1,4,Acer Aspire 7,SOURCE1,4,Acer Aspire 7
-SanPham,NEW,0.00%,SOURCE1_5,SOURCE1,5,MSI Creator Z16,SOURCE1,5,MSI Creator Z16
-SanPham,NEW,0.00%,SOURCE1_6,SOURCE1,6,Chu?t Logitech G102,SOURCE1,6,Chu?t Logitech G102
-SanPham,NEW,0.00%,SOURCE1_7,SOURCE1,7,Bàn phím Keychron K2,SOURCE1,7,Bàn phím Keychron K2
-SanPham,NEW,0.00%,SOURCE1_8,SOURCE1,8,Màn hình LG UltraGear 27,SOURCE1,8,Màn hình LG UltraGear 27
-SanPham,NEW,0.00%,SOURCE1_9,SOURCE1,9,Tai nghe HyperX Cloud II,SOURCE1,9,Tai nghe HyperX Cloud II
-SanPham,NEW,0.00%,SOURCE1_10,SOURCE1,10,Lenovo ThinkPad ***$$$,SOURCE1,10,Lenovo ThinkPad ***$$$
-SanPham,NEW,0.00%,SOURCE1_11,SOURCE1,11,Laptop L?i Giá,SOURCE1,11,Laptop L?i Giá
-SanPham,NEW,0.00%,SOURCE1_12,SOURCE1,12,Laptop T?n Âm,SOURCE1,12,Laptop T?n Âm
-SanPham,NEW,0.00%,SOURCE1_13,SOURCE1,13,  Laptop Spacer  ,SOURCE1,13,Laptop Spacer
-SanPham_Thue,NEW,0.00%,SOURCE1_?MaSP,SOURCE1,?MaSP,?MaSP,SOURCE1,?MaSP,MaSP
-SanPham_Thue,NEW,0.00%,SOURCE1_1,SOURCE1,1,1,SOURCE1,1,1
-SanPham_Thue,NEW,0.00%,SOURCE1_2,SOURCE1,2,2,SOURCE1,2,2
-SanPham_Thue,NEW,0.00%,SOURCE1_3,SOURCE1,3,3,SOURCE1,3,3
-SanPham_Thue,NEW,0.00%,SOURCE1_4,SOURCE1,4,4,SOURCE1,4,4
-SanPham_Thue,NEW,0.00%,SOURCE1_5,SOURCE1,5,5,SOURCE1,5,5
-SanPham_Thue,NEW,0.00%,SOURCE1_6,SOURCE1,6,6,SOURCE1,6,6
-SanPham_Thue,NEW,0.00%,SOURCE1_7,SOURCE1,7,7,SOURCE1,7,7
-SanPham_Thue,NEW,0.00%,SOURCE1_8,SOURCE1,8,8,SOURCE1,8,8
-SanPham,EXACT,100.00%,SOURCE1_?MaSP,SOURCE2,?MaSP,TenSP,SOURCE1,?MaSP,TenSP
-SanPham,NEW,0.00%,SOURCE2_1,SOURCE2,1,iPhone 14,SOURCE2,1,iPhone 14
-SanPham,NEW,0.00%,SOURCE2_2,SOURCE2,2,MacBook Pro,SOURCE2,2,MacBook Pro
-SanPham,NEW,0.00%,SOURCE2_3,SOURCE2,3,Samsung S23 Ultra,SOURCE2,3,Samsung S23 Ultra
-SanPham,NEW,0.00%,SOURCE2_4,SOURCE2,4,Dell XPS 15,SOURCE2,4,Dell XPS 15
-SanPham,NEW,0.00%,SOURCE2_5,SOURCE2,5,Chu?t Logitech,SOURCE2,5,Chu?t Logitech
-SanPham,NEW,0.00%,SOURCE2_6,SOURCE2,6,Tai nghe AirPods 3,SOURCE2,6,Tai nghe AirPods 3
-SanPham,NEW,0.00%,SOURCE2_7,SOURCE2,7,Bàn phím co Keychron,SOURCE2,7,Bàn phím co Keychron
-SanPham,NEW,0.00%,SOURCE2_8,SOURCE2,8,T? l?nh Samsung 300L,SOURCE2,8,T? l?nh Samsung 300L
-SanPham,NEW,0.00%,SOURCE2_9,SOURCE2,9,Máy gi?t LG Inverter,SOURCE2,9,Máy gi?t LG Inverter
-SanPham,NEW,0.00%,SOURCE2_10,SOURCE2,10,N?i com di?n Sharp,SOURCE2,10,N?i com di?n Sharp
-SanPham,NEW,0.00%,SOURCE2_11,SOURCE2,11,  Áo Thun L?i  ,SOURCE2,11,Áo Thun L?i
-SanPham,NEW,0.00%,SOURCE2_12,SOURCE2,12,Giày Nike $$*,SOURCE2,12,Giày Nike $$*
-SanPham,NEW,0.00%,SOURCE2_13,SOURCE2,13,S?n ph?m Giá Âm,SOURCE2,13,S?n ph?m Giá Âm
-SanPham,NEW,0.00%,SOURCE2_14,SOURCE2,14,S?n ph?m T?n Âm,SOURCE2,14,S?n ph?m T?n Âm
-Kho1_ChiTietPhieuNhap,NEW,0.00%,SOURCE1_?MaCTNH,SOURCE1,?MaCTNH,?MaCTNH,SOURCE1,?MaCTNH,MaCTNH
-Kho1_ChiTietPhieuNhap,NEW,0.00%,SOURCE1_1,SOURCE1,1,1,SOURCE1,1,1
-Kho1_ChiTietPhieuNhap,NEW,0.00%,SOURCE1_2,SOURCE1,2,2,SOURCE1,2,2
-Kho1_ChiTietPhieuNhap,NEW,0.00%,SOURCE1_3,SOURCE1,3,3,SOURCE1,3,3
-Kho1_ChiTietPhieuNhap,NEW,0.00%,SOURCE1_4,SOURCE1,4,4,SOURCE1,4,4
-Kho1_ChiTietPhieuNhap,NEW,0.00%,SOURCE1_5,SOURCE1,5,5,SOURCE1,5,5
-Kho1_ChiTietPhieuNhap,NEW,0.00%,SOURCE1_6,SOURCE1,6,6,SOURCE1,6,6
-Kho1_PhieuNhap,NEW,0.00%,SOURCE1_?MaPN,SOURCE1,?MaPN,?MaPN,SOURCE1,?MaPN,MaPN
-Kho1_PhieuNhap,NEW,0.00%,SOURCE1_1,SOURCE1,1,1,SOURCE1,1,1
-Kho1_PhieuNhap,NEW,0.00%,SOURCE1_2,SOURCE1,2,2,SOURCE1,2,2
-Kho1_PhieuNhap,NEW,0.00%,SOURCE1_3,SOURCE1,3,3,SOURCE1,3,3
-Kho1_PhieuNhap,NEW,0.00%,SOURCE1_4,SOURCE1,4,4,SOURCE1,4,4
-Kho1_PhieuNhap,NEW,0.00%,SOURCE1_5,SOURCE1,5,5,SOURCE1,5,5
-Kho1_TonKho,NEW,0.00%,SOURCE1_?MaSP,SOURCE1,?MaSP,?MaSP,SOURCE1,?MaSP,MaSP
-Kho1_TonKho,NEW,0.00%,SOURCE1_1,SOURCE1,1,1,SOURCE1,1,1
-Kho1_TonKho,NEW,0.00%,SOURCE1_2,SOURCE1,2,2,SOURCE1,2,2
-Kho1_TonKho,NEW,0.00%,SOURCE1_3,SOURCE1,3,3,SOURCE1,3,3
-Kho1_TonKho,NEW,0.00%,SOURCE1_4,SOURCE1,4,4,SOURCE1,4,4
-Kho1_TonKho,NEW,0.00%,SOURCE1_5,SOURCE1,5,5,SOURCE1,5,5
-Kho1_TonKho,NEW,0.00%,SOURCE1_6,SOURCE1,6,6,SOURCE1,6,6
-Kho1_ChiTietKiemKe,NEW,0.00%,SOURCE2_?MaKK,SOURCE2,?MaKK,?MaKK,SOURCE2,?MaKK,MaKK
-Kho1_ChiTietKiemKe,NEW,0.00%,SOURCE2_1,SOURCE2,1,1,SOURCE2,1,1
-Kho1_ChiTietKiemKe,EXACT,100.00%,SOURCE2_1,SOURCE2,1,1,SOURCE2,1,1
-Kho1_ChiTietKiemKe,NEW,0.00%,SOURCE2_2,SOURCE2,2,2,SOURCE2,2,2
-Kho1_ChiTietKiemKe,NEW,0.00%,SOURCE2_3,SOURCE2,3,3,SOURCE2,3,3
-Kho1_ChiTietPhieuXuat,NEW,0.00%,SOURCE2_?MaPX,SOURCE2,?MaPX,?MaPX,SOURCE2,?MaPX,MaPX
-Kho1_ChiTietPhieuXuat,NEW,0.00%,SOURCE2_1,SOURCE2,1,1,SOURCE2,1,1
-Kho1_ChiTietPhieuXuat,EXACT,100.00%,SOURCE2_1,SOURCE2,1,1,SOURCE2,1,1
-Kho1_ChiTietPhieuXuat,NEW,0.00%,SOURCE2_2,SOURCE2,2,2,SOURCE2,2,2
-Kho1_ChiTietPhieuXuat,NEW,0.00%,SOURCE2_3,SOURCE2,3,3,SOURCE2,3,3
-Kho1_PhieuKiemKe,NEW,0.00%,SOURCE2_?MaKK,SOURCE2,?MaKK,?MaKK,SOURCE2,?MaKK,MaKK
-Kho1_PhieuKiemKe,NEW,0.00%,SOURCE2_1,SOURCE2,1,1,SOURCE2,1,1
-Kho1_PhieuKiemKe,NEW,0.00%,SOURCE2_2,SOURCE2,2,2,SOURCE2,2,2
-Kho1_PhieuKiemKe,NEW,0.00%,SOURCE2_3,SOURCE2,3,3,SOURCE2,3,3
-Kho1_PhieuXuat,NEW,0.00%,SOURCE2_?MaPX,SOURCE2,?MaPX,?MaPX,SOURCE2,?MaPX,MaPX
-Kho1_PhieuXuat,NEW,0.00%,SOURCE2_1,SOURCE2,1,1,SOURCE2,1,1
-Kho1_PhieuXuat,NEW,0.00%,SOURCE2_2,SOURCE2,2,2,SOURCE2,2,2
-Kho1_PhieuXuat,NEW,0.00%,SOURCE2_3,SOURCE2,3,3,SOURCE2,3,3
-Kho1_PhieuXuat,NEW,0.00%,SOURCE2_4,SOURCE2,4,4,SOURCE2,4,4
-Kho1_VanDon,NEW,0.00%,SOURCE2_?MaVD,SOURCE2,?MaVD,MaHD,SOURCE2,?MaVD,MaHD
-Kho1_VanDon,NEW,0.00%,SOURCE2_1,SOURCE2,1,1,SOURCE2,1,1
-Kho1_VanDon,NEW,0.00%,SOURCE2_2,SOURCE2,2,2,SOURCE2,2,2
-Kho1_VanDon,NEW,0.00%,SOURCE2_3,SOURCE2,3,3,SOURCE2,3,3
-Kho1_VanDon,NEW,0.00%,SOURCE2_4,SOURCE2,4,99,SOURCE2,4,99
+TargetModel,Match_Type,Similarity_Score,Unified_ID,Incoming_Source,Incoming_RefTable,Incoming_ID,Incoming_Name,Anchor_Source,Anchor_RefTable,Anchor_ID,Anchor_Name
+NhaCungCap,NEW,0.0%,SOURCE1_ï»¿MaNCC,SOURCE1,NhaCungCap,ï»¿MaNCC,TenNCC,SOURCE1,NhaCungCap,ï»¿MaNCC,TenNCC
+NhaCungCap,NEW,0.0%,SOURCE1_1,SOURCE1,NhaCungCap,1,CÃ´ng ty Apple VN,SOURCE1,NhaCungCap,1,CÃ´ng ty Apple VN
+NhaCungCap,NEW,0.0%,SOURCE1_2,SOURCE1,NhaCungCap,2,CÃ´ng ty Dell VN,SOURCE1,NhaCungCap,2,CÃ´ng ty Dell VN
+NhaCungCap,NEW,0.0%,SOURCE1_3,SOURCE1,NhaCungCap,3,Samsung Vina,SOURCE1,NhaCungCap,3,Samsung Vina
+NhaCungCap,NEW,0.0%,SOURCE1_4,SOURCE1,NhaCungCap,4,LG Electronics,SOURCE1,NhaCungCap,4,LG Electronics
+NhaCungCap,NEW,0.0%,SOURCE1_5,SOURCE1,NhaCungCap,5,Logitech Distributor,SOURCE1,NhaCungCap,5,Logitech Distributor
+NhaCungCap,NEW,0.0%,SOURCE1_6,SOURCE1,NhaCungCap,6,NCC KÃ½ Tá»± @#,SOURCE1,NhaCungCap,6,NCC KÃ½ Tá»± @#
+NhaCungCap,NEW,0.0%,SOURCE1_7,SOURCE1,NhaCungCap,7,  NCC Space  ,SOURCE1,NhaCungCap,7,NCC Space
+ViTriKho,NEW,0.0%,SOURCE1_ï»¿MaVT,SOURCE1,ViTriKho,ï»¿MaVT,ï»¿MaVT - MaKho - TenViTri,SOURCE1,ViTriKho,ï»¿MaVT,MaVT - MaKho - TenViTri
+ViTriKho,NEW,0.0%,SOURCE1_1,SOURCE1,ViTriKho,1,1 - 1 - Ká»‡ A1,SOURCE1,ViTriKho,1,1 - 1 - Ká»‡ A1
+ViTriKho,NEW,0.0%,SOURCE1_2,SOURCE1,ViTriKho,2,2 - 1 - Ká»‡ A2,SOURCE1,ViTriKho,2,2 - 1 - Ká»‡ A2
+ViTriKho,NEW,0.0%,SOURCE1_3,SOURCE1,ViTriKho,3,3 - 1 - Ká»‡ B1,SOURCE1,ViTriKho,3,3 - 1 - Ká»‡ B1
+ViTriKho,NEW,0.0%,SOURCE1_4,SOURCE1,ViTriKho,4,4 - 1 - Ká»‡ B2,SOURCE1,ViTriKho,4,4 - 1 - Ká»‡ B2
+ViTriKho,NEW,0.0%,SOURCE1_5,SOURCE1,ViTriKho,5,5 - 2 - Ká»‡ HCM-01,SOURCE1,ViTriKho,5,5 - 2 - Ká»‡ HCM-01
+ViTriKho,NEW,0.0%,SOURCE1_6,SOURCE1,ViTriKho,6,6 - 2 - Ká»‡ HCM-02,SOURCE1,ViTriKho,6,6 - 2 - Ká»‡ HCM-02
+ViTriKho,NEW,0.0%,SOURCE1_7,SOURCE1,ViTriKho,7,7 - 3 - Ká»‡ DN-A,SOURCE1,ViTriKho,7,7 - 3 - Ká»‡ DN-A
+ViTriKho,NEW,0.0%,SOURCE1_8,SOURCE1,ViTriKho,8,8 - 1 - Ká»‡ Lá»—i $$,SOURCE1,ViTriKho,8,8 - 1 - Ká»‡ Lá»—i $$
+ViTriKho,NEW,0.0%,SOURCE1_9,SOURCE1,ViTriKho,9,9 - 4 -   Ká»‡ Thá»«a Space  ,SOURCE1,ViTriKho,9,9 - 4 -   Ká»‡ Thá»«a Space
+NhaCungCap,EXACT,100.0%,SOURCE1_ï»¿MaNCC,SOURCE2,NhaCungCap,ï»¿MaNCC,TenNCC,SOURCE1,NhaCungCap,ï»¿MaNCC,TenNCC
+NhaCungCap,NEW,0.0%,SOURCE2_1,SOURCE2,NhaCungCap,1,CÃ´ng ty TNHH PhÃ¢n Phá»‘i FPT,SOURCE2,NhaCungCap,1,CÃ´ng ty TNHH PhÃ¢n Phá»‘i FPT
+NhaCungCap,NEW,0.0%,SOURCE2_2,SOURCE2,NhaCungCap,2,Digiworld,SOURCE2,NhaCungCap,2,Digiworld
+NhaCungCap,NEW,0.0%,SOURCE2_3,SOURCE2,NhaCungCap,3,CÃ´ng ty PSD,SOURCE2,NhaCungCap,3,CÃ´ng ty PSD
+NhaCungCap,NEW,0.0%,SOURCE2_4,SOURCE2,NhaCungCap,4,Viá»…n SÆ¡n,SOURCE2,NhaCungCap,4,Viá»…n SÆ¡n
+NhaCungCap,NEW,0.0%,SOURCE2_5,SOURCE2,NhaCungCap,5,Háº£i Anh Computer,SOURCE2,NhaCungCap,5,Háº£i Anh Computer
+NhaCungCap,NEW,0.0%,SOURCE2_6,SOURCE2,NhaCungCap,6,Samsung Vina @#$,SOURCE2,NhaCungCap,6,Samsung Vina @#$
+NhaCungCap,EXACT,100.0%,SOURCE1_4,SOURCE2,NhaCungCap,7,   LG Electronics   ,SOURCE1,NhaCungCap,4,LG Electronics
+Web1_SoDiaChi,NEW,0.0%,SOURCE2_ï»¿MaDC,SOURCE2,SoDiaChi,ï»¿MaDC,TenNguoiNhan,SOURCE2,SoDiaChi,ï»¿MaDC,TenNguoiNhan
+Web1_SoDiaChi,NEW,0.0%,SOURCE2_1,SOURCE2,SoDiaChi,1,Nguyá»…n VÄƒn A,SOURCE2,SoDiaChi,1,Nguyá»…n VÄƒn A
+Web1_SoDiaChi,NEW,0.0%,SOURCE2_2,SOURCE2,SoDiaChi,2,Tráº§n Thá»‹ B,SOURCE2,SoDiaChi,2,Tráº§n Thá»‹ B
+Web1_SoDiaChi,NEW,0.0%,SOURCE2_3,SOURCE2,SoDiaChi,3,LÃª VÄƒn C,SOURCE2,SoDiaChi,3,LÃª VÄƒn C
+Web1_SoDiaChi,NEW,0.0%,SOURCE2_4,SOURCE2,SoDiaChi,4,Pháº¡m Thá»‹ D,SOURCE2,SoDiaChi,4,Pháº¡m Thá»‹ D
+Web1_SoDiaChi,EXACT,100.0%,SOURCE2_1,SOURCE2,SoDiaChi,5,Nguyá»…n VÄƒn A,SOURCE2,SoDiaChi,1,Nguyá»…n VÄƒn A
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_ï»¿MaTK,SOURCE2,TaiKhoan,ï»¿MaTK,TenDangNhap,SOURCE2,TaiKhoan,ï»¿MaTK,TenDangNhap
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_1,SOURCE2,TaiKhoan,1,admin,SOURCE2,TaiKhoan,1,admin
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_2,SOURCE2,TaiKhoan,2,user1,SOURCE2,TaiKhoan,2,user1
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_3,SOURCE2,TaiKhoan,3,user2,SOURCE2,TaiKhoan,3,user2
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_4,SOURCE2,TaiKhoan,4,user3,SOURCE2,TaiKhoan,4,user3
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_5,SOURCE2,TaiKhoan,5,user4,SOURCE2,TaiKhoan,5,user4
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_6,SOURCE2,TaiKhoan,6,user5,SOURCE2,TaiKhoan,6,user5
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_7,SOURCE2,TaiKhoan,7,user6,SOURCE2,TaiKhoan,7,user6
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_8,SOURCE2,TaiKhoan,8,user7,SOURCE2,TaiKhoan,8,user7
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_9,SOURCE2,TaiKhoan,9,user8,SOURCE2,TaiKhoan,9,user8
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_10,SOURCE2,TaiKhoan,10,  user_dirty  ,SOURCE2,TaiKhoan,10,user_dirty
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_11,SOURCE2,TaiKhoan,11,user_bad_email,SOURCE2,TaiKhoan,11,user_bad_email
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_12,SOURCE2,TaiKhoan,12,user_fail_role,SOURCE2,TaiKhoan,12,user_fail_role
+Web1_TaiKhoan,NEW,0.0%,SOURCE2_13,SOURCE2,TaiKhoan,13,user_null_name,SOURCE2,TaiKhoan,13,user_null_name
+ViTriKho,NEW,0.0%,SOURCE2_1,SOURCE2,ViTriKho,1,1 - 1 - K? A-01,SOURCE2,ViTriKho,1,1 - 1 - K? A-01
+ViTriKho,NEW,0.0%,SOURCE2_2,SOURCE2,ViTriKho,2,2 - 1 - K? A-02,SOURCE2,ViTriKho,2,2 - 1 - K? A-02
+ViTriKho,NEW,0.0%,SOURCE2_3,SOURCE2,ViTriKho,3,3 - 2 - K? B-01,SOURCE2,ViTriKho,3,3 - 2 - K? B-01
+ViTriKho,NEW,0.0%,SOURCE2_4,SOURCE2,ViTriKho,4,4 - 2 - K? B-02,SOURCE2,ViTriKho,4,4 - 2 - K? B-02
+ViTriKho,NEW,0.0%,SOURCE2_5,SOURCE2,ViTriKho,5,5 - 1 -   K? B-02 $$$  ,SOURCE2,ViTriKho,5,5 - 1 -   K? B-02 $$$
+ViTriKho,NEW,0.0%,SOURCE2_6,SOURCE2,ViTriKho,6,6 - 1 - K? C-Error,SOURCE2,ViTriKho,6,6 - 1 - K? C-Error
+Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_ï»¿MaCTNH,SOURCE1,ChiTietNhapHang,ï»¿MaCTNH,ï»¿MaCTNH,SOURCE1,ChiTietNhapHang,ï»¿MaCTNH,MaCTNH
+Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_1,SOURCE1,ChiTietNhapHang,1,1,SOURCE1,ChiTietNhapHang,1,1
+Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_2,SOURCE1,ChiTietNhapHang,2,2,SOURCE1,ChiTietNhapHang,2,2
+Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_3,SOURCE1,ChiTietNhapHang,3,3,SOURCE1,ChiTietNhapHang,3,3
+Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_4,SOURCE1,ChiTietNhapHang,4,4,SOURCE1,ChiTietNhapHang,4,4
+Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_5,SOURCE1,ChiTietNhapHang,5,5,SOURCE1,ChiTietNhapHang,5,5
+Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_6,SOURCE1,ChiTietNhapHang,6,6,SOURCE1,ChiTietNhapHang,6,6
+Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_7,SOURCE1,ChiTietNhapHang,7,7,SOURCE1,ChiTietNhapHang,7,7
+Kho1_ChiTietPhieuNhap,NEW,0.0%,SOURCE1_8,SOURCE1,ChiTietNhapHang,8,8,SOURCE1,ChiTietNhapHang,8,8
+Kho1_PhieuNhap,NEW,0.0%,SOURCE1_ï»¿MaPN,SOURCE1,PhieuNhap,ï»¿MaPN,ï»¿MaPN,SOURCE1,PhieuNhap,ï»¿MaPN,MaPN
+Kho1_PhieuNhap,NEW,0.0%,SOURCE1_1,SOURCE1,PhieuNhap,1,1,SOURCE1,PhieuNhap,1,1
+Kho1_PhieuNhap,NEW,0.0%,SOURCE1_2,SOURCE1,PhieuNhap,2,2,SOURCE1,PhieuNhap,2,2
+Kho1_PhieuNhap,NEW,0.0%,SOURCE1_3,SOURCE1,PhieuNhap,3,3,SOURCE1,PhieuNhap,3,3
+Kho1_PhieuNhap,NEW,0.0%,SOURCE1_4,SOURCE1,PhieuNhap,4,4,SOURCE1,PhieuNhap,4,4
+Kho1_PhieuNhap,NEW,0.0%,SOURCE1_5,SOURCE1,PhieuNhap,5,5,SOURCE1,PhieuNhap,5,5
+Kho1_PhieuNhap,NEW,0.0%,SOURCE1_6,SOURCE1,PhieuNhap,6,6,SOURCE1,PhieuNhap,6,6
+Kho1_TonKho,NEW,0.0%,SOURCE1_ï»¿MaSP,SOURCE1,TonKho,ï»¿MaSP,ï»¿MaSP,SOURCE1,TonKho,ï»¿MaSP,MaSP
+Kho1_TonKho,NEW,0.0%,SOURCE1_1,SOURCE1,TonKho,1,1,SOURCE1,TonKho,1,1
+Kho1_TonKho,NEW,0.0%,SOURCE1_2,SOURCE1,TonKho,2,2,SOURCE1,TonKho,2,2
+Kho1_TonKho,NEW,0.0%,SOURCE1_3,SOURCE1,TonKho,3,3,SOURCE1,TonKho,3,3
+Kho1_TonKho,NEW,0.0%,SOURCE1_4,SOURCE1,TonKho,4,4,SOURCE1,TonKho,4,4
+Kho1_TonKho,NEW,0.0%,SOURCE1_5,SOURCE1,TonKho,5,5,SOURCE1,TonKho,5,5
+Kho1_TonKho,NEW,0.0%,SOURCE1_8,SOURCE1,TonKho,8,8,SOURCE1,TonKho,8,8
+Kho1_TonKho,NEW,0.0%,SOURCE1_13,SOURCE1,TonKho,13,13,SOURCE1,TonKho,13,13
+Kho1_TonKho,NEW,0.0%,SOURCE1_14,SOURCE1,TonKho,14,14,SOURCE1,TonKho,14,14
+Kho1_ChiTietPhieuXuat,NEW,0.0%,SOURCE2_ï»¿MaPX,SOURCE2,ChiTietPhieuXuat,ï»¿MaPX,ï»¿MaPX - MaSP,SOURCE2,ChiTietPhieuXuat,ï»¿MaPX,MaPX - MaSP
+Kho1_ChiTietPhieuXuat,NEW,0.0%,SOURCE2_1,SOURCE2,ChiTietPhieuXuat,1,1 - 1,SOURCE2,ChiTietPhieuXuat,1,1 - 1
+Kho1_ChiTietPhieuXuat,NEW,0.0%,SOURCE2_2,SOURCE2,ChiTietPhieuXuat,2,2 - 6,SOURCE2,ChiTietPhieuXuat,2,2 - 6
+Web1_ChiTietHoaDon,NEW,0.0%,SOURCE2_ï»¿MaHD,SOURCE2,ChiTietHoaDon,ï»¿MaHD,ï»¿MaHD - MaSP - SoLuong,SOURCE2,ChiTietHoaDon,ï»¿MaHD,MaHD - MaSP - SoLuong
+Web1_ChiTietHoaDon,NEW,0.0%,SOURCE2_1,SOURCE2,ChiTietHoaDon,1,1 - 1 - 1,SOURCE2,ChiTietHoaDon,1,1 - 1 - 1
+Web1_ChiTietHoaDon,NEW,0.0%,SOURCE2_2,SOURCE2,ChiTietHoaDon,2,2 - 3 - 1,SOURCE2,ChiTietHoaDon,2,2 - 3 - 1
+Web1_ChiTietHoaDon,NEW,0.0%,SOURCE2_3,SOURCE2,ChiTietHoaDon,3,3 - 5 - 1,SOURCE2,ChiTietHoaDon,3,3 - 5 - 1
+Web1_ChiTietHoaDon,NEW,0.0%,SOURCE2_4,SOURCE2,ChiTietHoaDon,4,4 - 4 - 1,SOURCE2,ChiTietHoaDon,4,4 - 4 - 1
+Web1_ChiTietHoaDon,NEW,0.0%,SOURCE2_5,SOURCE2,ChiTietHoaDon,5,5 - 2 - 1,SOURCE2,ChiTietHoaDon,5,5 - 2 - 1
+Web1_ChiTietHoaDon,NEW,0.0%,SOURCE2_6,SOURCE2,ChiTietHoaDon,6,6 - 8 - 1,SOURCE2,ChiTietHoaDon,6,6 - 8 - 1
+Web1_ChiTietHoaDon,NEW,0.0%,SOURCE2_7,SOURCE2,ChiTietHoaDon,7,7 - 7 - 1,SOURCE2,ChiTietHoaDon,7,7 - 7 - 1
+Web1_ChiTietHoaDon,NEW,0.0%,SOURCE2_8,SOURCE2,ChiTietHoaDon,8,8 - 6 - 1,SOURCE2,ChiTietHoaDon,8,8 - 6 - 1
+Web1_DanhGia,NEW,0.0%,SOURCE2_ï»¿MaDG,SOURCE2,DanhGia,ï»¿MaDG,ï»¿MaDG,SOURCE2,DanhGia,ï»¿MaDG,MaDG
+Web1_DanhGia,NEW,0.0%,SOURCE2_1,SOURCE2,DanhGia,1,1,SOURCE2,DanhGia,1,1
+Web1_DanhGia,NEW,0.0%,SOURCE2_2,SOURCE2,DanhGia,2,2,SOURCE2,DanhGia,2,2
+Web1_DanhGia,NEW,0.0%,SOURCE2_3,SOURCE2,DanhGia,3,3,SOURCE2,DanhGia,3,3
+Web1_DanhGia,NEW,0.0%,SOURCE2_4,SOURCE2,DanhGia,4,4,SOURCE2,DanhGia,4,4
+Web1_DanhGia,NEW,0.0%,SOURCE2_5,SOURCE2,DanhGia,5,5,SOURCE2,DanhGia,5,5
+Web1_DanhGia,NEW,0.0%,SOURCE2_6,SOURCE2,DanhGia,6,6,SOURCE2,DanhGia,6,6
+Web1_DanhGia,NEW,0.0%,SOURCE2_7,SOURCE2,DanhGia,7,7,SOURCE2,DanhGia,7,7
+Web1_GioHang,NEW,0.0%,SOURCE2_ï»¿MaGH,SOURCE2,GioHang,ï»¿MaGH,ï»¿MaGH,SOURCE2,GioHang,ï»¿MaGH,MaGH
+Web1_GioHang,NEW,0.0%,SOURCE2_1,SOURCE2,GioHang,1,1,SOURCE2,GioHang,1,1
+Web1_GioHang,NEW,0.0%,SOURCE2_2,SOURCE2,GioHang,2,2,SOURCE2,GioHang,2,2
+Web1_GioHang,NEW,0.0%,SOURCE2_3,SOURCE2,GioHang,3,3,SOURCE2,GioHang,3,3
+Web1_GioHang,NEW,0.0%,SOURCE2_4,SOURCE2,GioHang,4,4,SOURCE2,GioHang,4,4
+Web1_GioHang,NEW,0.0%,SOURCE2_5,SOURCE2,GioHang,5,5,SOURCE2,GioHang,5,5
+Web1_HoaDon,NEW,0.0%,SOURCE2_1,SOURCE2,HoaDon,1,1 - 0909123001 - Nguy?n Van A,SOURCE2,HoaDon,1,1 - 0909123001 - Nguy?n Van A
+Web1_HoaDon,NEW,0.0%,SOURCE2_2,SOURCE2,HoaDon,2,2 - 0909123002 - Tr?n Th? B,SOURCE2,HoaDon,2,2 - 0909123002 - Tr?n Th? B
+Web1_HoaDon,NEW,0.0%,SOURCE2_3,SOURCE2,HoaDon,3,3 - 0909123003 - Lï¿½ Van C,SOURCE2,HoaDon,3,3 - 0909123003 - Lï¿½ Van C
+Web1_HoaDon,NEW,0.0%,SOURCE2_4,SOURCE2,HoaDon,4,4 - 0909123004 - Ph?m Th? D,SOURCE2,HoaDon,4,4 - 0909123004 - Ph?m Th? D
+Web1_HoaDon,FUZZY,95.5%,SOURCE2_1,SOURCE2,HoaDon,5,5 - 0909123001 - Nguy?n Van A,SOURCE2,HoaDon,1,1 - 0909123001 - Nguy?n Van A
+Web1_HoaDon,NEW,0.0%,SOURCE2_6,SOURCE2,HoaDon,6,6 - 0909123006 - ï¿½? Th? F,SOURCE2,HoaDon,6,6 - 0909123006 - ï¿½? Th? F
+Web1_HoaDon,NEW,0.0%,SOURCE2_7,SOURCE2,HoaDon,7,7 - 0909123007 - Bï¿½i Van G,SOURCE2,HoaDon,7,7 - 0909123007 - Bï¿½i Van G
+Web1_HoaDon,NEW,0.0%,SOURCE2_8,SOURCE2,HoaDon,8,8 - 0909123008 - Lï¿½ Th? H,SOURCE2,HoaDon,8,8 - 0909123008 - Lï¿½ Th? H
+Web1_HoaDon,NEW,0.0%,SOURCE2_9,SOURCE2,HoaDon,9,9 - 0987654321 - Tr?n Van B !!!,SOURCE2,HoaDon,9,9 - 0987654321 - Tr?n Van B !!!
+Web1_HoaDon,NEW,0.0%,SOURCE2_10,SOURCE2,HoaDon,10,10 - 0911223344 - Lï¿½ Van C,SOURCE2,HoaDon,10,10 - 0911223344 - Lï¿½ Van C
+Web1_HoaDon,NEW,0.0%,SOURCE2_11,SOURCE2,HoaDon,11,11 - 0911223344 - Lï¿½ Van C,SOURCE2,HoaDon,11,11 - 0911223344 - Lï¿½ Van C
+Web1_LichSuDonHang,NEW,0.0%,SOURCE2_ï»¿MaLSDH,SOURCE2,LichSuDonHang,ï»¿MaLSDH,ï»¿MaLSDH,SOURCE2,LichSuDonHang,ï»¿MaLSDH,MaLSDH
+Web1_LichSuDonHang,NEW,0.0%,SOURCE2_1,SOURCE2,LichSuDonHang,1,1,SOURCE2,LichSuDonHang,1,1
+Web1_LichSuDonHang,NEW,0.0%,SOURCE2_2,SOURCE2,LichSuDonHang,2,2,SOURCE2,LichSuDonHang,2,2
+Web1_LichSuDonHang,NEW,0.0%,SOURCE2_3,SOURCE2,LichSuDonHang,3,3,SOURCE2,LichSuDonHang,3,3
+Web1_LichSuDonHang,NEW,0.0%,SOURCE2_4,SOURCE2,LichSuDonHang,4,4,SOURCE2,LichSuDonHang,4,4
+Web1_LichSuDonHang,NEW,0.0%,SOURCE2_5,SOURCE2,LichSuDonHang,5,5,SOURCE2,LichSuDonHang,5,5
+Web1_LichSuDonHang,NEW,0.0%,SOURCE2_6,SOURCE2,LichSuDonHang,6,6,SOURCE2,LichSuDonHang,6,6
+Web1_LichSuDonHang,NEW,0.0%,SOURCE2_7,SOURCE2,LichSuDonHang,7,7,SOURCE2,LichSuDonHang,7,7
+Web1_ThanhToan,NEW,0.0%,SOURCE2_ï»¿MaTT,SOURCE2,ThanhToan,ï»¿MaTT,ï»¿MaTT,SOURCE2,ThanhToan,ï»¿MaTT,MaTT
+Web1_ThanhToan,NEW,0.0%,SOURCE2_1,SOURCE2,ThanhToan,1,1,SOURCE2,ThanhToan,1,1
+Web1_ThanhToan,NEW,0.0%,SOURCE2_2,SOURCE2,ThanhToan,2,2,SOURCE2,ThanhToan,2,2
+Web1_ThanhToan,NEW,0.0%,SOURCE2_3,SOURCE2,ThanhToan,3,3,SOURCE2,ThanhToan,3,3
+Web1_ThanhToan,NEW,0.0%,SOURCE2_4,SOURCE2,ThanhToan,4,4,SOURCE2,ThanhToan,4,4
+Web1_ThanhToan,NEW,0.0%,SOURCE2_5,SOURCE2,ThanhToan,5,5,SOURCE2,ThanhToan,5,5

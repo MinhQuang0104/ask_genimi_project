@@ -1,0 +1,9 @@
+MaLSDH,MaHD,NgayThayDoi,GhiChu
+1,,NgayThayDoi,GhiChu
+2,1,2025-12-01 14:09:24.510,Đặt hàng thành công
+3,1,2025-12-01 15:09:24.510,Đã xác nhận
+4,2,2025-12-01 14:09:24.510,Đang giao hàng
+5,3,2025-12-01 14:09:24.510,Đã giao thành công
+6,4,2025-12-01 14:09:24.510,Đơn hàng đã hủy
+7,1,2099-12-31 00:00:00.000,Ngày tương lai
+8,2,2025-12-01 14:09:24.510,Ghi chú thừa khoảng trắng

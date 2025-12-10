@@ -1,0 +1,12 @@
+MaHD,MaTK,NgayDat,TongTien,TrangThaiDonHang,DiaChiGiaoHang,SoDienThoaiNguoiNhan,TenNguoiNhan,PhuongThucThanhToan,GhiChuKhachHang
+1,2,52:32.4,32990000,1,"123 Lê L?i, Q.1, TP.HCM",0909123001,Nguy?n Van A,Ti?n m?t,Giao bu?i sáng.
+2,3,52:32.4,15990000,2,"45 Hai Bà Trung, Q.1, TP.HCM",0909123002,Tr?n Th? B,Chuy?n kho?n,Giao sau gi? hành chính.
+3,4,52:32.4,49990000,3,"78 Nguy?n Hu?, Q.1, TP.HCM",0909123003,Lê Van C,Th? tín d?ng,Liên h? tru?c khi giao.
+4,5,52:32.4,13990000,4,"12 Lê Thu?ng Ki?t, Q.5, TP.HCM",0909123004,Ph?m Th? D,Ti?n m?t,Không giao th? 7.
+5,2,52:32.4,38990000,5,"99 Nguy?n Trãi, Q.5, TP.HCM",0909123001,Nguy?n Van A,MOMO,Giao g?p.
+6,6,00:00.0,8500000,5,Hà N?i,0909123006,Ð? Th? F,Ti?n m?t,Ðon cu nam ngoái
+7,7,00:00.0,1900000,5,Ðà N?ng,0909123007,Bùi Van G,COD,NULL
+8,8,52:32.4,400000,1,C?n Tho,0909123008,Lý Th? H,MOMO,NULL
+9,2,52:32.4,1000000,2,   TP. H? Chí Minh   ,0987654321,Tr?n Van B !!!,ATM,NULL
+10,2,52:32.4,2000000,9,Ðà N?ng,0911223344,Lê Van C,COD,NULL
+11,2,52:32.4,-500000,1,Hà N?i,0911223344,Lê Van C,COD,NULL

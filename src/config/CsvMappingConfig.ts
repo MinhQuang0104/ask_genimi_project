@@ -62,23 +62,23 @@ export const CSV_CONFIG: Record<string, IModelConfig> = {
     "SOURCE1_ChiTietNhapHang": { idIndex: 0, nameIndex: 0, targetModel: "Kho1_ChiTietPhieuNhap", foreignKeys: [{ colIndex: 1, parentModel: "Kho1_PhieuNhap" }, { colIndex: 2, parentModel: "SanPham" }] },
     
     "SOURCE2_PhieuXuat": { idIndex: 0, nameIndex: 0, targetModel: "Kho1_PhieuXuat", foreignKeys: [{ colIndex: 2, parentModel: "KhoHang" }] },
-    "SOURCE2_ChiTietPhieuXuat": { idIndex: 0, nameIndex: 0, targetModel: "Kho1_ChiTietPhieuXuat", foreignKeys: [{ colIndex: 1, parentModel: "Kho1_PhieuXuat" }, { colIndex: 2, parentModel: "SanPham" }] },
+    "SOURCE2_ChiTietPhieuXuat": { idIndex: 0, nameIndex: [0,1], targetModel: "Kho1_ChiTietPhieuXuat", foreignKeys: [{ colIndex: 1, parentModel: "Kho1_PhieuXuat" }, { colIndex: 2, parentModel: "SanPham" }] },
     
     "SOURCE2_VanDon": { idIndex: 0, nameIndex: 1, targetModel: "Kho1_VanDon", foreignKeys: [{ colIndex: 1, parentModel: "Kho1_PhieuXuat" }] },
     
     "SOURCE2_PhieuKiemKe": { idIndex: 0, nameIndex: 0, targetModel: "Kho1_PhieuKiemKe", foreignKeys: [{ colIndex: 2, parentModel: "KhoHang" }] },
-    "SOURCE2_ChiTietKiemKe": { idIndex: 0, nameIndex: 0, targetModel: "Kho1_ChiTietKiemKe", foreignKeys: [{ colIndex: 1, parentModel: "Kho1_PhieuKiemKe" }, { colIndex: 2, parentModel: "SanPham" }] },
+    "SOURCE2_ChiTietKiemKe": { idIndex: 0, nameIndex: [0,1], targetModel: "Kho1_ChiTietKiemKe", foreignKeys: [{ colIndex: 1, parentModel: "Kho1_PhieuKiemKe" }, { colIndex: 2, parentModel: "SanPham" }] },
 
     // ========================================================================
     // PHASE 4: TRANSACTION (WEB DATA - Đổi hết sang SOURCE2)
     // ========================================================================
 
     "SOURCE2_HoaDon": { 
-        idIndex: 0, nameIndex: 0, targetModel: "Web1_HoaDon",
+        idIndex: 0, nameIndex: [0,6,7], targetModel: "Web1_HoaDon",
         foreignKeys: [{ colIndex: 1, parentModel: "Web1_TaiKhoan" }] 
     },
     "SOURCE2_ChiTietHoaDon": {
-        idIndex: 0, nameIndex: 0, targetModel: "Web1_ChiTietHoaDon",
+        idIndex: 0, nameIndex: [0,1,2], targetModel: "Web1_ChiTietHoaDon",
         foreignKeys: [{ colIndex: 1, parentModel: "Web1_HoaDon" }, { colIndex: 2, parentModel: "SanPham" }]
     },
     "SOURCE2_GioHang": { 
@@ -94,7 +94,7 @@ export const CSV_CONFIG: Record<string, IModelConfig> = {
         foreignKeys: [{ colIndex: 1, parentModel: "Web1_HoaDon" }]
     },
     "SOURCE2_LichSuDonHang": {
-        idIndex: 0, nameIndex: 2, targetModel: "Web1_LichSuDonHang",
+        idIndex: 0, nameIndex: [0], targetModel: "Web1_LichSuDonHang",
         foreignKeys: [{ colIndex: 1, parentModel: "Web1_HoaDon" }]
     }
 };

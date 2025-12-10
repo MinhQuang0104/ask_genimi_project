@@ -1,25 +1,16 @@
-TenSP,GiaBan,MaSP
-TenSP,MaDM,1
-Asus ROG Strix G15,SOURCE1_1,2
-Dell XPS 13,SOURCE1_5,3
-HP Pavilion 15,SOURCE1_2,4
-Acer Aspire 7,SOURCE1_4,5
-MSI Creator Z16,SOURCE1_3,6
-Chuột Logitech G102,SOURCE1_6,7
-Bàn phím Keychron K2,SOURCE1_7,8
-Màn hình LG UltraGear 27,SOURCE1_8,9
-Tai nghe HyperX Cloud II,SOURCE1_6,10
-Lenovo ThinkPad ***$$$,SOURCE1_2,11
-Laptop Lỗi Giá,SOURCE1_2,12
-Laptop Tồn Âm,SOURCE1_4,13
-Laptop Spacer,SOURCE1_1,14
-iPhone 14,20000000.00,25000000.00,4,1,12,16
-MacBook Pro,30000000.00,35000000.00,5,1,2,17
-Samsung S23 Ultra,22000000.00,28000000.00,10,1,12,18
-Tai nghe AirPods 3,3500000.00,4200000.00,15,1,7,21
-Tủ lạnh Samsung 300L,8000000.00,10000000.00,2,1,11,23
-Máy giặt LG Inverter,7500000.00,9500000.00,4,1,11,24
-Nồi cơm điện Sharp,1200000.00,1800000.00,20,1,13,25
-Áo Thun Lỗi,100000.00,150000.00,6,1,16,26
-Giày Nike $$*,2000000.00,2500000.00,6,1,16,27
-Sản phẩm Giá Âm,-50000.00,100000.00,5,1,17,28
+TenSP,GiaBan,SoLuongTon,MoTaChiTiet,NhaSanXuat,MaLoaiHang,MaSP
+Asus ROG Strix G15,32990000,10,Laptop gaming v?i CPU Ryzen 7 v� GPU RTX 4060.,ASUS,,1
+Dell XPS 13,38990000,8,"Laptop m?ng nh? cao c?p, m�n h�nh 13 inch 4K.",Dell,,2
+HP Pavilion 15,15990000,15,"Laptop van ph�ng hi?u nang t?t, pin b?n.",HP,,3
+Acer Aspire 7,13990000,12,Laptop h?c t?p v� l�m vi?c da d?ng.,Acer,,4
+MSI Creator Z16,49990000,5,D�nh cho d�n d? h?a v?i GPU RTX 4070.,MSI,,5
+Chu?t Logitech G102,400000,50,"Chu?t qu?c d�n, led RGB.",Logitech,,6
+B�n ph�m Keychron K2,1900000,20,B�n ph�m co kh�ng d�y layout 75%.,Keychron,,7
+M�n h�nh LG UltraGear 27,8500000,10,M�n h�nh 2K 144Hz.,LG,,8
+Tai nghe HyperX Cloud II,1500000,25,Tai nghe gaming �m thanh v�m 7.1.,HyperX,,9
+Lenovo ThinkPad ***$$$,25000000,10,B?n b?.,Lenovo,,10
+Laptop L?i Gi�,-5000000,5,Test gi� �m,Dell,,11
+Laptop T?n �m,10000000,-10,Test t?n kho �m,HP,,12
+Laptop Spacer,20000000,5,T�n th?a kho?ng tr?ng,Asus,,13
+iPhone 14,8500000,5,�i?n thoai,Apple,,14
+MacBook Pro,8500001,6,Laptop,Apple,,15

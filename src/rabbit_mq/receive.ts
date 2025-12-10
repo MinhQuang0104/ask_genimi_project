@@ -12,28 +12,11 @@ import logger from "../utils/logger";
 const ROOT_DIR = path.resolve(__dirname, "../../");
 const STAGING_DIR = path.join(ROOT_DIR, "resource", "data_csv", "staging");
 
-// 1. ĐỊNH NGHĨA THỨ TỰ ƯU TIÊN (PHASES)
 const PHASES = [
-    // PHASE 1: MASTER DATA
-    [
-        "LoaiHang", "NhaCungCap", "KhoHang", "ViTriKho", 
-        "Thue", "KhuyenMai", "Web1_TaiKhoan", "Web1_SoDiaChi"
-    ],
-    // PHASE 2: PRODUCT DATA
-    [
-        "SanPham", "AnhSanPham", "SanPham_Thue", "SanPham_KhuyenMai"
-    ],
-    // PHASE 3: INVENTORY & OPS
-    [
-        "Kho1_TonKho", "Kho1_PhieuNhap", "Kho1_ChiTietPhieuNhap",
-        "Kho1_PhieuXuat", "Kho1_ChiTietPhieuXuat", "Kho1_VanDon",
-        "Kho1_PhieuKiemKe", "Kho1_ChiTietKiemKe", "Kho1_PhieuTraHang", "Kho1_ChiTietTraHang"
-    ],
-    // PHASE 4: TRANSACTION
-    [
-        "Web1_HoaDon", "Web1_ChiTietHoaDon", "Web1_GioHang", 
-        "Web1_DanhGia", "Web1_ThanhToan", "Web1_LichSuDonHang"
-    ]
+    ["LoaiHang", "NhaCungCap", "KhoHang", "ViTriKho", "Thue", "KhuyenMai", "Web1_TaiKhoan", "Web1_SoDiaChi"],
+    ["SanPham", "AnhSanPham", "SanPham_Thue", "SanPham_KhuyenMai"],
+    ["Kho1_TonKho", "Kho1_PhieuNhap", "Kho1_ChiTietPhieuNhap", "Kho1_PhieuXuat", "Kho1_ChiTietPhieuXuat", "Kho1_VanDon", "Kho1_PhieuKiemKe", "Kho1_ChiTietKiemKe", "Kho1_PhieuTraHang", "Kho1_ChiTietTraHang"],
+    ["Web1_HoaDon", "Web1_ChiTietHoaDon", "Web1_GioHang", "Web1_DanhGia", "Web1_ThanhToan", "Web1_LichSuDonHang"]
 ];
 
 function getConfigKey(source: string, rawTable: string): string {
@@ -46,11 +29,10 @@ function getRawNameForLog(rawTable: string): string {
 }
 
 async function consumePhase(client: rabbit.Client, streams: string[], targetTables: string[]) {
-    // logger.info(`\n🚀 BẮT ĐẦU PHASE: [${targetTables.join(", ")}]`); // Log này đã chuyển ra ngoài main
-    
     const promises = streams.map(streamName => {
         return new Promise<void>(async (resolve) => {
             const sourceName = streamName.includes("data_source1") ? "SOURCE1" : "SOURCE2";
+            
             let consumer: any;
             let idleTimer: NodeJS.Timeout;
 
@@ -94,7 +76,6 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
                                     let cols = rows[0]; 
                                     const oldId = cols[config.idIndex];
 
-                                    // XỬ LÝ NHIỀU CỘT TÊN
                                     let rawName = "";
                                     if (Array.isArray(config.nameIndex)) {
                                         rawName = config.nameIndex.map(idx => cols[idx]).filter(val => val).join(" - ");
@@ -102,15 +83,22 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
                                         rawName = cols[config.nameIndex];
                                     }
 
-                                    // BỘ LỌC HEADER
                                     const headerKeywords = ["Ma", "ID", "Code", "Stt", "Ten", "Name", "Source", "Nguon"];
                                     const isHeader = oldId && headerKeywords.some(k => oldId.toString().toLowerCase().startsWith(k.toLowerCase())) && isNaN(Number(oldId));
 
                                     if (isHeader) return; 
 
                                     if (oldId && rawName) {
-                                        // Gọi Service
-                                        const result = MergeService.processRecord(targetModel, sourceName, oldId, rawName);
+                                        const rawTableNameClean = getRawNameForLog(rawTable);
+                                        
+                                        // [FIX] GỌI ĐÚNG 5 THAM SỐ
+                                        const result = MergeService.processRecord(
+                                            targetModel,        // 1
+                                            sourceName,         // 2
+                                            rawTableNameClean,  // 3 (Thêm mới)
+                                            oldId,              // 4
+                                            rawName             // 5
+                                        );
 
                                         cols[config.idIndex] = result.newId; 
                                         if (!Array.isArray(config.nameIndex)) {
@@ -135,25 +123,22 @@ async function consumePhase(client: rabbit.Client, streams: string[], targetTabl
                     }
                 }
             );
+            
             resetIdleTimer();
         });
     });
 
     await Promise.all(promises);
-    // logger.info(`✅ HOÀN TẤT STREAM.`); 
 }
 
 async function main() {
-    // 0. Dọn dẹp Staging cũ
     if (fs.existsSync(STAGING_DIR)) {
         fs.rmSync(STAGING_DIR, { recursive: true, force: true });
         fs.mkdirSync(STAGING_DIR, { recursive: true });
     }
 
-    // 1. Reset bộ nhớ đệm MergeService
     MergeService.clear();
 
-    // 2. Kết nối RabbitMQ
     const client = await rabbit.connect({
         hostname: "localhost",
         port: 5552,
@@ -162,26 +147,21 @@ async function main() {
         vhost: "/"
     });
 
-    // [UPDATE] Tách riêng 2 stream để xử lý tuần tự
     const streamSource1 = ["data_source1_kho_stream"];
     const streamSource2 = ["data_source2_web_stream"];
 
-    logger.info("🔥 BẮT ĐẦU QUÁ TRÌNH INTEGRATION...");
+    logger.info("🔥 BẮT ĐẦU QUÁ TRÌNH INTEGRATION VỚI MERGE SERVICE...");
 
-    // 3. CHẠY TUẦN TỰ TỪNG PHASE
     for (const phaseTables of PHASES) {
         logger.info(`\n=== ĐANG XỬ LÝ PHASE: [${phaseTables.join(", ")}] ===`);
         
-        // [QUAN TRỌNG] Chạy Source 1 trước để nạp dữ liệu Gốc (Anchor)
         logger.info(`>> Đang nạp dữ liệu gốc từ SOURCE 1...`);
         await consumePhase(client, streamSource1, phaseTables);
 
-        // [QUAN TRỌNG] Sau đó mới chạy Source 2 để Gộp vào Source 1
         logger.info(`>> Đang nạp và gộp dữ liệu từ SOURCE 2...`);
         await consumePhase(client, streamSource2, phaseTables);
     }
 
-    // === XUẤT BÁO CÁO MERGE CHI TIẾT ===
     logger.info("📊 Đang tạo báo cáo gộp dữ liệu chi tiết (Detailed Merge Report)...");
     
     try {
@@ -191,11 +171,11 @@ async function main() {
             const csvData = stringify(MergeService.mergeLogs, {
                 header: true,
                 columns: [
-                    "TableName", 
+                    "TargetModel", 
                     "Match_Type", "Similarity_Score", 
                     "Unified_ID",
-                    "Incoming_Source", "Incoming_ID", "Incoming_Name", 
-                    "Anchor_Source", "Anchor_ID", "Anchor_Name"        
+                    "Incoming_Source", "Incoming_RefTable", "Incoming_ID", "Incoming_Name", 
+                    "Anchor_Source", "Anchor_RefTable", "Anchor_ID", "Anchor_Name"        
                 ]
             });
             
@@ -207,9 +187,8 @@ async function main() {
     } catch (err) {
         logger.error("❌ Lỗi khi ghi báo cáo:", err);
     }
-    // ==============================================
 
-    logger.info("🎉QUÁ TRÌNH XỬ LÝ HOÀN TẤT.");
+    logger.info("🎉 TOÀN BỘ QUÁ TRÌNH TÍCH HỢP HOÀN TẤT.");
     process.exit(0);
 }
 
